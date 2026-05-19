@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.antigravitycli/
+*.zip
+*.log
+.DS_Store
+.env
+.idea/
+.vscode/
