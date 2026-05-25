@@ -15,9 +15,46 @@ import {
   HelpCircle, 
   Info, 
   Calendar,
-  Upload
+  Upload,
+  ChevronDown,
+  Check
 } from 'lucide-react';
 import { translate } from '../shared/locales';
+
+const USFlag: React.FC<{ className?: string }> = ({ className = 'w-5 h-3.5' }) => (
+  <svg viewBox="0 0 20 14" className={`${className} rounded-sm overflow-hidden flex-shrink-0 shadow-sm`} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="20" height="14" fill="#B31942" />
+    <path d="M0 1h20M0 3h20M0 5h20M0 7h20M0 9h20M0 11h20M0 13h20" stroke="#FFFFFF" strokeWidth="1" />
+    <rect width="9" height="8" fill="#0A3161" />
+    <circle cx="1.5" cy="1.5" r="0.4" fill="#FFFFFF" />
+    <circle cx="3" cy="1.5" r="0.4" fill="#FFFFFF" />
+    <circle cx="4.5" cy="1.5" r="0.4" fill="#FFFFFF" />
+    <circle cx="6" cy="1.5" r="0.4" fill="#FFFFFF" />
+    <circle cx="7.5" cy="1.5" r="0.4" fill="#FFFFFF" />
+    <circle cx="2.25" cy="3" r="0.4" fill="#FFFFFF" />
+    <circle cx="3.75" cy="3" r="0.4" fill="#FFFFFF" />
+    <circle cx="5.25" cy="3" r="0.4" fill="#FFFFFF" />
+    <circle cx="6.75" cy="3" r="0.4" fill="#FFFFFF" />
+    <circle cx="1.5" cy="4.5" r="0.4" fill="#FFFFFF" />
+    <circle cx="3" cy="4.5" r="0.4" fill="#FFFFFF" />
+    <circle cx="4.5" cy="4.5" r="0.4" fill="#FFFFFF" />
+    <circle cx="6" cy="4.5" r="0.4" fill="#FFFFFF" />
+    <circle cx="7.5" cy="4.5" r="0.4" fill="#FFFFFF" />
+    <circle cx="2.25" cy="6" r="0.4" fill="#FFFFFF" />
+    <circle cx="3.75" cy="6" r="0.4" fill="#FFFFFF" />
+    <circle cx="5.25" cy="6" r="0.4" fill="#FFFFFF" />
+    <circle cx="6.75" cy="6" r="0.4" fill="#FFFFFF" />
+  </svg>
+);
+
+const TRFlag: React.FC<{ className?: string }> = ({ className = 'w-5 h-3.5' }) => (
+  <svg viewBox="0 0 24 16" className={`${className} rounded-sm overflow-hidden flex-shrink-0 shadow-sm`} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="24" height="16" fill="#E30A17" />
+    <circle cx="9" cy="8" r="4" fill="#FFFFFF" />
+    <circle cx="10.2" cy="8" r="3.2" fill="#E30A17" />
+    <polygon points="15.5,5.8 16.4,7.8 18.5,8.1 17,9.6 17.4,11.7 15.5,10.7 13.6,11.7 14,9.6 12.5,8.1 14.6,7.8" fill="#FFFFFF" />
+  </svg>
+);
 
 export const OptionsApp: React.FC = () => {
   const { 
@@ -77,6 +114,7 @@ export const OptionsApp: React.FC = () => {
   const [defaultUsesPerWeek, setDefaultUsesPerWeek] = useState('5');
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [language, setLanguage] = useState<'en' | 'tr'>('en');
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
 
   // Work cost states
   const [showWorkCost, setShowWorkCost] = useState(false);
@@ -209,10 +247,7 @@ export const OptionsApp: React.FC = () => {
     { value: 'dark', label: settings.language === 'tr' ? 'Koyu Tema' : 'Dark Theme' },
   ];
 
-  const languageOptions = [
-    { value: 'en', label: 'English' },
-    { value: 'tr', label: 'Türkçe' },
-  ];
+
 
   return (
     <div className="min-h-screen bg-background text-text-primary px-4 py-8 sm:py-12 select-text font-sans">
@@ -342,12 +377,70 @@ export const OptionsApp: React.FC = () => {
                   onChange={(e) => setTheme(e.target.value as 'light' | 'dark')}
                 />
 
-                <Select
-                  label={t('settings.labelLanguage')}
-                  options={languageOptions}
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value as 'en' | 'tr')}
-                />
+                {/* Custom Language Dropdown Selector */}
+                <div className="flex flex-col gap-1.5 relative select-none">
+                  <span className="text-xs font-bold text-text-secondary select-none">
+                    {t('settings.labelLanguage')}
+                  </span>
+                  
+                  {/* Selector Button */}
+                  <button
+                    type="button"
+                    onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                    className="flex justify-between items-center w-full px-3 py-2.5 bg-background border border-border/70 rounded-xl hover:border-accent/50 focus:border-accent text-xs font-semibold text-text-primary transition-all duration-200 outline-none"
+                  >
+                    <div className="flex items-center gap-2">
+                      {language === 'tr' ? <TRFlag /> : <USFlag />}
+                      <span>{language === 'tr' ? 'Türkçe' : 'English'}</span>
+                    </div>
+                    <ChevronDown className={`w-4 h-4 text-text-secondary transition-transform duration-200 ${isLangDropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  {/* Dropdown Menu Overlay List */}
+                  {isLangDropdownOpen && (
+                    <>
+                      {/* Invisible backdrop to click away */}
+                      <div 
+                        className="fixed inset-0 z-40" 
+                        onClick={() => setIsLangDropdownOpen(false)}
+                      />
+                      
+                      <div className="absolute top-[64px] left-0 right-0 z-50 bg-surface border border-border/70 rounded-xl shadow-premium dark:shadow-premium-dark p-1 flex flex-col gap-0.5 animate-scale-in origin-top">
+                        {/* English Option */}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setLanguage('en');
+                            setIsLangDropdownOpen(false);
+                          }}
+                          className={`flex items-center justify-between w-full px-3 py-2 text-xs font-semibold rounded-lg transition-colors hover:bg-elevated/40 ${language === 'en' ? 'bg-accent/10 text-accent hover:bg-accent/15' : 'text-text-primary'}`}
+                        >
+                          <div className="flex items-center gap-2">
+                            <USFlag />
+                            <span>English</span>
+                          </div>
+                          {language === 'en' && <Check className="w-3.5 h-3.5 text-accent" />}
+                        </button>
+
+                        {/* Turkish Option */}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setLanguage('tr');
+                            setIsLangDropdownOpen(false);
+                          }}
+                          className={`flex items-center justify-between w-full px-3 py-2 text-xs font-semibold rounded-lg transition-colors hover:bg-elevated/40 ${language === 'tr' ? 'bg-accent/10 text-accent hover:bg-accent/15' : 'text-text-primary'}`}
+                        >
+                          <div className="flex items-center gap-2">
+                            <TRFlag />
+                            <span>Türkçe</span>
+                          </div>
+                          {language === 'tr' && <Check className="w-3.5 h-3.5 text-accent" />}
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </div>
 
                 <Button type="submit" variant="primary" fullWidth className="mt-2">
                   {t('settings.btnSave')}
