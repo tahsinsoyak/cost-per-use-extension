@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <filter id="innerShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur"/>
+      <feOffset dx="0" dy="4" result="offsetBlur"/>
+      <feComposite in="SourceGraphic" in2="offsetBlur" operator="over"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect x="32" y="32" width="448" height="448" rx="100" ry="100" fill="url(#bg)"/>
+
+  <!-- Subtle inner highlight for depth -->
+  <rect x="36" y="36" width="440" height="220" rx="96" ry="96" fill="white" opacity="0.08"/>
+
+  <!-- Division symbol ÷ -->
+  <g fill="white" filter="url(#glow)">
+    <!-- Horizontal bar -->
+    <rect x="136" y="235" width="240" height="42" rx="21"/>
+
+    <!-- Top circle -->
+    <circle cx="256" cy="162" r="34"/>
+
+    <!-- Bottom circle -->
+    <circle cx="256" cy="350" r="34"/>
+  </g>
+</svg>
