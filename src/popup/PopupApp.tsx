@@ -53,13 +53,9 @@ export const PopupApp: React.FC = () => {
       {/* Header */}
       <header className="flex justify-between items-center p-4 bg-surface border-b border-border/40 select-none">
         <div className="flex items-center gap-2.5">
-          {/* Brand Logo — ÷ division symbol on gradient */}
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#2563EB] via-[#3B82F6] to-[#10B981] flex items-center justify-center shadow-sm select-none overflow-hidden">
-            <svg viewBox="0 0 32 32" className="w-5 h-5" fill="white">
-              <rect x="8" y="14" width="16" height="4" rx="2" />
-              <circle cx="16" cy="8" r="3" />
-              <circle cx="16" cy="24" r="3" />
-            </svg>
+          {/* Brand Logo — Custom SVG Logo */}
+          <div className="w-8 h-8 flex items-center justify-center select-none overflow-hidden">
+            <img src="icons/icon.svg" className="w-8 h-8 object-contain" alt="Cost Per Use Logo" />
           </div>
           <div className="flex flex-col">
             <h1 className="text-sm font-extrabold tracking-tight text-text-primary leading-tight">

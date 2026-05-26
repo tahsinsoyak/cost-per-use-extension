@@ -21,38 +21,26 @@ import {
 } from 'lucide-react';
 import { translate } from '../shared/locales';
 
-const USFlag: React.FC<{ className?: string }> = ({ className = 'w-5 h-3.5' }) => (
-  <svg viewBox="0 0 20 14" className={`${className} rounded-sm overflow-hidden flex-shrink-0 shadow-sm`} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="20" height="14" fill="#B31942" />
-    <path d="M0 1h20M0 3h20M0 5h20M0 7h20M0 9h20M0 11h20M0 13h20" stroke="#FFFFFF" strokeWidth="1" />
-    <rect width="9" height="8" fill="#0A3161" />
-    <circle cx="1.5" cy="1.5" r="0.4" fill="#FFFFFF" />
-    <circle cx="3" cy="1.5" r="0.4" fill="#FFFFFF" />
-    <circle cx="4.5" cy="1.5" r="0.4" fill="#FFFFFF" />
-    <circle cx="6" cy="1.5" r="0.4" fill="#FFFFFF" />
-    <circle cx="7.5" cy="1.5" r="0.4" fill="#FFFFFF" />
-    <circle cx="2.25" cy="3" r="0.4" fill="#FFFFFF" />
-    <circle cx="3.75" cy="3" r="0.4" fill="#FFFFFF" />
-    <circle cx="5.25" cy="3" r="0.4" fill="#FFFFFF" />
-    <circle cx="6.75" cy="3" r="0.4" fill="#FFFFFF" />
-    <circle cx="1.5" cy="4.5" r="0.4" fill="#FFFFFF" />
-    <circle cx="3" cy="4.5" r="0.4" fill="#FFFFFF" />
-    <circle cx="4.5" cy="4.5" r="0.4" fill="#FFFFFF" />
-    <circle cx="6" cy="4.5" r="0.4" fill="#FFFFFF" />
-    <circle cx="7.5" cy="4.5" r="0.4" fill="#FFFFFF" />
-    <circle cx="2.25" cy="6" r="0.4" fill="#FFFFFF" />
-    <circle cx="3.75" cy="6" r="0.4" fill="#FFFFFF" />
-    <circle cx="5.25" cy="6" r="0.4" fill="#FFFFFF" />
-    <circle cx="6.75" cy="6" r="0.4" fill="#FFFFFF" />
+const USFlag: React.FC<{ className?: string }> = ({ className = 'w-5 h-3.75' }) => (
+  <svg viewBox="0 0 640 480" className={`${className} rounded-sm overflow-hidden flex-shrink-0 shadow-sm`} xmlns="http://www.w3.org/2000/svg">
+    <path fill="#bd3d44" d="M0 0h640v480H0"/>
+    <path stroke="#fff" strokeWidth="37" d="M0 55.3h640M0 129h640M0 203h640M0 277h640M0 351h640M0 425h640"/>
+    <path fill="#192f5d" d="M0 0h364.8v258.5H0"/>
+    <marker id="us-a" markerHeight="30" markerWidth="30">
+      <path fill="#fff" d="m14 0 9 27L0 10h28L5 27z"/>
+    </marker>
+    <path fill="none" markerMid="url(#us-a)" d="m0 0 16 11h61 61 61 61 60L47 37h61 61 60 61L16 63h61 61 61 61 60L47 89h61 61 60 61L16 115h61 61 61 61 60L47 141h61 61 60 61L16 166h61 61 61 61 60L47 192h61 61 60 61L16 218h61 61 61 61 60z"/>
   </svg>
 );
 
-const TRFlag: React.FC<{ className?: string }> = ({ className = 'w-5 h-3.5' }) => (
-  <svg viewBox="0 0 24 16" className={`${className} rounded-sm overflow-hidden flex-shrink-0 shadow-sm`} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="24" height="16" fill="#E30A17" />
-    <circle cx="9" cy="8" r="4" fill="#FFFFFF" />
-    <circle cx="10.2" cy="8" r="3.2" fill="#E30A17" />
-    <polygon points="15.5,5.8 16.4,7.8 18.5,8.1 17,9.6 17.4,11.7 15.5,10.7 13.6,11.7 14,9.6 12.5,8.1 14.6,7.8" fill="#FFFFFF" />
+const TRFlag: React.FC<{ className?: string }> = ({ className = 'w-5 h-3.75' }) => (
+  <svg viewBox="0 0 640 480" className={`${className} rounded-sm overflow-hidden flex-shrink-0 shadow-sm`} xmlns="http://www.w3.org/2000/svg">
+    <g fillRule="evenodd">
+      <path fill="#e30a17" d="M0 0h640v480H0z"/>
+      <path fill="#fff" d="M407 247.5c0 66.2-54.6 119.9-122 119.9s-122-53.7-122-120 54.6-119.8 122-119.8 122 53.7 122 119.9"/>
+      <path fill="#e30a17" d="M413 247.5c0 53-43.6 95.9-97.5 95.9s-97.6-43-97.6-96 43.7-95.8 97.6-95.8 97.6 42.9 97.6 95.9z"/>
+      <path fill="#fff" d="m430.7 191.5-1 44.3-41.3 11.2 40.8 14.5-1 40.7 26.5-31.8 40.2 14-23.2-34.1 28.3-33.9-43.5 12-25.8-37z"/>
+    </g>
   </svg>
 );
 
@@ -256,12 +244,8 @@ export const OptionsApp: React.FC = () => {
         {/* Header */}
         <header className="flex flex-col gap-2 select-none border-b border-border/40 pb-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#2563EB] via-[#3B82F6] to-[#10B981] flex items-center justify-center shadow-premium select-none overflow-hidden">
-              <svg viewBox="0 0 32 32" className="w-6 h-6" fill="white">
-                <rect x="8" y="14" width="16" height="4" rx="2" />
-                <circle cx="16" cy="8" r="3" />
-                <circle cx="16" cy="24" r="3" />
-              </svg>
+            <div className="w-10 h-10 flex items-center justify-center select-none overflow-hidden">
+              <img src="icons/icon.svg" className="w-10 h-10 object-contain" alt="Cost Per Use Logo" />
             </div>
             <div>
               <h1 className="text-2xl font-extrabold tracking-tight">{t('common.appName')}</h1>
