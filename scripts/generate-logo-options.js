@@ -11,6 +11,9 @@ if (!fs.existsSync(targetDir)) {
   fs.mkdirSync(targetDir, { recursive: true });
 }
 
+// -------------------------------------------------------------
+// Layout Options (Varying themes on your original 256x256 shape)
+// -------------------------------------------------------------
 const option1 = `<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
   <title>Option 1: Neon Glow</title>
   <defs>
@@ -204,33 +207,195 @@ const option5 = `<svg width="256" height="256" viewBox="0 0 256 256" fill="none"
   <rect x="190" y="195" width="15" height="15" rx="5" fill="#111827"/>
 </svg>`;
 
-const options = [
+// -------------------------------------------------------------
+// Fresh Logo Concepts (Designed from scratch by AI)
+// -------------------------------------------------------------
+const concept1 = `<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Concept 1: Mobius Loop</title>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+    <linearGradient id="loopGradient" x1="48" y1="128" x2="208" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect x="16" y="16" width="224" height="224" rx="56" fill="url(#bg)" stroke="#334155" stroke-width="2"/>
+  <path d="M128 128 C96 85 54 85 54 128 C54 171 96 171 128 128 C160 85 202 85 202 128 C202 171 160 171 128 128 Z" stroke="url(#loopGradient)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.3" filter="url(#glow)"/>
+  <path d="M128 128 C96 85 54 85 54 128 C54 171 96 171 128 128 C160 85 202 85 202 128 C202 171 160 171 128 128 Z" stroke="url(#loopGradient)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M128 128 C96 85 54 85 54 128 C54 171 96 171 128 128 C160 85 202 85 202 128 C202 171 160 171 128 128 Z" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+  <text x="128" y="142" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="42" font-weight="900" text-anchor="middle" filter="url(#glow)">$</text>
+</svg>`;
+
+const concept2 = `<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Concept 2: Hourglass Coins</title>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="256">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#CA8A04"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect x="16" y="16" width="224" height="224" rx="56" fill="url(#bg)" stroke="#334155" stroke-width="2"/>
+  <path d="M70 60 H186 V72 H70 V60 Z M70 184 H186 V196 H70 V184 Z" fill="#64748B"/>
+  <rect x="74" y="72" width="10" height="112" fill="#475569" rx="2"/>
+  <rect x="172" y="72" width="10" height="112" fill="#475569" rx="2"/>
+  <path d="M86 72 C86 110 116 128 128 128 C140 128 170 110 170 72 Z M86 184 C86 146 116 128 128 128 C140 128 170 146 170 184 Z" fill="#3B82F6" fill-opacity="0.1" stroke="#3B82F6" stroke-width="4" stroke-opacity="0.5"/>
+  <ellipse cx="128" cy="88" rx="26" ry="7" fill="url(#gold)" filter="url(#glow)"/>
+  <ellipse cx="128" cy="94" rx="24" ry="6.5" fill="url(#gold)"/>
+  <ellipse cx="128" cy="100" rx="22" ry="6" fill="url(#gold)"/>
+  <circle cx="128" cy="116" r="4.5" fill="#FBBF24"/>
+  <circle cx="128" cy="128" r="4.5" fill="#FBBF24"/>
+  <circle cx="128" cy="140" r="4.5" fill="#FBBF24"/>
+  <ellipse cx="128" cy="178" rx="30" ry="8" fill="#10B981" filter="url(#glow)"/>
+  <ellipse cx="128" cy="172" rx="28" ry="7.5" fill="#10B981"/>
+  <ellipse cx="112" cy="166" rx="14" ry="4" fill="#059669"/>
+  <ellipse cx="144" cy="166" rx="14" ry="4" fill="#059669"/>
+</svg>`;
+
+const concept3 = `<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Concept 3: Tag Calendar</title>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect x="16" y="16" width="224" height="224" rx="56" fill="url(#bg)" stroke="#334155" stroke-width="2"/>
+  <rect x="60" y="60" width="136" height="136" rx="16" fill="#1E293B" stroke="#475569" stroke-width="3" filter="url(#shadow)"/>
+  <path d="M60 76 C60 68 68 60 76 60 H180 C188 60 196 60 196 76 V90 H60 V76 Z" fill="#EF4444"/>
+  <rect x="90" y="46" width="12" height="24" rx="6" fill="#94A3B8" stroke="#475569" stroke-width="2"/>
+  <rect x="154" y="46" width="12" height="24" rx="6" fill="#94A3B8" stroke="#475569" stroke-width="2"/>
+  <g transform="translate(128, 138) rotate(-12) translate(-128, -138)" filter="url(#shadow)">
+    <rect x="80" y="96" width="96" height="74" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+    <circle cx="100" cy="133" r="6" fill="#1E293B"/>
+    <path d="M125 116H160M125 133H160M125 150H150" stroke="#EF4444" stroke-width="4" stroke-linecap="round"/>
+    <text x="100" y="140" fill="#EF4444" font-family="system-ui, sans-serif" font-size="16" font-weight="900" text-anchor="middle">$</text>
+  </g>
+</svg>`;
+
+const concept4 = `<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Concept 4: Cost Optimization Chart</title>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect x="16" y="16" width="224" height="224" rx="56" fill="url(#bg)" stroke="#334155" stroke-width="2"/>
+  <g transform="translate(60, 160)" filter="url(#shadow)">
+    <path d="M-15 0 L0 10 L15 0 L0 -10 Z" fill="#0284C7"/>
+    <path d="M-15 0 V-40 L0 -30 V10 Z" fill="#0369A1"/>
+    <path d="M15 0 V-40 L0 -30 V10 Z" fill="#075985"/>
+    <path d="M-15 -40 L0 -30 L15 -40 L0 -50 Z" fill="#38BDF8"/>
+    <circle cx="0" cy="-68" r="8" fill="#EF4444"/>
+    <text x="0" y="-65" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10" font-weight="900" text-anchor="middle">1</text>
+  </g>
+  <g transform="translate(128, 160)" filter="url(#shadow)">
+    <path d="M-15 0 L0 10 L15 0 L0 -10 Z" fill="#0284C7"/>
+    <path d="M-15 0 V-25 L0 -15 V10 Z" fill="#0369A1"/>
+    <path d="M15 0 V-25 L0 -15 V10 Z" fill="#075985"/>
+    <path d="M-15 -25 L0 -15 L15 -25 L0 -35 Z" fill="#38BDF8"/>
+    <circle cx="0" cy="-53" r="8" fill="#F59E0B"/>
+    <text x="0" y="-50" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10" font-weight="900" text-anchor="middle">5</text>
+  </g>
+  <g transform="translate(196, 160)" filter="url(#shadow)">
+    <path d="M-15 0 L0 10 L15 0 L0 -10 Z" fill="#10B981"/>
+    <path d="M-15 0 V-12 L0 -2 V10 Z" fill="#059669"/>
+    <path d="M15 0 V-12 L0 -2 V10 Z" fill="#047857"/>
+    <path d="M-15 -12 L0 -2 L15 -12 L0 -22 Z" fill="#34D399"/>
+    <circle cx="0" cy="-40" r="8" fill="#10B981"/>
+    <text x="0" y="-37" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="9" font-weight="900" text-anchor="middle">50</text>
+  </g>
+  <path d="M60 80 Q128 105 196 122" fill="none" stroke="#10B981" stroke-width="4" stroke-dasharray="8 4" stroke-linecap="round"/>
+  <path d="M196 122 L186 116 M196 122 L188 129" stroke="#10B981" stroke-width="4" stroke-linecap="round"/>
+</svg>`;
+
+const concept5 = `<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Concept 5: CU Monogram</title>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+    <linearGradient id="cGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="uGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect x="16" y="16" width="224" height="224" rx="56" fill="url(#bg)" stroke="#334155" stroke-width="2"/>
+  <g filter="url(#shadow)">
+    <path d="M176 80 C156 60 110 60 90 80 C68 102 68 154 90 176 C110 196 156 196 176 176" stroke="url(#cGrad)" stroke-width="20" stroke-linecap="round" fill="none"/>
+    <path d="M116 100 V136 C116 148 126 156 138 156 C150 156 160 148 160 136 V100" stroke="url(#uGrad)" stroke-width="16" stroke-linecap="round" fill="none"/>
+    <path d="M84 172 L172 84" stroke="#F8FAFC" stroke-width="10" stroke-linecap="round"/>
+  </g>
+</svg>`;
+
+const files = [
   { name: 'option1', svg: option1 },
   { name: 'option2', svg: option2 },
   { name: 'option3', svg: option3 },
   { name: 'option4', svg: option4 },
   { name: 'option5', svg: option5 },
+  { name: 'concept1', svg: concept1 },
+  { name: 'concept2', svg: concept2 },
+  { name: 'concept3', svg: concept3 },
+  { name: 'concept4', svg: concept4 },
+  { name: 'concept5', svg: concept5 },
 ];
 
 async function run() {
   try {
-    for (const opt of options) {
-      // Write SVG
-      const svgPath = path.join(targetDir, `${opt.name}.svg`);
-      fs.writeFileSync(svgPath, opt.svg);
-      console.log(`✓ Saved ${opt.name}.svg`);
+    for (const file of files) {
+      // Save SVG
+      const svgPath = path.join(targetDir, `${file.name}.svg`);
+      fs.writeFileSync(svgPath, file.svg);
+      console.log(`✓ Saved ${file.name}.svg`);
 
-      // Write 512x512 PNG
-      const pngPath = path.join(targetDir, `${opt.name}.png`);
-      await sharp(Buffer.from(opt.svg))
+      // Generate 512x512 PNG
+      const pngPath = path.join(targetDir, `${file.name}.png`);
+      await sharp(Buffer.from(file.svg))
         .resize(512, 512)
         .png()
         .toFile(pngPath);
-      console.log(`✓ Generated ${opt.name}.png (512x512)`);
+      console.log(`✓ Generated ${file.name}.png (512x512)`);
     }
-    console.log('\\nAll 5 logo options generated successfully inside "logo_options/" folder!');
+    console.log('\nAll 10 designs (5 layout options + 5 fresh concepts) generated inside "logo_options/" folder!');
   } catch (err) {
-    console.error('Error generating options:', err);
+    console.error('Error generating files:', err);
     process.exit(1);
   }
 }
