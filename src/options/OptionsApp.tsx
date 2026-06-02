@@ -17,7 +17,8 @@ import {
   Calendar,
   Upload,
   ChevronDown,
-  Check
+  Check,
+  Heart
 } from 'lucide-react';
 import { translate } from '../shared/locales';
 
@@ -106,6 +107,7 @@ export const OptionsApp: React.FC = () => {
 
   // Work cost states
   const [showWorkCost, setShowWorkCost] = useState(false);
+  const [autoFillEnabled, setAutoFillEnabled] = useState(true);
   const [monthlySalary, setMonthlySalary] = useState('');
   const [workHoursPerWeek, setWorkHoursPerWeek] = useState('40');
 
@@ -126,6 +128,7 @@ export const OptionsApp: React.FC = () => {
       setTheme(settings.theme);
       setLanguage(settings.language || 'en');
       setShowWorkCost(settings.showWorkCost);
+      setAutoFillEnabled(settings.autoFillEnabled !== false);
       setMonthlySalary(settings.monthlySalary ? settings.monthlySalary.toString() : '');
       setWorkHoursPerWeek(settings.workHoursPerWeek ? settings.workHoursPerWeek.toString() : '40');
     }
@@ -146,6 +149,7 @@ export const OptionsApp: React.FC = () => {
       theme,
       language,
       showWorkCost,
+      autoFillEnabled,
       monthlySalary: salaryNum,
       workHoursPerWeek: hoursNum,
       hourlyWage: calculatedHourlyWage,
@@ -354,6 +358,20 @@ export const OptionsApp: React.FC = () => {
                   )}
                 </div>
 
+                {/* Auto-fill Toggle */}
+                <div className="border-t border-border/40 my-2 pt-2.5 flex justify-between items-center select-none cursor-pointer" onClick={() => setAutoFillEnabled(!autoFillEnabled)}>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-xs font-bold text-text-primary">{t('settings.labelAutoFill')}</span>
+                    <span className="text-[10px] text-text-secondary leading-none">{t('settings.descAutoFill')}</span>
+                  </div>
+                  <input
+                    type="checkbox"
+                    checked={autoFillEnabled}
+                    onChange={(e) => e.stopPropagation()}
+                    className="w-4 h-4 text-accent border-border rounded focus:ring-accent/50 cursor-pointer"
+                  />
+                </div>
+
                 <Select
                   label={t('settings.labelTheme')}
                   options={themeOptions}
@@ -444,6 +462,30 @@ export const OptionsApp: React.FC = () => {
               <div className="mt-3 flex gap-2 items-center">
                 <Badge variant="success" className="text-[9px] py-0 px-2.5 font-bold">{t('settings.privacyBadge1')}</Badge>
                 <Badge variant="primary" className="text-[9px] py-0 px-2.5 font-bold">{t('settings.privacyBadge2')}</Badge>
+              </div>
+            </div>
+
+            {/* Support / Patreon Card */}
+            <div className="bg-surface border border-border/50 rounded-2xl p-5 shadow-premium dark:shadow-premium-dark select-none">
+              <h2 className="text-sm font-bold flex items-center gap-2 mb-3">
+                <Heart className="w-4.5 h-4.5 text-danger" />
+                <span>{t('support.title')}</span>
+              </h2>
+              <p className="text-xs text-text-secondary leading-relaxed">
+                {t('support.description')}
+              </p>
+              <div className="mt-3 flex items-center gap-2">
+                <a
+                  href="https://www.patreon.com/tahsinsoyak"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#FF424D] hover:bg-[#e63a45] text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
+                >
+                  <Heart className="w-3.5 h-3.5" />
+                  <span>{t('support.patreonBtn')}</span>
+                </a>
+                <Badge variant="success" className="text-[9px] py-0 px-2.5 font-bold">{t('support.freeBadge')}</Badge>
+                <Badge variant="primary" className="text-[9px] py-0 px-2.5 font-bold">{t('support.noAdsBadge')}</Badge>
               </div>
             </div>
           </div>

@@ -160,6 +160,8 @@ export const tr = {
     labelUsesPerWeek: "Haftalık Kullanım",
     labelEnableLabor: "Çalışma süresi karşılıklarını göster",
     descEnableLabor: "Maliyeti iş saati cinsinden gösterir",
+    labelAutoFill: "Ürün sayfalarından otomatik doldurmayı etkinleştir",
+    descAutoFill: "Desteklenen alışveriş sitelerinden ürün bilgilerini otomatik algılar ve doldurur",
     labelMonthlySalary: "Aylık Net Maaş",
     labelWorkHours: "Haftalık Çalışma Saati",
     calculatedWage: "Hesaplanan Saatlik Ücret:",
@@ -176,5 +178,12 @@ export const tr = {
     btnConfirmClearDb: "Veritabanını Temizlemeyi Onayla",
     saveSuccess: "Tercihler başarıyla kaydedildi.",
     clearDbSuccess: "Uzantıya ait tüm veriler temizlendi.",
+  },
+  support: {
+    title: "Bu Uzantıyı Destekle",
+    description: "Bu uzantı tamamen ücretsiz ve açık kaynaklıdır. Değerli buluyorsanız, Patreon üzerinden geliştirmeyi desteklemeyi düşünün.",
+    patreonBtn: "Patreon ile Destekle",
+    freeBadge: "Ücretsiz ve Açık Kaynak",
+    noAdsBadge: "Reklamsız, Takipsiz",
   }
 };

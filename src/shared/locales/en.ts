@@ -160,6 +160,8 @@ export const en = {
     labelUsesPerWeek: "Uses Per Week",
     labelEnableLabor: "Enable labor cost conversions",
     descEnableLabor: "Show working time equivalent",
+    labelAutoFill: "Enable auto-fill from product pages",
+    descAutoFill: "Automatically detect and fill product details from supported shopping sites",
     labelMonthlySalary: "Monthly Net Salary",
     labelWorkHours: "Working Hours Per Week",
     calculatedWage: "Calculated Hourly Wage:",
@@ -176,5 +178,12 @@ export const en = {
     btnConfirmClearDb: "Confirm Clear Database",
     saveSuccess: "Preferences saved successfully.",
     clearDbSuccess: "All extension storage cleared.",
+  },
+  support: {
+    title: "Support This Extension",
+    description: "This extension is 100% free and open source. If you find it valuable, consider supporting its development on Patreon.",
+    patreonBtn: "Support on Patreon",
+    freeBadge: "Free & Open Source",
+    noAdsBadge: "No Ads, No Tracking",
   }
 };

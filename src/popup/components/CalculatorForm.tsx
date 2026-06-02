@@ -45,6 +45,7 @@ export const CalculatorForm: React.FC = () => {
         if (activeTab && activeTab.url) {
           const url = activeTab.url;
           const scrapable =
+            settings.autoFillEnabled &&
             !url.startsWith('chrome://') &&
             !url.startsWith('chrome-extension://') &&
             !url.startsWith('edge://') &&
@@ -53,7 +54,7 @@ export const CalculatorForm: React.FC = () => {
         }
       });
     }
-  }, []);
+  }, [settings.autoFillEnabled]);
 
   const handleManualScrape = () => {
     triggerScrape(true);

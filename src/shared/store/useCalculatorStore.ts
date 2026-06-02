@@ -65,6 +65,10 @@ interface CalculatorState {
 
   // Auto-fill Product Scraper
   triggerScrape: (showFeedback?: boolean) => void;
+
+  // Popup form persistence
+  restorePopupFormState: (currentTabId: number) => Promise<void>;
+  savePopupFormState: (currentTabId: number) => Promise<void>;
 }
 
 const getInitialLanguage = (): 'en' | 'tr' => {
@@ -91,6 +95,7 @@ const DEFAULT_SETTINGS: AppSettings = {
   workHoursPerWeek: 40,
   hourlyWage: 0,
   language: getInitialLanguage(),
+  autoFillEnabled: true,
 };
 
 export const useCalculatorStore = create<CalculatorState>((set, get) => ({
@@ -388,6 +393,8 @@ export const useCalculatorStore = create<CalculatorState>((set, get) => ({
   },
 
   triggerScrape: (showFeedback = false) => {
+    if (!get().settings.autoFillEnabled) return;
+
     if (typeof chrome === 'undefined' || !chrome.tabs || !chrome.tabs.query) {
       return;
     }
@@ -488,5 +495,31 @@ export const useCalculatorStore = create<CalculatorState>((set, get) => ({
         }
       });
     });
+  },
+
+  restorePopupFormState: async (currentTabId: number) => {
+    const saved = await storage.get<{ tabId: number; inputs: Record<string, string> | null }>('popupFormState', { tabId: -1, inputs: null });
+    if (saved.tabId === currentTabId && saved.inputs) {
+      set(saved.inputs);
+    }
+  },
+
+  savePopupFormState: async (currentTabId: number) => {
+    const state = get();
+    const inputs = {
+      currentProductName: state.currentProductName,
+      currentPrice: state.currentPrice,
+      currentCurrency: state.currentCurrency,
+      currentCustomCurrencySymbol: state.currentCustomCurrencySymbol,
+      currentDurationValue: state.currentDurationValue,
+      currentDurationUnit: state.currentDurationUnit,
+      currentUsesPerWeek: state.currentUsesPerWeek,
+      currentResaleValue: state.currentResaleValue,
+      currentMaintenanceCost: state.currentMaintenanceCost,
+      currentInstallmentCount: state.currentInstallmentCount,
+      currentTotalInstallmentCost: state.currentTotalInstallmentCost,
+      currentInlineHourlyWage: state.currentInlineHourlyWage,
+    };
+    await storage.set('popupFormState', { tabId: currentTabId, inputs });
   },
 }));

@@ -31,7 +31,7 @@ export const Toast: React.FC = () => {
   return (
     <div
       className={`
-        fixed bottom-4 left-1/2 -translate-x-1/2 z-[9999] 
+        fixed top-4 left-1/2 -translate-x-1/2 z-[9999] 
         flex items-center gap-2.5 px-4 py-3 bg-surface border rounded-xl 
         shadow-premium dark:shadow-premium-dark max-w-[90%] w-max animate-scale-in 
         text-xs font-semibold

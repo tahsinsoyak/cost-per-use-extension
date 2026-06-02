@@ -1,16 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { useCalculatorStore } from '../shared/store/useCalculatorStore';
 import CalculatorForm from './components/CalculatorForm';
 import ResultCard from './components/ResultCard';
 import ProductComparison from './components/ProductComparison';
 import SavedCalculations from './components/SavedCalculations';
 import Toast from '../shared/components/Toast';
-import { Sun, Moon, Scale, History, Calculator, Settings } from 'lucide-react';
+import { Sun, Moon, Scale, History, Calculator, Settings, Heart } from 'lucide-react';
 import { translate } from '../shared/locales';
 
 export const PopupApp: React.FC = () => {
-  const { init, settings, updateSettings, isInitialized, comparisonList, history, triggerScrape } = useCalculatorStore();
+  const {
+    init, settings, updateSettings, isInitialized, comparisonList, history, triggerScrape,
+    restorePopupFormState, savePopupFormState,
+    currentProductName, currentPrice, currentCurrency, currentCustomCurrencySymbol,
+    currentDurationValue, currentDurationUnit, currentUsesPerWeek,
+    currentResaleValue, currentMaintenanceCost, currentInstallmentCount,
+    currentTotalInstallmentCost, currentInlineHourlyWage,
+  } = useCalculatorStore();
   const [activeTab, setActiveTab] = useState<'calculator' | 'compare' | 'history'>('calculator');
+  const tabIdRef = useRef<number | null>(null);
+  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const t = (key: string) => translate(key, settings.language);
 
@@ -20,9 +29,44 @@ export const PopupApp: React.FC = () => {
 
   useEffect(() => {
     if (isInitialized) {
-      triggerScrape(false);
+      if (typeof chrome !== 'undefined' && chrome.tabs && chrome.tabs.query) {
+        chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
+          const activeTab = tabs[0];
+          if (activeTab?.id) {
+            tabIdRef.current = activeTab.id;
+            await restorePopupFormState(activeTab.id);
+          }
+          triggerScrape(false);
+        });
+      } else {
+        triggerScrape(false);
+      }
     }
-  }, [isInitialized, triggerScrape]);
+  }, [isInitialized]);
+
+  const persistFormState = useCallback(() => {
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    saveTimerRef.current = setTimeout(() => {
+      if (tabIdRef.current !== null) {
+        savePopupFormState(tabIdRef.current);
+      }
+    }, 400);
+  }, [savePopupFormState]);
+
+  useEffect(() => {
+    if (isInitialized) {
+      persistFormState();
+    }
+    return () => {
+      if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    };
+  }, [
+    currentProductName, currentPrice, currentCurrency, currentCustomCurrencySymbol,
+    currentDurationValue, currentDurationUnit, currentUsesPerWeek,
+    currentResaleValue, currentMaintenanceCost, currentInstallmentCount,
+    currentTotalInstallmentCost, currentInlineHourlyWage,
+    persistFormState, isInitialized,
+  ]);
 
   const toggleTheme = () => {
     updateSettings({ theme: settings.theme === 'light' ? 'dark' : 'light' });
@@ -144,6 +188,19 @@ export const PopupApp: React.FC = () => {
 
       {/* Toast Alert */}
       <Toast />
+
+      {/* Support Footer */}
+      <footer className="border-t border-border/40 bg-surface px-4 py-3 select-none">
+        <a
+          href="https://www.patreon.com/tahsinsoyak"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 text-[10px] font-bold text-text-secondary hover:text-accent transition-colors group"
+        >
+          <Heart className="w-3 h-3 text-danger/60 group-hover:text-danger transition-colors" />
+          <span>{t('support.title')}</span>
+        </a>
+      </footer>
     </div>
   );
 };

@@ -51,4 +51,7 @@ export interface AppSettings {
 
   // Localization (New!)
   language: 'en' | 'tr';
+
+  // Auto-fill toggle
+  autoFillEnabled: boolean;
 }
