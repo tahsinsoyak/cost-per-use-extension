@@ -2,6 +2,7 @@
   "name": "cost-per-use-extension",
   "private": true,
   "version": "1.0.0",
+  "author": "tahsinsoyak",
   "type": "module",
   "scripts": {
     "dev": "vite",
