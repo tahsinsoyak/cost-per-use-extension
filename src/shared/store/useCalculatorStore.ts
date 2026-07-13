@@ -95,7 +95,7 @@ const DEFAULT_SETTINGS: AppSettings = {
   workHoursPerWeek: 40,
   hourlyWage: 0,
   language: getInitialLanguage(),
-  autoFillEnabled: true,
+  autoFillEnabled: false,
 };
 
 export const useCalculatorStore = create<CalculatorState>((set, get) => ({

@@ -73,6 +73,8 @@ npm run build
 - **No Analytics** — We do not track your shopping behaviors or website visits.
 - **No Cloud Sync** — Your data never leaves your browser. All history is saved to `chrome.storage.local` and can be cleared instantly.
 
+Read the full [Privacy Policy](docs/privacy-policy.md). Chrome Web Store submission materials are in [docs/chrome-web-store](docs/chrome-web-store/README.md).
+
 ---
 
 ## Support

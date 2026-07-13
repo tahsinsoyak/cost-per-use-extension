@@ -23,7 +23,7 @@ export default {
         border: 'var(--color-border)',
       },
       fontFamily: {
-        sans: ['Inter', 'Outfit', 'system-ui', 'sans-serif'],
+        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.25s ease-out forwards',
