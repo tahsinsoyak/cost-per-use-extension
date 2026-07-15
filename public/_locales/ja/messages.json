@@ -1,0 +1,4 @@
+{
+  "extName": { "message": "1回あたりのコスト" },
+  "extDescription": { "message": "購入前に商品の1回あたりの実質コストを計算します。" }
+}

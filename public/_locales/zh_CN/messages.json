@@ -1,0 +1,4 @@
+{
+  "extName": { "message": "单次使用成本" },
+  "extDescription": { "message": "购买前计算商品每次使用的实际成本。" }
+}

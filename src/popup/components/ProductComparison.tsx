@@ -17,7 +17,7 @@ export const ProductComparison: React.FC = () => {
           <HelpCircle className="w-6 h-6" />
         </div>
         <h3 className="text-sm font-bold text-text-primary mb-1 select-none">
-          {settings.language === 'tr' ? 'Karşılaştırma Listesi Boş' : 'No products to compare'}
+          {t('compare.emptyTitle')}
         </h3>
         <p className="text-xs text-text-secondary leading-relaxed max-w-[240px]">
           {t('compare.empty')}
@@ -49,7 +49,7 @@ export const ProductComparison: React.FC = () => {
     <div className="flex flex-col gap-4 animate-fade-in">
       <div className="flex justify-between items-center select-none">
         <span className="text-xs font-bold text-text-secondary">
-          {settings.language === 'tr' ? `Karşılaştırma (${comparisonList.length}/3)` : `Comparing (${comparisonList.length}/3)`}
+          {t('compare.comparingCount').replace('{count}', comparisonList.length.toString())}
         </span>
         <button
           onClick={clearComparison}
@@ -77,20 +77,20 @@ export const ProductComparison: React.FC = () => {
               <button
                 onClick={() => removeFromComparison(item.id)}
                 className="absolute top-2 right-2 text-text-secondary hover:text-danger p-1 rounded-lg hover:bg-elevated transition-colors"
-                title={settings.language === 'tr' ? 'Ürünü kaldır' : 'Remove product'}
+                title={t('compare.btnRemove')}
               >
                 <Trash2 className="w-3.5 h-3.5" />
               </button>
 
               <div className="flex flex-col gap-1.5 pr-4 select-text">
                 <span className="text-xs font-bold text-text-primary truncate block" title={item.productName || 'Unnamed'}>
-                  {item.productName || (settings.language === 'tr' ? 'Ürün' : 'Product')}
+                  {item.productName || t('common.productDefault')}
                 </span>
                 
                 {/* Cost per Use */}
                 <div className="flex flex-col mt-1">
                   <span className="text-[10px] text-text-secondary font-medium">
-                    {settings.language === 'tr' ? 'Kullanım Bşk.' : 'Cost / Use'}
+                    {t('compare.rowCostUse')}
                   </span>
                   <span className={`text-base font-extrabold tracking-tight ${isBestValue ? 'text-success' : 'text-accent'}`}>
                     {formatCurrency(item.costPerUse, item.currency, item.customCurrencySymbol)}
@@ -100,12 +100,12 @@ export const ProductComparison: React.FC = () => {
                 {/* Best Value badge */}
                 {isBestValue && (
                   <Badge variant="success" className="py-0 px-2 text-[9px] w-max font-bold">
-                    {settings.language === 'tr' ? 'En İyi Seçim' : 'Best Value'}
+                    {t('compare.bestBadge')}
                   </Badge>
                 )}
                 {isHighestCost && (
                   <Badge variant="danger" className="py-0 px-2 text-[9px] w-max font-bold">
-                    {settings.language === 'tr' ? 'En Yüksek' : 'Highest'}
+                    {t('compare.highestBadge')}
                   </Badge>
                 )}
 
@@ -114,27 +114,25 @@ export const ProductComparison: React.FC = () => {
                 {/* Specs */}
                 <div className="flex flex-col gap-1 text-[10px] text-text-secondary">
                   <div className="flex justify-between">
-                    <span>{settings.language === 'tr' ? 'Fiyat:' : 'Price:'}</span>
+                    <span>{t('compare.rowPrice')}</span>
                     <span className="font-semibold text-text-primary">
                       {formatCurrency(item.price, item.currency, item.customCurrencySymbol, true)}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span>{settings.language === 'tr' ? 'Süre:' : 'Duration:'}</span>
+                    <span>{t('compare.rowDuration')}</span>
                     <span className="font-semibold text-text-primary">
                       {item.ownershipDurationValue} {
-                        item.ownershipDurationUnit === 'years' 
-                          ? (settings.language === 'tr' ? 'yıl' : 'yr') 
-                          : (settings.language === 'tr' ? 'ay' : 'mo')
+                        t(item.ownershipDurationUnit === 'years' ? 'common.yrShort' : 'common.moShort')
                       }
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span>{settings.language === 'tr' ? 'Haftalık:' : 'Uses/Wk:'}</span>
+                    <span>{t('compare.rowUsesWeek')}</span>
                     <span className="font-semibold text-text-primary">{item.usesPerWeek}x</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>{settings.language === 'tr' ? 'Toplam Kln.:' : 'Total Uses:'}</span>
+                    <span>{t('compare.rowUses')}</span>
                     <span className="font-semibold text-text-primary">{item.totalEstimatedUses}</span>
                   </div>
                 </div>
@@ -148,10 +146,8 @@ export const ProductComparison: React.FC = () => {
         <div className="flex gap-2.5 p-3.5 bg-success/5 border border-success/20 rounded-xl items-start">
           <TrendingDown className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
           <p className="text-[10px] text-text-secondary leading-normal">
-            <strong>{settings.language === 'tr' ? 'İpucu:' : 'Insight:'}</strong>{' '}
-            {settings.language === 'tr' 
-              ? 'Kullanım başına en düşük maliyete sahip ürün, satın alma işleminizin zaman içindeki en iyi amortismanını temsil eder.' 
-              : 'The product with the lowest cost per use represents the best amortization of your purchase over time.'}
+            <strong>{t('compare.insightTitle')}</strong>{' '}
+            {t('compare.insightDescription')}
           </p>
         </div>
       )}

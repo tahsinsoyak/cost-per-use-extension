@@ -3,7 +3,7 @@ import { CostCalculation, Currency, AppSettings } from '../types/calculation';
 import { storage } from '../lib/storage';
 import { calculateCostPerUse } from '../lib/calculateCostPerUse';
 import { validateCalculationInput } from '../lib/validation';
-import { translate } from '../locales';
+import { applyDocumentLanguage, resolveLanguage, translate } from '../locales';
 
 interface CalculatorState {
   settings: AppSettings;
@@ -71,13 +71,11 @@ interface CalculatorState {
   savePopupFormState: (currentTabId: number) => Promise<void>;
 }
 
-const getInitialLanguage = (): 'en' | 'tr' => {
+const getInitialLanguage = () => {
   if (typeof chrome !== 'undefined' && chrome.i18n && chrome.i18n.getUILanguage) {
-    const uiLang = chrome.i18n.getUILanguage().toLowerCase();
-    if (uiLang.startsWith('tr')) return 'tr';
+    return resolveLanguage(chrome.i18n.getUILanguage());
   } else if (typeof navigator !== 'undefined') {
-    const navLang = navigator.language.toLowerCase();
-    if (navLang.startsWith('tr')) return 'tr';
+    return resolveLanguage(navigator.language);
   }
   return 'en';
 };
@@ -126,7 +124,12 @@ export const useCalculatorStore = create<CalculatorState>((set, get) => ({
   init: async () => {
     if (get().isInitialized) return;
 
-    const savedSettings = await storage.get<AppSettings>('settings', DEFAULT_SETTINGS);
+    const storedSettings = await storage.get<AppSettings>('settings', DEFAULT_SETTINGS);
+    const savedSettings = {
+      ...DEFAULT_SETTINGS,
+      ...storedSettings,
+      language: resolveLanguage(storedSettings.language),
+    };
     const savedHistory = await storage.get<CostCalculation[]>('history', []);
     const savedComparison = await storage.get<CostCalculation[]>('comparisonList', []);
 
@@ -136,6 +139,7 @@ export const useCalculatorStore = create<CalculatorState>((set, get) => ({
     } else {
       document.documentElement.classList.remove('dark');
     }
+    applyDocumentLanguage(savedSettings.language);
 
     set({
       settings: savedSettings,
@@ -161,6 +165,10 @@ export const useCalculatorStore = create<CalculatorState>((set, get) => ({
       } else {
         document.documentElement.classList.remove('dark');
       }
+    }
+
+    if (newSettings.language) {
+      applyDocumentLanguage(newSettings.language);
     }
 
     set({ settings: updated });

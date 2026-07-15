@@ -50,8 +50,9 @@ export interface AppSettings {
   hourlyWage: number;
 
   // Localization (New!)
-  language: 'en' | 'tr';
+  language: Language;
 
   // Auto-fill toggle
   autoFillEnabled: boolean;
 }
+import type { Language } from '../locales/catalog';
