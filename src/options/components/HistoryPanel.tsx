@@ -96,7 +96,7 @@ export const HistoryPanel: React.FC = () => {
 
   return (
     <div className="lg:col-span-8 flex flex-col gap-6">
-      <section className="bg-surface border border-border/50 rounded-2xl p-5 shadow-premium dark:shadow-premium-dark">
+      <section className="history-panel bg-surface border border-border/50 rounded-2xl p-5 shadow-premium dark:shadow-premium-dark">
         <div className="flex flex-wrap justify-between items-center gap-3 mb-6 select-none">
           <h2 className="text-sm font-bold flex items-center gap-2">
             <Calendar className="w-4.5 h-4.5 text-accent" />
@@ -214,7 +214,7 @@ export const HistoryPanel: React.FC = () => {
         )}
       </section>
 
-      <section className="bg-surface border border-border/50 rounded-2xl p-5 shadow-premium dark:shadow-premium-dark select-none">
+      <section className="info-panel bg-surface border border-border/50 rounded-2xl p-5 shadow-premium dark:shadow-premium-dark select-none">
         <h2 className="text-sm font-bold flex items-center gap-2 mb-3"><Info className="w-4.5 h-4.5 text-accent" /><span>{t('history.aboutTitle')}</span></h2>
         <p className="text-xs text-text-secondary leading-relaxed">{t('history.aboutDescription')}</p>
         <p className="text-[10px] text-text-secondary/70 mt-3">{t('history.aboutMeta')}</p>

@@ -15,11 +15,11 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyle =
-    'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 focus:outline-none active:scale-[0.97] disabled:opacity-50 disabled:pointer-events-none';
+    'app-button inline-flex items-center justify-center font-bold rounded-xl transition-all duration-200 focus:outline-none active:scale-[0.97] disabled:opacity-50 disabled:pointer-events-none';
 
   const variants = {
     primary: 'bg-accent text-white hover:bg-accent-hover shadow-sm',
-    secondary: 'bg-elevated text-text-primary hover:bg-border/40 border border-border/50',
+    secondary: 'bg-surface text-text-primary hover:bg-elevated border border-border/70 shadow-sm',
     danger: 'bg-danger text-white hover:bg-danger/90 shadow-sm',
     ghost: 'bg-transparent text-text-secondary hover:text-text-primary hover:bg-elevated',
   };

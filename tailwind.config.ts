@@ -23,7 +23,8 @@ export default {
         border: 'var(--color-border)',
       },
       fontFamily: {
-        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        sans: ['Manrope Variable', 'Segoe UI', 'sans-serif'],
+        mono: ['JetBrains Mono Variable', 'ui-monospace', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.25s ease-out forwards',
@@ -45,10 +46,10 @@ export default {
         },
       },
       boxShadow: {
-        'premium': '0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 8px -1px rgba(0, 0, 0, 0.03)',
-        'premium-hover': '0 10px 30px -4px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04)',
-        'premium-dark': '0 4px 20px -2px rgba(0, 0, 0, 0.3), 0 2px 8px -1px rgba(0, 0, 0, 0.2)',
-        'premium-dark-hover': '0 10px 30px -4px rgba(0, 0, 0, 0.45), 0 4px 12px -2px rgba(0, 0, 0, 0.35)',
+        'premium': '0 12px 35px -24px rgba(19, 34, 53, 0.45), 0 2px 8px rgba(19, 34, 53, 0.05)',
+        'premium-hover': '0 18px 42px -24px rgba(19, 34, 53, 0.58), 0 5px 14px rgba(19, 34, 53, 0.07)',
+        'premium-dark': '0 16px 40px -24px rgba(0, 0, 0, 0.7), 0 3px 12px rgba(0, 0, 0, 0.28)',
+        'premium-dark-hover': '0 22px 48px -22px rgba(0, 0, 0, 0.82), 0 6px 16px rgba(0, 0, 0, 0.32)',
       }
     },
   },

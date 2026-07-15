@@ -71,22 +71,22 @@ export const ResultCard: React.FC = () => {
   return (
     <div
       className={`
-        bg-surface border border-border/70 rounded-3xl p-5 shadow-premium dark:shadow-premium-dark
+        result-ledger bg-surface border border-border/70 rounded-3xl p-5 shadow-premium dark:shadow-premium-dark
         transition-all duration-500 transform flex flex-col gap-4 select-text
         ${animate ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-95'}
       `}
     >
       {/* Cost Per Use Display Area */}
-      <div className="relative overflow-hidden bg-elevated/20 border border-border/40 rounded-2xl p-6 flex flex-col items-center text-center">
+      <div className="result-hero relative overflow-hidden border rounded-2xl p-6 flex flex-col items-center text-center">
         {/* Decorative backdrop glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-accent/5 dark:bg-accent/10 rounded-full blur-2xl pointer-events-none select-none"></div>
 
-        <span className="text-[10px] font-extrabold uppercase tracking-widest text-text-secondary mb-1.5 select-none z-10">
+        <span className="result-eyebrow text-[10px] font-extrabold uppercase tracking-widest mb-1.5 select-none z-10">
           {t('results.costPerUse')}
         </span>
         
         {/* Massive Premium Hero Value */}
-        <h2 className="text-5xl font-black font-sans tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-accent to-success mb-3 drop-shadow-sm select-all z-10">
+        <h2 className="result-number text-5xl font-black text-transparent bg-clip-text mb-3 drop-shadow-sm select-all z-10">
           {formatCurrency(costPerUse, currency, customCurrencySymbol)}
         </h2>
 
@@ -102,7 +102,7 @@ export const ResultCard: React.FC = () => {
         </div>
 
         {/* Description Copy */}
-        <p className="text-[11px] text-text-secondary leading-relaxed px-4 mt-3 select-text z-10 font-medium">
+        <p className="result-copy text-[11px] leading-relaxed px-4 mt-3 select-text z-10 font-medium">
           {t(`results.ratings.${valueRating}`)}
         </p>
       </div>
@@ -110,7 +110,7 @@ export const ResultCard: React.FC = () => {
       {/* Breakdowns Grid */}
       <div className="grid grid-cols-2 gap-2.5">
         
-        <div className="bg-surface border border-border/40 rounded-xl p-3 flex flex-col justify-between hover:border-accent/35 hover:-translate-y-[0.5px] transition-all duration-200 shadow-sm">
+        <div className="metric-card bg-surface border border-border/40 rounded-xl p-3 flex flex-col justify-between hover:border-accent/35 hover:-translate-y-[0.5px] transition-all duration-200 shadow-sm">
           <span className="text-[9px] font-bold uppercase tracking-wider text-text-secondary select-none">{t('results.metrics.totalUses')}</span>
           <span className="text-xs font-black text-text-primary mt-1 flex items-center gap-1.5">
             <RefreshCcw className="w-3.5 h-3.5 text-accent/80" />
@@ -118,7 +118,7 @@ export const ResultCard: React.FC = () => {
           </span>
         </div>
 
-        <div className="bg-surface border border-border/40 rounded-xl p-3 flex flex-col justify-between hover:border-accent/35 hover:-translate-y-[0.5px] transition-all duration-200 shadow-sm">
+        <div className="metric-card bg-surface border border-border/40 rounded-xl p-3 flex flex-col justify-between hover:border-accent/35 hover:-translate-y-[0.5px] transition-all duration-200 shadow-sm">
           <span className="text-[9px] font-bold uppercase tracking-wider text-text-secondary select-none">{t('results.metrics.perDay')}</span>
           <span className="text-xs font-black text-text-primary mt-1 flex items-center gap-1.5">
             <Calendar className="w-3.5 h-3.5 text-accent/80" />
@@ -126,7 +126,7 @@ export const ResultCard: React.FC = () => {
           </span>
         </div>
 
-        <div className="bg-surface border border-border/40 rounded-xl p-3 flex flex-col justify-between hover:border-accent/35 hover:-translate-y-[0.5px] transition-all duration-200 shadow-sm">
+        <div className="metric-card bg-surface border border-border/40 rounded-xl p-3 flex flex-col justify-between hover:border-accent/35 hover:-translate-y-[0.5px] transition-all duration-200 shadow-sm">
           <span className="text-[9px] font-bold uppercase tracking-wider text-text-secondary select-none">{t('results.metrics.perMonth')}</span>
           <span className="text-xs font-black text-text-primary mt-1 flex items-center gap-1.5">
             <Calendar className="w-3.5 h-3.5 text-accent/80" />
@@ -134,7 +134,7 @@ export const ResultCard: React.FC = () => {
           </span>
         </div>
 
-        <div className="bg-surface border border-border/40 rounded-xl p-3 flex flex-col justify-between hover:border-accent/35 hover:-translate-y-[0.5px] transition-all duration-200 shadow-sm">
+        <div className="metric-card bg-surface border border-border/40 rounded-xl p-3 flex flex-col justify-between hover:border-accent/35 hover:-translate-y-[0.5px] transition-all duration-200 shadow-sm">
           <span className="text-[9px] font-bold uppercase tracking-wider text-text-secondary select-none">{t('results.metrics.perYear')}</span>
           <span className="text-xs font-black text-text-primary mt-1 flex items-center gap-1.5">
             <TrendingUp className="w-3.5 h-3.5 text-accent/80" />
@@ -142,7 +142,7 @@ export const ResultCard: React.FC = () => {
           </span>
         </div>
 
-        <div className="bg-surface border border-border/40 rounded-xl p-3 flex flex-col justify-between hover:border-accent/35 hover:-translate-y-[0.5px] transition-all duration-200 shadow-sm col-span-2">
+        <div className="metric-card bg-surface border border-border/40 rounded-xl p-3 flex flex-col justify-between hover:border-accent/35 hover:-translate-y-[0.5px] transition-all duration-200 shadow-sm col-span-2">
           <span className="text-[9px] font-bold uppercase tracking-wider text-text-secondary select-none">{t('results.metrics.netCost')}</span>
           <span className="text-xs font-black text-text-primary mt-1 flex items-center gap-1.5">
             <DollarSign className="w-3.5 h-3.5 text-accent/80" />

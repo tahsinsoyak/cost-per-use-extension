@@ -26,7 +26,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <input
             ref={ref}
             className={`
-              w-full bg-surface text-text-primary text-sm rounded-xl border border-border/80 px-3.5 py-2.5
+              app-input w-full bg-surface text-text-primary text-sm rounded-xl border border-border/80 px-3.5 py-2.5
               placeholder:text-text-secondary/40 focus:border-accent/50 focus:ring-1 focus:ring-accent/50 transition-all duration-200
               ${prefixElement ? 'pl-9' : ''}
               ${suffixElement ? 'pr-9' : ''}

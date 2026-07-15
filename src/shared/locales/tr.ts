@@ -171,7 +171,7 @@ export const tr = {
     monthsPlan: "{count} ay taksit",
     aboutTitle: "Kullanım Başına Maliyet Hakkında",
     aboutDescription: "Kullanım Başına Maliyet, yalnızca etiket fiyatına odaklanmak yerine ürün dayanıklılığına ve düzenli kullanıma göre değer tahmini yaparak bilinçli harcamayı destekler.",
-    aboutMeta: "Sürüm 1.0.0 • MIT Lisansı • Premium verimlilik deneyimi.",
+    aboutMeta: "Sürüm 1.0.1 • MIT Lisansı • Premium verimlilik deneyimi.",
   },
   settings: {
     title: "Varsayılanlar ve Ayarlar",

@@ -102,12 +102,12 @@ export const OptionsApp: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-text-primary px-4 py-8 sm:py-12 select-text font-sans">
+    <div className="options-shell min-h-screen bg-background text-text-primary px-4 py-8 sm:py-10 select-text font-sans">
       <div className="w-full max-w-7xl mx-auto flex flex-col gap-8 animate-fade-in">
-        <header className="flex flex-col gap-2 select-none border-b border-border/40 pb-6">
+        <header className="options-header flex flex-col gap-2 select-none px-6 py-5">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
-              <img src="icons/icon.svg" className="w-10 h-10 object-contain" alt="Cost Per Use Logo" />
+            <div className="brand-mark flex items-center justify-center overflow-hidden">
+              <img src="icons/icon.svg" className="w-full h-full object-contain" alt="Cost Per Use Logo" />
             </div>
             <div>
               <h1 className="text-2xl font-extrabold tracking-tight">{t('common.appName')}</h1>
@@ -118,7 +118,7 @@ export const OptionsApp: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-4 flex flex-col gap-6">
-            <section className="bg-surface border border-border/50 rounded-2xl p-5 shadow-premium dark:shadow-premium-dark">
+            <section className="settings-panel bg-surface border border-border/50 rounded-2xl p-5 shadow-premium dark:shadow-premium-dark">
               <h2 className="text-sm font-bold flex items-center gap-2 mb-4 select-none">
                 <Settings className="w-4.5 h-4.5 text-accent" />
                 <span>{t('settings.title')}</span>
@@ -174,7 +174,7 @@ export const OptionsApp: React.FC = () => {
               </form>
             </section>
 
-            <section className="bg-surface border border-border/50 rounded-2xl p-5 shadow-premium dark:shadow-premium-dark select-none">
+            <section className="info-panel bg-surface border border-border/50 rounded-2xl p-5 shadow-premium dark:shadow-premium-dark select-none">
               <h2 className="text-sm font-bold flex items-center gap-2 mb-3"><ShieldAlert className="w-4.5 h-4.5 text-success" /><span>{t('settings.privacyTitle')}</span></h2>
               <p className="text-xs text-text-secondary leading-relaxed">{t('settings.privacyDesc')}</p>
               <div className="mt-3 flex gap-2 items-center">
@@ -183,7 +183,7 @@ export const OptionsApp: React.FC = () => {
               </div>
             </section>
 
-            <section className="bg-surface border border-border/50 rounded-2xl p-5 shadow-premium dark:shadow-premium-dark select-none">
+            <section className="info-panel bg-surface border border-border/50 rounded-2xl p-5 shadow-premium dark:shadow-premium-dark select-none">
               <h2 className="text-sm font-bold flex items-center gap-2 mb-3"><Heart className="w-4.5 h-4.5 text-danger" /><span>{t('support.title')}</span></h2>
               <p className="text-xs text-text-secondary leading-relaxed">{t('support.description')}</p>
               <div className="mt-3 flex flex-wrap items-center gap-2">

@@ -33,6 +33,8 @@ Help users evaluate and compare purchases by calculating the expected cost per u
 
 ## Asset files
 
+See the [Store asset workflow](assets.md) to regenerate and validate these files.
+
 - Store icon: `public/icons/icon128.png`
 - Calculator screenshot: `store-assets/screenshot-calculator.png`
 - Result screenshot: `store-assets/screenshot-result.png`

@@ -68,7 +68,7 @@ export const ProductComparison: React.FC = () => {
             <div
               key={item.id}
               className={`
-                relative flex flex-col justify-between bg-surface border rounded-2xl p-3 shadow-premium dark:shadow-premium-dark transition-all duration-200
+                compare-card relative flex flex-col justify-between bg-surface border rounded-2xl p-3 shadow-premium dark:shadow-premium-dark transition-all duration-200
                 ${isBestValue ? 'border-success/60 ring-1 ring-success/30 bg-success/[0.01]' : 'border-border/60'}
                 ${isHighestCost ? 'border-danger/30' : ''}
               `}
