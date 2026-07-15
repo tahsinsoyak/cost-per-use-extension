@@ -116,14 +116,14 @@ export const PopupApp: React.FC = () => {
           <button
             onClick={toggleTheme}
             className="p-2 text-text-secondary hover:text-text-primary rounded-xl hover:bg-elevated transition-colors"
-            title={settings.theme === 'light' ? (settings.language === 'tr' ? 'Koyu Tema' : 'Dark Mode') : (settings.language === 'tr' ? 'Açık Tema' : 'Light Mode')}
+            title={t(settings.theme === 'light' ? 'settings.themeDark' : 'settings.themeLight')}
           >
             {settings.theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
           </button>
           <button
             onClick={handleOpenOptions}
             className="p-2 text-text-secondary hover:text-text-primary rounded-xl hover:bg-elevated transition-colors"
-            title={settings.language === 'tr' ? 'Ayarlar' : 'Settings'}
+            title={t('settings.openSettings')}
           >
             <Settings className="w-4 h-4" />
           </button>

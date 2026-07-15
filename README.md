@@ -26,7 +26,7 @@
 7. **Labor Time Equivalent** — See how many work hours each use costs.
 8. **Local History** — Save, export, and import calculations as JSON.
 9. **Dark / Light Theme** — System preference detection included.
-10. **English & Turkish** — Full bilingual support.
+10. **10 Languages** — English, Turkish, Spanish, German, French, Brazilian Portuguese, Russian, Arabic, Japanese, and Simplified Chinese, with English fallback for every message.
 11. **100% Private** — Zero analytics, zero cloud databases, no accounts, no trackers.
 
 ---

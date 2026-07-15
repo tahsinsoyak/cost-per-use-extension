@@ -1,31 +1,55 @@
+import { ar } from './ar';
+import { Language } from './catalog';
+import { de } from './de';
 import { en } from './en';
+import { es } from './es';
+import { fr } from './fr';
+import { ja } from './ja';
+import { LocaleMessages } from './createLocale';
+import { ptBR } from './ptBR';
+import { ru } from './ru';
 import { tr } from './tr';
+import { zhCN } from './zhCN';
 
-export type Language = 'en' | 'tr';
+export {
+  applyDocumentLanguage,
+  getLanguageConfig,
+  languageCodes,
+  languages,
+  resolveLanguage,
+} from './catalog';
+export type { Language, LanguageConfig } from './catalog';
 
-const translations: Record<Language, any> = { en, tr };
+const translations: Record<Language, LocaleMessages> = {
+  en,
+  tr,
+  es,
+  de,
+  fr,
+  'pt-BR': ptBR,
+  ru,
+  ar,
+  ja,
+  'zh-CN': zhCN,
+};
 
-/**
- * Resolves a nested localization key in the specified language.
- * Falls back to English if the key is missing in the target language.
- * E.g., translate('calculator.errors.priceRequired', 'tr')
- */
-export function translate(key: string, lang: Language = 'en'): string {
-  const keys = key.split('.');
-  let value = translations[lang] || translations['en'];
+function resolveKey(messages: LocaleMessages, path: readonly string[]): unknown {
+  let value: unknown = messages;
 
-  for (const k of keys) {
-    if (value && value[k] !== undefined) {
-      value = value[k];
-    } else {
-      // Fallback path using English
-      let fb = translations['en'];
-      for (const fbk of keys) {
-        fb = fb?.[fbk];
-      }
-      return typeof fb === 'string' ? fb : key;
-    }
+  for (const segment of path) {
+    if (!value || typeof value !== 'object' || !(segment in value)) return undefined;
+    value = (value as Record<string, unknown>)[segment];
   }
 
-  return typeof value === 'string' ? value : key;
+  return value;
+}
+
+/** Resolves a locale key and always falls back to the canonical English copy. */
+export function translate(key: string, language: Language = 'en'): string {
+  const path = key.split('.');
+  const localized = resolveKey(translations[language], path);
+  if (typeof localized === 'string') return localized;
+
+  const fallback = resolveKey(en, path);
+  return typeof fallback === 'string' ? fallback : key;
 }
