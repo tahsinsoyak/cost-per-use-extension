@@ -157,7 +157,6 @@ async function addStoreFrame(page, story) {
     .popup-footer { backdrop-filter: none !important; }
   ` });
   await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(350);
 }
 
 async function captureCalculatorAndResult(browser) {
@@ -176,16 +175,20 @@ async function captureCalculatorAndResult(browser) {
   await amountInputs.nth(2).fill('20');
   await advancedToggle.click();
   await addStoreFrame(page, stories.calculator);
-  await page.screenshot({ path: resolve(assets, 'screenshot-calculator.png') });
+  await page.screenshot({ path: resolve(assets, 'screenshot-calculator.png'), animations: 'disabled' });
 
   await page.getByRole('button', { name: 'Calculate Cost Per Use' }).click();
-  await page.waitForTimeout(450);
+  const resultCard = page.getByTestId('calculation-result');
+  await resultCard.waitFor({ state: 'attached' });
+  await page.waitForFunction(() => (
+    document.querySelector('[data-testid="calculation-result"]')?.classList.contains('opacity-100')
+  ));
   await page.locator('main').evaluate((element) => {
     const result = element.querySelector(':scope > div > div:nth-child(2)');
     if (result) element.scrollTop = result.offsetTop - element.offsetTop - 8;
   });
   await addStoreFrame(page, stories.result);
-  await page.screenshot({ path: resolve(assets, 'screenshot-result.png') });
+  await page.screenshot({ path: resolve(assets, 'screenshot-result.png'), animations: 'disabled' });
   await page.close();
   if (errors.length) throw new Error(`Calculator page errors:\n${errors.join('\n')}`);
 }
@@ -197,7 +200,7 @@ async function capturePopupTab(browser, tabName, filename, story) {
   await page.goto(baseUrl, { waitUntil: 'networkidle' });
   await page.getByRole('button', { name: tabName }).click();
   await addStoreFrame(page, story);
-  await page.screenshot({ path: resolve(assets, filename) });
+  await page.screenshot({ path: resolve(assets, filename), animations: 'disabled' });
   await page.close();
   if (errors.length) throw new Error(`${tabName} page errors:\n${errors.join('\n')}`);
 }
@@ -207,7 +210,7 @@ async function captureOptions(browser) {
   const errors = collectPageErrors(page);
   await seedLocalData(page);
   await page.goto(`${baseUrl}/options.html`, { waitUntil: 'networkidle' });
-  await page.screenshot({ path: resolve(assets, 'screenshot-options.png') });
+  await page.screenshot({ path: resolve(assets, 'screenshot-options.png'), animations: 'disabled' });
   await page.close();
   if (errors.length) throw new Error(`Options page errors:\n${errors.join('\n')}`);
 }

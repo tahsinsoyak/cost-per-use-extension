@@ -137,7 +137,7 @@ export const PopupApp: React.FC = () => {
           aria-selected={activeTab === 'calculator'}
           className={`
             popup-tab flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold rounded-xl transition-all duration-200
-            ${activeTab === 'calculator' ? 'bg-accent/10 text-accent' : 'text-text-secondary hover:text-text-primary'}
+            ${activeTab === 'calculator' ? 'text-accent' : 'text-text-secondary hover:text-text-primary'}
           `}
         >
           <Calculator className="w-3.5 h-3.5" />
@@ -148,7 +148,7 @@ export const PopupApp: React.FC = () => {
           aria-selected={activeTab === 'compare'}
           className={`
             popup-tab flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold rounded-xl transition-all duration-200 relative
-            ${activeTab === 'compare' ? 'bg-accent/10 text-accent' : 'text-text-secondary hover:text-text-primary'}
+            ${activeTab === 'compare' ? 'text-accent' : 'text-text-secondary hover:text-text-primary'}
           `}
         >
           <Scale className="w-3.5 h-3.5" />
@@ -164,7 +164,7 @@ export const PopupApp: React.FC = () => {
           aria-selected={activeTab === 'history'}
           className={`
             popup-tab flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold rounded-xl transition-all duration-200 relative
-            ${activeTab === 'history' ? 'bg-accent/10 text-accent' : 'text-text-secondary hover:text-text-primary'}
+            ${activeTab === 'history' ? 'text-accent' : 'text-text-secondary hover:text-text-primary'}
           `}
         >
           <History className="w-3.5 h-3.5" />

@@ -70,6 +70,7 @@ export const ResultCard: React.FC = () => {
 
   return (
     <div
+      data-testid="calculation-result"
       className={`
         result-ledger bg-surface border border-border/70 rounded-3xl p-5 shadow-premium dark:shadow-premium-dark
         transition-all duration-500 transform flex flex-col gap-4 select-text
