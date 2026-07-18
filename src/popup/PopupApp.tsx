@@ -4,9 +4,11 @@ import CalculatorForm from './components/CalculatorForm';
 import ResultCard from './components/ResultCard';
 import ProductComparison from './components/ProductComparison';
 import SavedCalculations from './components/SavedCalculations';
+import WhatsNewDialog from './components/WhatsNewDialog';
 import Toast from '../shared/components/Toast';
 import { Sun, Moon, Scale, History, Calculator, Settings, Heart } from 'lucide-react';
 import { translate } from '../shared/locales';
+import { getPendingReleaseVersion, markReleaseVersionSeen } from '../shared/lib/releaseNotice';
 
 export const PopupApp: React.FC = () => {
   const {
@@ -18,6 +20,7 @@ export const PopupApp: React.FC = () => {
     currentTotalInstallmentCost, currentInlineHourlyWage,
   } = useCalculatorStore();
   const [activeTab, setActiveTab] = useState<'calculator' | 'compare' | 'history'>('calculator');
+  const [pendingReleaseVersion, setPendingReleaseVersion] = useState<string | null>(null);
   const tabIdRef = useRef<number | null>(null);
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -26,6 +29,19 @@ export const PopupApp: React.FC = () => {
   useEffect(() => {
     init();
   }, [init]);
+
+  useEffect(() => {
+    if (!isInitialized) return;
+
+    let isActive = true;
+    getPendingReleaseVersion().then((version) => {
+      if (isActive) setPendingReleaseVersion(version);
+    });
+
+    return () => {
+      isActive = false;
+    };
+  }, [isInitialized]);
 
   useEffect(() => {
     if (isInitialized) {
@@ -81,9 +97,16 @@ export const PopupApp: React.FC = () => {
     }
   };
 
+  const dismissReleaseNotice = () => {
+    if (!pendingReleaseVersion) return;
+    const version = pendingReleaseVersion;
+    setPendingReleaseVersion(null);
+    void markReleaseVersionSeen(version);
+  };
+
   if (!isInitialized) {
     return (
-      <div className="w-[420px] h-[620px] bg-background flex items-center justify-center select-none">
+      <div className="popup-shell bg-background flex items-center justify-center select-none">
         <div className="flex flex-col items-center gap-3">
           <div className="w-10 h-10 border-4 border-accent border-t-transparent rounded-full animate-spin"></div>
           <span className="text-xs font-semibold text-text-secondary">{t('common.loading')}</span>
@@ -95,24 +118,24 @@ export const PopupApp: React.FC = () => {
   return (
     <div className="popup-shell bg-background flex flex-col font-sans">
       {/* Header */}
-      <header className="popup-header flex justify-between items-center select-none">
-        <div className="flex items-center gap-2.5">
+      <header className="popup-header flex-none flex justify-between items-center select-none">
+        <div className="flex items-center gap-2.5 min-w-0">
           {/* Brand Logo — Custom SVG Logo */}
           <div className="brand-mark flex items-center justify-center select-none overflow-hidden">
             <img src="icons/icon.svg" className="w-full h-full object-contain" alt="Cost Per Use Logo" />
           </div>
-          <div className="flex flex-col">
-            <h1 className="text-sm font-extrabold tracking-tight text-text-primary leading-tight">
+          <div className="flex flex-col min-w-0">
+            <h1 className="text-sm font-extrabold tracking-tight text-text-primary leading-tight truncate">
               {t('common.appName')}
             </h1>
-            <span className="text-[10px] text-text-secondary font-medium leading-none">
+            <span className="popup-subtitle text-[10px] text-text-secondary font-medium leading-none truncate">
               {t('common.appSubTitle')}
             </span>
           </div>
         </div>
 
         {/* Toolbar buttons */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 shrink-0">
           <button
             onClick={toggleTheme}
             className="toolbar-button p-2 text-text-secondary hover:text-text-primary rounded-xl transition-colors"
@@ -131,7 +154,7 @@ export const PopupApp: React.FC = () => {
       </header>
 
       {/* Tabs */}
-      <nav className="popup-nav flex select-none">
+      <nav className="popup-nav flex-none flex select-none">
         <button
           onClick={() => setActiveTab('calculator')}
           aria-selected={activeTab === 'calculator'}
@@ -141,7 +164,7 @@ export const PopupApp: React.FC = () => {
           `}
         >
           <Calculator className="w-3.5 h-3.5" />
-          <span>{t('tabs.calculate')}</span>
+          <span className="min-w-0 truncate">{t('tabs.calculate')}</span>
         </button>
         <button
           onClick={() => setActiveTab('compare')}
@@ -152,7 +175,7 @@ export const PopupApp: React.FC = () => {
           `}
         >
           <Scale className="w-3.5 h-3.5" />
-          <span>{t('tabs.compare')}</span>
+          <span className="min-w-0 truncate">{t('tabs.compare')}</span>
           {comparisonList.length > 0 && (
             <span className="absolute top-1 right-2 w-4 h-4 text-[9px] font-bold bg-accent text-white flex items-center justify-center rounded-full">
               {comparisonList.length}
@@ -168,7 +191,7 @@ export const PopupApp: React.FC = () => {
           `}
         >
           <History className="w-3.5 h-3.5" />
-          <span>{t('tabs.history')}</span>
+          <span className="min-w-0 truncate">{t('tabs.history')}</span>
           {history.length > 0 && (
             <span className="absolute top-1 right-2 w-4 h-4 text-[9px] font-bold bg-text-secondary/20 text-text-secondary flex items-center justify-center rounded-full">
               {history.length}
@@ -192,8 +215,16 @@ export const PopupApp: React.FC = () => {
       {/* Toast Alert */}
       <Toast />
 
+      {pendingReleaseVersion && (
+        <WhatsNewDialog
+          language={settings.language}
+          version={pendingReleaseVersion}
+          onDismiss={dismissReleaseNotice}
+        />
+      )}
+
       {/* Support Footer */}
-      <footer className="popup-footer border-t border-border/50 px-4 py-3 select-none">
+      <footer className="popup-footer flex-none border-t border-border/50 px-4 py-2 select-none">
         <a
           href="https://www.patreon.com/tahsinsoyak"
           target="_blank"

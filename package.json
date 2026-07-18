@@ -1,7 +1,7 @@
 {
   "name": "cost-per-use-extension",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "tahsinsoyak",
   "type": "module",
   "scripts": {

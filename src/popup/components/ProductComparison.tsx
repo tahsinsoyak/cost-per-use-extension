@@ -59,7 +59,7 @@ export const ProductComparison: React.FC = () => {
         </button>
       </div>
 
-      <div className={`grid gap-3 ${comparisonList.length === 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+      <div className="comparison-grid grid gap-3">
         {comparisonList.map((item) => {
           const isBestValue = comparisonList.length > 1 && item.id === lowestId;
           const isHighestCost = comparisonList.length > 1 && item.id === highestId;

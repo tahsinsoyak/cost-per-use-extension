@@ -120,7 +120,7 @@ export const CalculatorForm: React.FC = () => {
           placeholder={t('calculator.placeholderProduct')}
           value={currentProductName}
           onChange={(e) => setInputs({ currentProductName: e.target.value })}
-          className="flex-1 bg-transparent text-base font-extrabold tracking-tight text-text-primary placeholder:text-text-secondary/40 border-none outline-none focus:ring-0 px-1 py-0.5"
+          className="flex-1 min-w-0 bg-transparent text-base font-extrabold tracking-tight text-text-primary placeholder:text-text-secondary/40 border-none outline-none focus:ring-0 px-1 py-0.5"
         />
         {isPageScrapable && (
           <button
@@ -144,7 +144,7 @@ export const CalculatorForm: React.FC = () => {
             {t('calculator.titlePrice')}
           </span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 min-w-0">
           {/* Glowing Prefix */}
           <span className="price-symbol text-3xl font-extrabold pl-1 select-none">
             {getCurrencySymbolText()}
@@ -157,13 +157,13 @@ export const CalculatorForm: React.FC = () => {
             required
             value={currentPrice}
             onChange={(e) => setInputs({ currentPrice: e.target.value })}
-            className="price-input w-full bg-transparent text-3xl font-extrabold placeholder:text-white/20 border-none outline-none focus:ring-0 p-0"
+            className="price-input flex-1 min-w-0 w-full bg-transparent text-3xl font-extrabold placeholder:text-white/20 border-none outline-none focus:ring-0 p-0"
           />
           {/* Compact Currency Dropdown */}
           <select
             value={currentCurrency}
             onChange={handleCurrencyChange}
-            className="currency-select text-xs font-bold border rounded-xl px-2.5 py-1.5 cursor-pointer outline-none transition-colors"
+            className="currency-select shrink-0 max-w-[104px] text-xs font-bold border rounded-xl px-2.5 py-1.5 cursor-pointer outline-none transition-colors"
           >
             {currencyOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -198,7 +198,7 @@ export const CalculatorForm: React.FC = () => {
         </label>
         
         {durationMode === 'pill' ? (
-          <div className="grid grid-cols-5 gap-1.5 select-none">
+          <div className="preset-grid select-none">
             {[
               { label: `6 ${t('common.moShort')}`, val: '6', unit: 'months' },
               { label: `1 ${t('common.yrShort')}`, val: '1', unit: 'years' },
@@ -226,14 +226,14 @@ export const CalculatorForm: React.FC = () => {
             <button
               type="button"
               onClick={() => setDurationMode('custom')}
-              className="choice-chip py-2 text-xs font-bold border bg-surface/50 border-border/80 text-text-secondary hover:border-accent/20 hover:text-text-primary active:scale-95"
+              className="choice-chip preset-custom-chip py-2 text-xs font-bold border bg-surface/50 border-border/80 text-text-secondary hover:border-accent/20 hover:text-text-primary active:scale-95"
             >
               {t('calculator.customValue')}
             </button>
           </div>
         ) : (
-          <div className="flex items-end gap-2 animate-slide-in">
-            <div className="flex-1">
+          <div className="responsive-input-row flex items-end gap-2 animate-slide-in">
+            <div className="flex-1 min-w-0">
               <Input
                 type="number"
                 inputMode="numeric"
@@ -243,7 +243,7 @@ export const CalculatorForm: React.FC = () => {
                 error={formErrors.ownershipDurationValue ? t('calculator.errors.durationRequired') : undefined}
               />
             </div>
-            <div className="w-24">
+            <div className="responsive-unit-select w-24 shrink-0">
               <Select
                 options={durationUnitOptions}
                 value={currentDurationUnit}
@@ -272,7 +272,7 @@ export const CalculatorForm: React.FC = () => {
         </label>
         
         {usageMode === 'pill' ? (
-          <div className="grid grid-cols-5 gap-1.5 select-none">
+          <div className="preset-grid select-none">
             {[
               { label: `1x ${t('common.perWeekShort')}`, val: '1' },
               { label: `3x ${t('common.perWeekShort')}`, val: '3' },
@@ -300,14 +300,14 @@ export const CalculatorForm: React.FC = () => {
             <button
               type="button"
               onClick={() => setUsageMode('custom')}
-              className="choice-chip py-2 text-xs font-bold border bg-surface/50 border-border/80 text-text-secondary hover:border-accent/20 hover:text-text-primary active:scale-95"
+              className="choice-chip preset-custom-chip py-2 text-xs font-bold border bg-surface/50 border-border/80 text-text-secondary hover:border-accent/20 hover:text-text-primary active:scale-95"
             >
               {t('calculator.customValue')}
             </button>
           </div>
         ) : (
-          <div className="flex items-end gap-2 animate-slide-in">
-            <div className="flex-1">
+          <div className="responsive-input-row flex items-end gap-2 animate-slide-in">
+            <div className="flex-1 min-w-0">
               <Input
                 type="number"
                 inputMode="numeric"
@@ -375,7 +375,7 @@ export const CalculatorForm: React.FC = () => {
                   {t('calculator.paymentPlanTitle')}
                 </span>
               </div>
-              <div className="flex gap-2">
+              <div className="responsive-field-pair flex gap-2">
                 <div className="flex-1">
                   <Input
                     label={t('calculator.labelPayments')}
