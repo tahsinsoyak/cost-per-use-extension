@@ -9,8 +9,10 @@
 ## Screenshots
 
 <p align="center">
-  <img src="logo_options/screenshot_popup.png" alt="Popup Calculator" width="380" />
-  <img src="logo_options/screenshot_options.png" alt="Options & History" width="700" />
+  <img src="store-assets/screenshot-calculator.png" alt="Cost Per Use calculator with a real-world product example" width="720" />
+</p>
+<p align="center">
+  <img src="store-assets/screenshot-compare.png" alt="Side-by-side product comparison" width="720" />
 </p>
 
 ---
@@ -74,6 +76,8 @@ npm run build
 - **No Cloud Sync** — Your data never leaves your browser. All history is saved to `chrome.storage.local` and can be cleared instantly.
 
 Read the full [Privacy Policy](docs/privacy-policy.md). Chrome Web Store submission materials are in [docs/chrome-web-store](docs/chrome-web-store/README.md).
+
+Release history is available in the [changelog](CHANGELOG.md).
 
 ---
 
