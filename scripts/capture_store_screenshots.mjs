@@ -83,6 +83,7 @@ async function seedLocalData(page) {
   await page.addInitScript((sample) => {
     localStorage.setItem('history', JSON.stringify(sample));
     localStorage.setItem('comparisonList', JSON.stringify(sample));
+    localStorage.setItem('lastSeenReleaseVersion', JSON.stringify('1.0.2'));
     localStorage.setItem('settings', JSON.stringify({
       defaultCurrency: 'USD', customCurrencySymbol: '', defaultDurationValue: 3,
       defaultDurationUnit: 'years', defaultUsesPerWeek: 5, theme: 'light',
@@ -117,7 +118,7 @@ async function addStoreFrame(page, story) {
     html, body { width: 1280px !important; height: 800px !important; margin: 0 !important; overflow: hidden !important; }
     body {
       display: grid !important;
-      grid-template-columns: minmax(0, 1fr) 420px !important;
+      grid-template-columns: minmax(0, 1fr) 400px !important;
       align-items: center !important;
       gap: 58px !important;
       padding: 64px 78px !important;
@@ -135,8 +136,8 @@ async function addStoreFrame(page, story) {
     }
     #root {
       grid-column: 2;
-      width: 420px !important;
-      height: 620px !important;
+      width: 400px !important;
+      height: 600px !important;
       border: 1px solid rgba(255,255,255,.18);
       border-radius: 25px;
       overflow: hidden;

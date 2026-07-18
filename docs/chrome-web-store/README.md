@@ -6,6 +6,7 @@ Use these files when creating the Chrome Web Store item:
 - [Privacy practices](privacy-practices.md)
 - [Permission justifications](permission-justifications.md)
 - [Submission checklist](submission-checklist.md)
+- [Version 1.0.2 update guide](releases/v1.0.2.md)
 - [Version 1.0.1 update guide](releases/v1.0.1.md)
 - [Privacy policy](../privacy-policy.md)
 

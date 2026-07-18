@@ -109,7 +109,7 @@ export const ResultCard: React.FC = () => {
       </div>
 
       {/* Breakdowns Grid */}
-      <div className="grid grid-cols-2 gap-2.5">
+      <div className="metric-grid grid gap-2.5">
         
         <div className="metric-card bg-surface border border-border/40 rounded-xl p-3 flex flex-col justify-between hover:border-accent/35 hover:-translate-y-[0.5px] transition-all duration-200 shadow-sm">
           <span className="text-[9px] font-bold uppercase tracking-wider text-text-secondary select-none">{t('results.metrics.totalUses')}</span>
@@ -143,7 +143,7 @@ export const ResultCard: React.FC = () => {
           </span>
         </div>
 
-        <div className="metric-card bg-surface border border-border/40 rounded-xl p-3 flex flex-col justify-between hover:border-accent/35 hover:-translate-y-[0.5px] transition-all duration-200 shadow-sm col-span-2">
+        <div className="metric-card metric-card-wide bg-surface border border-border/40 rounded-xl p-3 flex flex-col justify-between hover:border-accent/35 hover:-translate-y-[0.5px] transition-all duration-200 shadow-sm">
           <span className="text-[9px] font-bold uppercase tracking-wider text-text-secondary select-none">{t('results.metrics.netCost')}</span>
           <span className="text-xs font-black text-text-primary mt-1 flex items-center gap-1.5">
             <DollarSign className="w-3.5 h-3.5 text-accent/80" />
@@ -251,7 +251,7 @@ export const ResultCard: React.FC = () => {
       </div>
 
       {/* Action Buttons */}
-      <div className="flex gap-2">
+      <div className="result-actions flex gap-2">
         <Button
           onClick={() => saveCalculation()}
           variant="secondary"
