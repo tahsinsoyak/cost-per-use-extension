@@ -9,6 +9,8 @@
     "build": "tsc && vite build",
     "test": "vitest run",
     "zip": "node scripts/zip.js",
+    "package:validate": "node scripts/validate_package.mjs",
+    "release:check": "npm test && npm run build && npm run package:validate && npm run store:validate && npm run zip",
     "store:promo": "node scripts/generate_store_promo.js",
     "store:screenshots": "node scripts/capture_store_screenshots.mjs",
     "store:validate": "node scripts/validate_store_assets.mjs"
