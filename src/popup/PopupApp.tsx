@@ -83,7 +83,7 @@ export const PopupApp: React.FC = () => {
 
   if (!isInitialized) {
     return (
-      <div className="w-[390px] h-[580px] bg-background flex items-center justify-center select-none">
+      <div className="w-[420px] h-[620px] bg-background flex items-center justify-center select-none">
         <div className="flex flex-col items-center gap-3">
           <div className="w-10 h-10 border-4 border-accent border-t-transparent rounded-full animate-spin"></div>
           <span className="text-xs font-semibold text-text-secondary">{t('common.loading')}</span>
@@ -93,13 +93,13 @@ export const PopupApp: React.FC = () => {
   }
 
   return (
-    <div className="w-[390px] min-h-[580px] bg-background flex flex-col font-sans relative">
+    <div className="popup-shell bg-background flex flex-col font-sans">
       {/* Header */}
-      <header className="flex justify-between items-center p-4 bg-surface border-b border-border/40 select-none">
+      <header className="popup-header flex justify-between items-center select-none">
         <div className="flex items-center gap-2.5">
           {/* Brand Logo — Custom SVG Logo */}
-          <div className="w-8 h-8 flex items-center justify-center select-none overflow-hidden">
-            <img src="icons/icon.svg" className="w-8 h-8 object-contain" alt="Cost Per Use Logo" />
+          <div className="brand-mark flex items-center justify-center select-none overflow-hidden">
+            <img src="icons/icon.svg" className="w-full h-full object-contain" alt="Cost Per Use Logo" />
           </div>
           <div className="flex flex-col">
             <h1 className="text-sm font-extrabold tracking-tight text-text-primary leading-tight">
@@ -115,14 +115,14 @@ export const PopupApp: React.FC = () => {
         <div className="flex items-center gap-1">
           <button
             onClick={toggleTheme}
-            className="p-2 text-text-secondary hover:text-text-primary rounded-xl hover:bg-elevated transition-colors"
+            className="toolbar-button p-2 text-text-secondary hover:text-text-primary rounded-xl transition-colors"
             title={t(settings.theme === 'light' ? 'settings.themeDark' : 'settings.themeLight')}
           >
             {settings.theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
           </button>
           <button
             onClick={handleOpenOptions}
-            className="p-2 text-text-secondary hover:text-text-primary rounded-xl hover:bg-elevated transition-colors"
+            className="toolbar-button p-2 text-text-secondary hover:text-text-primary rounded-xl transition-colors"
             title={t('settings.openSettings')}
           >
             <Settings className="w-4 h-4" />
@@ -131,12 +131,13 @@ export const PopupApp: React.FC = () => {
       </header>
 
       {/* Tabs */}
-      <nav className="flex bg-surface border-b border-border/40 p-1.5 gap-1 select-none">
+      <nav className="popup-nav flex select-none">
         <button
           onClick={() => setActiveTab('calculator')}
+          aria-selected={activeTab === 'calculator'}
           className={`
-            flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold rounded-xl transition-all duration-200
-            ${activeTab === 'calculator' ? 'bg-accent/10 text-accent' : 'text-text-secondary hover:text-text-primary'}
+            popup-tab flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold rounded-xl transition-all duration-200
+            ${activeTab === 'calculator' ? 'text-accent' : 'text-text-secondary hover:text-text-primary'}
           `}
         >
           <Calculator className="w-3.5 h-3.5" />
@@ -144,9 +145,10 @@ export const PopupApp: React.FC = () => {
         </button>
         <button
           onClick={() => setActiveTab('compare')}
+          aria-selected={activeTab === 'compare'}
           className={`
-            flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold rounded-xl transition-all duration-200 relative
-            ${activeTab === 'compare' ? 'bg-accent/10 text-accent' : 'text-text-secondary hover:text-text-primary'}
+            popup-tab flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold rounded-xl transition-all duration-200 relative
+            ${activeTab === 'compare' ? 'text-accent' : 'text-text-secondary hover:text-text-primary'}
           `}
         >
           <Scale className="w-3.5 h-3.5" />
@@ -159,9 +161,10 @@ export const PopupApp: React.FC = () => {
         </button>
         <button
           onClick={() => setActiveTab('history')}
+          aria-selected={activeTab === 'history'}
           className={`
-            flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold rounded-xl transition-all duration-200 relative
-            ${activeTab === 'history' ? 'bg-accent/10 text-accent' : 'text-text-secondary hover:text-text-primary'}
+            popup-tab flex-1 flex items-center justify-center gap-1.5 py-2 px-3 text-xs font-bold rounded-xl transition-all duration-200 relative
+            ${activeTab === 'history' ? 'text-accent' : 'text-text-secondary hover:text-text-primary'}
           `}
         >
           <History className="w-3.5 h-3.5" />
@@ -175,7 +178,7 @@ export const PopupApp: React.FC = () => {
       </nav>
 
       {/* Main View Area */}
-      <main className="flex-1 p-4 overflow-y-auto max-h-[470px]">
+      <main className="popup-main flex-1 overflow-y-auto">
         {activeTab === 'calculator' && (
           <div className="flex flex-col gap-4">
             <CalculatorForm />
@@ -190,7 +193,7 @@ export const PopupApp: React.FC = () => {
       <Toast />
 
       {/* Support Footer */}
-      <footer className="border-t border-border/40 bg-surface px-4 py-3 select-none">
+      <footer className="popup-footer border-t border-border/50 px-4 py-3 select-none">
         <a
           href="https://www.patreon.com/tahsinsoyak"
           target="_blank"

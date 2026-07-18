@@ -84,7 +84,7 @@ export const SavedCalculations: React.FC = () => {
         {recentHistory.map((item) => (
           <div
             key={item.id}
-            className="group relative flex justify-between items-center p-3.5 bg-surface border border-border/60 rounded-2xl hover:border-accent/40 shadow-premium dark:shadow-premium-dark hover:shadow-premium-hover transition-all duration-200"
+            className="history-item group relative flex justify-between items-center p-3.5 bg-surface border border-border/60 rounded-2xl hover:border-accent/40 shadow-premium dark:shadow-premium-dark hover:shadow-premium-hover transition-all duration-200"
           >
             <div
               onClick={() => handleLoad(item)}

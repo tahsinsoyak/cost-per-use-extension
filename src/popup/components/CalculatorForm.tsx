@@ -111,10 +111,10 @@ export const CalculatorForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 animate-fade-in pb-1 select-text">
+    <form onSubmit={handleSubmit} className="calculator-form flex flex-col gap-4 animate-fade-in pb-1 select-text">
       
       {/* Product Name (Notepad Style) */}
-      <div className="relative flex items-center justify-between border-b border-dashed border-border/80 pb-1.5 focus-within:border-accent/60 transition-all duration-200">
+      <div className="product-name-row relative flex items-center justify-between border-b border-border/80 focus-within:border-accent/60 transition-all duration-200">
         <input
           type="text"
           placeholder={t('calculator.placeholderProduct')}
@@ -136,17 +136,17 @@ export const CalculatorForm: React.FC = () => {
       </div>
 
       {/* Wise/Revolut Style Price Card */}
-      <div className="bg-elevated/40 border border-border/50 rounded-2xl p-4 flex flex-col gap-1.5 focus-within:ring-2 focus-within:ring-accent/15 focus-within:border-accent/40 transition-all duration-200">
-        <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider text-text-secondary select-none">
+      <div className="price-ledger-card border rounded-2xl p-4 flex flex-col gap-1.5 focus-within:ring-2 focus-within:ring-accent/20 transition-all duration-200">
+        <div className="price-label flex justify-between items-center text-[10px] font-bold uppercase tracking-wider select-none">
           <span>{t('calculator.labelPrice')}</span>
-          <span className="flex items-center gap-1 text-accent select-none">
+          <span className="flex items-center gap-1 text-white/80 select-none">
             <Sparkles className="w-3 h-3" />
             {t('calculator.titlePrice')}
           </span>
         </div>
         <div className="flex items-center gap-2">
           {/* Glowing Prefix */}
-          <span className="text-3xl font-extrabold text-accent/80 pl-1 select-none">
+          <span className="price-symbol text-3xl font-extrabold pl-1 select-none">
             {getCurrencySymbolText()}
           </span>
           <input
@@ -157,13 +157,13 @@ export const CalculatorForm: React.FC = () => {
             required
             value={currentPrice}
             onChange={(e) => setInputs({ currentPrice: e.target.value })}
-            className="w-full bg-transparent text-3xl font-extrabold tracking-tight text-text-primary placeholder:text-text-secondary/20 border-none outline-none focus:ring-0 p-0"
+            className="price-input w-full bg-transparent text-3xl font-extrabold placeholder:text-white/20 border-none outline-none focus:ring-0 p-0"
           />
           {/* Compact Currency Dropdown */}
           <select
             value={currentCurrency}
             onChange={handleCurrencyChange}
-            className="bg-surface text-text-primary text-xs font-bold border border-border/80 rounded-xl px-2.5 py-1.5 cursor-pointer hover:border-accent/40 focus:border-accent/50 outline-none transition-colors"
+            className="currency-select text-xs font-bold border rounded-xl px-2.5 py-1.5 cursor-pointer outline-none transition-colors"
           >
             {currencyOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -211,8 +211,9 @@ export const CalculatorForm: React.FC = () => {
                   key={p.label}
                   type="button"
                   onClick={() => setInputs({ currentDurationValue: p.val, currentDurationUnit: p.unit as 'months' | 'years' })}
+                  data-active={isActive}
                   className={`
-                    py-2 text-xs font-bold rounded-xl border transition-all duration-200 active:scale-95
+                    choice-chip py-2 text-xs font-bold border transition-all duration-200 active:scale-95
                     ${isActive 
                       ? 'bg-accent/10 border-accent/50 text-accent font-extrabold shadow-sm' 
                       : 'bg-surface/50 border-border/80 text-text-secondary hover:border-accent/20 hover:text-text-primary'}
@@ -225,7 +226,7 @@ export const CalculatorForm: React.FC = () => {
             <button
               type="button"
               onClick={() => setDurationMode('custom')}
-              className="py-2 text-xs font-bold rounded-xl border bg-surface/50 border-border/80 text-text-secondary hover:border-accent/20 hover:text-text-primary active:scale-95"
+              className="choice-chip py-2 text-xs font-bold border bg-surface/50 border-border/80 text-text-secondary hover:border-accent/20 hover:text-text-primary active:scale-95"
             >
               {t('calculator.customValue')}
             </button>
@@ -284,8 +285,9 @@ export const CalculatorForm: React.FC = () => {
                   key={p.label}
                   type="button"
                   onClick={() => setInputs({ currentUsesPerWeek: p.val })}
+                  data-active={isActive}
                   className={`
-                    py-2 text-xs font-bold rounded-xl border transition-all duration-200 active:scale-95
+                    choice-chip py-2 text-xs font-bold border transition-all duration-200 active:scale-95
                     ${isActive 
                       ? 'bg-accent/10 border-accent/50 text-accent font-extrabold shadow-sm' 
                       : 'bg-surface/50 border-border/80 text-text-secondary hover:border-accent/20 hover:text-text-primary'}
@@ -298,7 +300,7 @@ export const CalculatorForm: React.FC = () => {
             <button
               type="button"
               onClick={() => setUsageMode('custom')}
-              className="py-2 text-xs font-bold rounded-xl border bg-surface/50 border-border/80 text-text-secondary hover:border-accent/20 hover:text-text-primary active:scale-95"
+              className="choice-chip py-2 text-xs font-bold border bg-surface/50 border-border/80 text-text-secondary hover:border-accent/20 hover:text-text-primary active:scale-95"
             >
               {t('calculator.customValue')}
             </button>
@@ -344,7 +346,7 @@ export const CalculatorForm: React.FC = () => {
         </button>
 
         {showAdvanced && (
-          <div className="mt-3 p-3 bg-elevated/40 border border-border/40 rounded-2xl flex flex-col gap-3 animate-slide-in">
+          <div className="advanced-panel mt-3 p-3 border border-border/40 rounded-2xl flex flex-col gap-3 animate-slide-in">
             <Input
               label={t('calculator.labelResale')}
               type="number"
@@ -435,7 +437,7 @@ export const CalculatorForm: React.FC = () => {
         )}
       </div>
 
-      <Button type="submit" variant="primary" fullWidth className="mt-2 py-3 select-none">
+      <Button type="submit" variant="primary" fullWidth className="cta-button mt-2 py-3 select-none">
         {t('calculator.btnCalculate')}
       </Button>
     </form>
