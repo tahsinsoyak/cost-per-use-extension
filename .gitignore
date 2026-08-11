@@ -1,6 +1,8 @@
 node_modules/
 dist/
 .antigravitycli/
+.agents/
+skills-lock.json
 *.zip
 *.log
 .DS_Store
