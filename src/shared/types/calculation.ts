@@ -1,5 +1,6 @@
 export type Currency = 'TRY' | 'USD' | 'EUR' | 'GBP' | 'CUSTOM';
 
+// Historical storage keys for usage bands; these are not affordability ratings.
 export type ValueRating = 'excellent' | 'good' | 'think_twice' | 'expensive';
 
 export interface CostCalculation {

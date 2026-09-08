@@ -60,7 +60,7 @@ export const tr = {
   results: {
     title: "Hesaplama Sonuçları",
     costPerUse: "Kullanım Başına",
-    valueRating: "Değer Derecesi",
+    valueRating: "Tahmini kullanım",
     btnSave: "Hesaplamayı Kaydet",
     btnCompare: "Karşılaştırmaya Ekle",
     metrics: {
@@ -71,16 +71,16 @@ export const tr = {
       netCost: "Net Maliyet",
     },
     ratings: {
-      excellent: "Harika değer. Kullanım tahmininize göre, bu ürün kullanım başına çok uygun bir maliyete geliyor.",
-      good: "İyi değer. Kullanım tahmininiz gerçekçi ise kullanım başına maliyet makul görünüyor.",
-      think_twice: "Tekrar düşünün. Sık kullanmazsanız bu ürün size pahalıya mal olabilir.",
-      expensive: "Yüksek kullanım başına maliyet. Daha ucuz bir alternatif, daha uzun kullanım süresi veya daha sık kullanım düşünün.",
+      excellent: "Sahiplik süreniz boyunca tahmini toplam kullanım sayısıdır. Kullanım sayısı tek başına uygun fiyatlı olduğunu göstermez; kullanım başına maliyeti bütçenizle karşılaştırın.",
+      good: "Sahiplik süreniz boyunca tahmini toplam kullanım sayısıdır. Kullanım sayısı tek başına uygun fiyatlı olduğunu göstermez; kullanım başına maliyeti bütçenizle karşılaştırın.",
+      think_twice: "Sahiplik süreniz boyunca tahmini toplam kullanım sayısıdır. Kullanım sayısı tek başına uygun fiyatlı olduğunu göstermez; kullanım başına maliyeti bütçenizle karşılaştırın.",
+      expensive: "Sahiplik süreniz boyunca tahmini toplam kullanım sayısıdır. Kullanım sayısı tek başına uygun fiyatlı olduğunu göstermez; kullanım başına maliyeti bütçenizle karşılaştırın.",
     },
     ratingLabels: {
-      excellent: "Harika Değer",
-      good: "İyi Değer",
-      think_twice: "Tekrar Düşün",
-      expensive: "Pahalı",
+      excellent: "200+ kullanım",
+      good: "50–199 kullanım",
+      think_twice: "20–49 kullanım",
+      expensive: "20'den az kullanım",
     },
     perUseLabel: "/ kullanım",
     laborCard: {

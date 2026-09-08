@@ -60,7 +60,7 @@ export const en = {
   results: {
     title: "Calculation Results",
     costPerUse: "Cost Per Use",
-    valueRating: "Value Rating",
+    valueRating: "Estimated usage",
     btnSave: "Save Calculation",
     btnCompare: "Add to Compare",
     metrics: {
@@ -71,16 +71,16 @@ export const en = {
       netCost: "Net Cost",
     },
     ratings: {
-      excellent: "Great value. Based on your usage estimate, this product becomes very affordable per use.",
-      good: "Good value. The cost per use is reasonable if your usage estimate is realistic.",
-      think_twice: "Think twice. The product may feel expensive if you do not use it often.",
-      expensive: "High cost per use. Consider a cheaper alternative, longer ownership, or more frequent use.",
+      excellent: "Estimated total uses over your ownership period. Usage alone does not determine affordability; compare the cost per use with your budget.",
+      good: "Estimated total uses over your ownership period. Usage alone does not determine affordability; compare the cost per use with your budget.",
+      think_twice: "Estimated total uses over your ownership period. Usage alone does not determine affordability; compare the cost per use with your budget.",
+      expensive: "Estimated total uses over your ownership period. Usage alone does not determine affordability; compare the cost per use with your budget.",
     },
     ratingLabels: {
-      excellent: "Excellent",
-      good: "Good",
-      think_twice: "Think Twice",
-      expensive: "Expensive",
+      excellent: "200+ uses",
+      good: "50–199 uses",
+      think_twice: "20–49 uses",
+      expensive: "Under 20 uses",
     },
     perUseLabel: "/ use",
     laborCard: {

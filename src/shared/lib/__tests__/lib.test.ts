@@ -158,8 +158,8 @@ describe('Currency Formatter Tests', () => {
   });
 });
 
-describe('Value Rating Tests', () => {
-  it('should assign correct value ratings based on total uses', () => {
+describe('Estimated usage bands (legacy storage keys)', () => {
+  it('should assign usage bands based on total uses', () => {
     expect(getValueRating(250)).toBe('excellent');
     expect(getValueRating(100)).toBe('good');
     expect(getValueRating(30)).toBe('think_twice');
@@ -168,9 +168,33 @@ describe('Value Rating Tests', () => {
 
   it('should return correct metadata copy and color classes', () => {
     const details = getRatingDetails('excellent');
-    expect(details.label).toBe('Excellent value');
-    expect(details.className).toContain('text-success');
-    expect(details.explanation).toContain('affordable per use');
+    expect(details.label).toBe('200+ uses');
+    expect(details.className).toContain('text-text-secondary');
+    expect(details.explanation).toContain('Usage alone does not determine affordability');
+  });
+
+  it.each([
+    [0, 'Under 20 uses'], [19, 'Under 20 uses'],
+    [20, '20–49 uses'], [49, '20–49 uses'],
+    [50, '50–199 uses'], [199, '50–199 uses'], [200, '200+ uses'],
+  ] as const)('describes %s total uses without a price judgment', (uses, label) => {
+    expect(getRatingDetails(getValueRating(uses)).label).toBe(label);
+  });
+
+  it('shows different costs for cheap and costly items with the same neutral usage label', () => {
+    const input = {
+      currency: 'USD' as const, ownershipDurationValue: 1,
+      ownershipDurationUnit: 'years' as const, usesPerWeek: 5,
+    };
+    const cheap = calculateCostPerUse({ ...input, price: 20 });
+    const costly = calculateCostPerUse({ ...input, price: 2000 });
+    expect(costly.costPerUse).toBeCloseTo(cheap.costPerUse * 100);
+    for (const result of [cheap, costly]) {
+      const details = getRatingDetails(result.valueRating);
+      expect(details.label).toBe('200+ uses');
+      expect(details.explanation).toContain('compare the cost per use with your budget');
+      expect(details.className).not.toMatch(/success|warning|danger/);
+    }
   });
 });
 
