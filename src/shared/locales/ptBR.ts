@@ -20,9 +20,20 @@ export const ptBR = createLocale({
     },
   },
   results: {
-    title: 'Resultados', costPerUse: 'Custo por uso', valueRating: 'Avaliação de valor', btnSave: 'Salvar cálculo',
+    title: 'Resultados', costPerUse: 'Custo por uso', valueRating: "Uso estimado", btnSave: 'Salvar cálculo',
     btnCompare: 'Adicionar à comparação', metrics: { perDay: 'Por dia', perMonth: 'Por mês', perYear: 'Por ano', totalUses: 'Usos totais', netCost: 'Custo líquido' },
-    ratingLabels: { excellent: 'Excelente', good: 'Bom', think_twice: 'Pense melhor', expensive: 'Caro' },
+    ratings: {
+      excellent: "Total estimado de usos durante o período de posse. O uso por si só não determina se o preço é acessível; compare o custo por uso com seu orçamento.",
+      good: "Total estimado de usos durante o período de posse. O uso por si só não determina se o preço é acessível; compare o custo por uso com seu orçamento.",
+      think_twice: "Total estimado de usos durante o período de posse. O uso por si só não determina se o preço é acessível; compare o custo por uso com seu orçamento.",
+      expensive: "Total estimado de usos durante o período de posse. O uso por si só não determina se o preço é acessível; compare o custo por uso com seu orçamento.",
+    },
+    ratingLabels: {
+      excellent: "200+ usos",
+      good: "50–199 usos",
+      think_twice: "20–49 usos",
+      expensive: "Menos de 20 usos",
+    },
     perUseLabel: '/ uso', disclaimer: 'Esta estimativa usa os dados informados. O valor real depende do uso.',
     btnCompared: 'Adicionado', timesLabel: 'vezes',
   },

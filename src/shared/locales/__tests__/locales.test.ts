@@ -34,6 +34,18 @@ describe('locale catalog', () => {
 });
 
 describe('translations', () => {
+  it.each(languageCodes)('localizes neutral usage copy for %s', (language) => {
+    for (const rating of ['excellent', 'good', 'think_twice', 'expensive']) {
+      const label = translate(`results.ratingLabels.${rating}`, language);
+      const explanation = translate(`results.ratings.${rating}`, language);
+      expect(label).not.toContain('results.');
+      expect(explanation).not.toContain('results.');
+      if (language !== 'en') {
+        expect(label).not.toBe(translate(`results.ratingLabels.${rating}`, 'en'));
+        expect(explanation).not.toBe(translate(`results.ratings.${rating}`, 'en'));
+      }
+    }
+  });
   it.each(languageCodes)('provides localized core copy for %s', (language) => {
     expect(translate('common.appName', language)).not.toBe('common.appName');
     expect(translate('calculator.btnCalculate', language)).not.toBe('calculator.btnCalculate');

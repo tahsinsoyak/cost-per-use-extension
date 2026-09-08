@@ -20,9 +20,20 @@ export const fr = createLocale({
     },
   },
   results: {
-    title: 'Résultats', costPerUse: 'Coût par utilisation', valueRating: 'Évaluation', btnSave: 'Enregistrer le calcul',
+    title: 'Résultats', costPerUse: 'Coût par utilisation', valueRating: "Utilisation estimée", btnSave: 'Enregistrer le calcul',
     btnCompare: 'Ajouter à la comparaison', metrics: { perDay: 'Par jour', perMonth: 'Par mois', perYear: 'Par an', totalUses: 'Utilisations totales', netCost: 'Coût net' },
-    ratingLabels: { excellent: 'Excellent', good: 'Bon', think_twice: 'À reconsidérer', expensive: 'Cher' },
+    ratings: {
+      excellent: "Nombre total d’utilisations estimé pendant la durée de possession. L’utilisation seule ne détermine pas si le prix est abordable ; comparez le coût par utilisation à votre budget.",
+      good: "Nombre total d’utilisations estimé pendant la durée de possession. L’utilisation seule ne détermine pas si le prix est abordable ; comparez le coût par utilisation à votre budget.",
+      think_twice: "Nombre total d’utilisations estimé pendant la durée de possession. L’utilisation seule ne détermine pas si le prix est abordable ; comparez le coût par utilisation à votre budget.",
+      expensive: "Nombre total d’utilisations estimé pendant la durée de possession. L’utilisation seule ne détermine pas si le prix est abordable ; comparez le coût par utilisation à votre budget.",
+    },
+    ratingLabels: {
+      excellent: "200+ utilisations",
+      good: "50–199 utilisations",
+      think_twice: "20–49 utilisations",
+      expensive: "Moins de 20 utilisations",
+    },
     perUseLabel: '/ utilisation', disclaimer: 'Cette estimation repose sur vos données. La valeur réelle dépend de votre utilisation.',
     btnCompared: 'Ajouté', timesLabel: 'fois',
   },

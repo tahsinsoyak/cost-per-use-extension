@@ -35,10 +35,21 @@ export const de = createLocale({
     },
   },
   results: {
-    title: 'Berechnungsergebnis', costPerUse: 'Kosten pro Nutzung', valueRating: 'Wertbewertung',
+    title: 'Berechnungsergebnis', costPerUse: 'Kosten pro Nutzung', valueRating: "Geschätzte Nutzung",
     btnSave: 'Berechnung speichern', btnCompare: 'Zum Vergleich hinzufügen',
     metrics: { perDay: 'Pro Tag', perMonth: 'Pro Monat', perYear: 'Pro Jahr', totalUses: 'Gesamtnutzungen', netCost: 'Nettokosten' },
-    ratingLabels: { excellent: 'Ausgezeichnet', good: 'Gut', think_twice: 'Überdenken', expensive: 'Teuer' },
+    ratings: {
+      excellent: "Geschätzte Gesamtnutzungen während der Besitzdauer. Die Nutzung allein sagt nichts über die Erschwinglichkeit aus; vergleiche die Kosten pro Nutzung mit deinem Budget.",
+      good: "Geschätzte Gesamtnutzungen während der Besitzdauer. Die Nutzung allein sagt nichts über die Erschwinglichkeit aus; vergleiche die Kosten pro Nutzung mit deinem Budget.",
+      think_twice: "Geschätzte Gesamtnutzungen während der Besitzdauer. Die Nutzung allein sagt nichts über die Erschwinglichkeit aus; vergleiche die Kosten pro Nutzung mit deinem Budget.",
+      expensive: "Geschätzte Gesamtnutzungen während der Besitzdauer. Die Nutzung allein sagt nichts über die Erschwinglichkeit aus; vergleiche die Kosten pro Nutzung mit deinem Budget.",
+    },
+    ratingLabels: {
+      excellent: "200+ Nutzungen",
+      good: "50–199 Nutzungen",
+      think_twice: "20–49 Nutzungen",
+      expensive: "Unter 20 Nutzungen",
+    },
     perUseLabel: '/ Nutzung', disclaimer: 'Diese Schätzung basiert auf deinen Angaben. Der tatsächliche Wert hängt von der Nutzung ab.',
     btnCompared: 'Hinzugefügt', timesLabel: 'Mal',
   },
