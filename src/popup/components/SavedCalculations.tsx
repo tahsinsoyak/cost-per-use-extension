@@ -1,3 +1,4 @@
+import { getValueRating } from '../../shared/lib/valueRating';
 import React from 'react';
 import { useCalculatorStore } from '../../shared/store/useCalculatorStore';
 import { formatCurrency } from '../../shared/lib/formatCurrency';
@@ -107,12 +108,8 @@ export const SavedCalculations: React.FC = () => {
                 </span>
               </div>
               <div>
-                <Badge variant={
-                  item.valueRating === 'excellent' ? 'success' : 
-                  item.valueRating === 'good' ? 'primary' : 
-                  item.valueRating === 'think_twice' ? 'warning' : 'danger'
-                } className="text-[8px] py-0 px-2 select-none font-bold">
-                  {t('results.ratingLabels.' + item.valueRating)}
+                <Badge variant="secondary" className="text-[8px] py-0 px-2 select-none font-bold">
+                  {t('results.ratingLabels.' + getValueRating(item.totalEstimatedUses))}
                 </Badge>
               </div>
             </div>

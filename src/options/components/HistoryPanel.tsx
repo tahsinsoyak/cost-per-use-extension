@@ -1,3 +1,4 @@
+import { getValueRating } from '../../shared/lib/valueRating';
 import React, { useState } from 'react';
 import { Calendar, Download, HelpCircle, Info, Trash2, Upload } from 'lucide-react';
 import Badge from '../../shared/components/Badge';
@@ -145,7 +146,7 @@ export const HistoryPanel: React.FC = () => {
                   <th className="p-3.5">{t('history.tableNetCost')}</th>
                   <th className="p-3.5">{t('history.tableDuration')}</th>
                   {settings.showWorkCost && <th className="p-3.5">{t('history.tableLabor')}</th>}
-                  <th className="p-3.5">{t('history.tableRating')}</th>
+                  <th className="p-3.5">{t('results.valueRating')}</th>
                   <th className="p-3.5">{t('history.tableCostUse')}</th>
                   <th className="p-3.5 text-center">{t('history.tableActions')}</th>
                 </tr>
@@ -195,8 +196,8 @@ export const HistoryPanel: React.FC = () => {
                         </td>
                       )}
                       <td className="p-3.5 align-middle">
-                        <Badge variant={item.valueRating === 'excellent' ? 'success' : item.valueRating === 'good' ? 'primary' : item.valueRating === 'think_twice' ? 'warning' : 'danger'} className="text-[9px] py-0.5 px-2 font-bold">
-                          {t(`results.ratingLabels.${item.valueRating}`)}
+                        <Badge variant="secondary" className="text-[9px] py-0.5 px-2 font-bold">
+                          {t(`results.ratingLabels.${getValueRating(item.totalEstimatedUses)}`)}
                         </Badge>
                       </td>
                       <td className="p-3.5 align-middle"><span className="text-sm font-black text-accent">{formatCurrency(item.costPerUse, item.currency, item.customCurrencySymbol)}</span></td>

@@ -1,3 +1,4 @@
+import { getValueRating } from '../../shared/lib/valueRating';
 import React, { useEffect, useState } from 'react';
 import { useCalculatorStore } from '../../shared/store/useCalculatorStore';
 import { formatCurrency } from '../../shared/lib/formatCurrency';
@@ -34,7 +35,6 @@ export const ResultCard: React.FC = () => {
     costPerMonth,
     costPerYear,
     costPerDay,
-    valueRating,
     workHoursCost,
     workHoursPerUse,
     installmentCount,
@@ -42,6 +42,8 @@ export const ResultCard: React.FC = () => {
     totalInstallmentCost,
     installmentInterest,
   } = currentResult;
+
+  const valueRating = getValueRating(totalEstimatedUses);
 
   const isCompared = comparisonList.some((item) => item.id === currentResult.id);
 
@@ -91,13 +93,9 @@ export const ResultCard: React.FC = () => {
           {formatCurrency(costPerUse, currency, customCurrencySymbol)}
         </h2>
 
-        {/* Rating Badge */}
+        {/* Estimated usage badge */}
         <div className="z-10">
-          <Badge variant={
-            valueRating === 'excellent' ? 'success' : 
-            valueRating === 'good' ? 'primary' : 
-            valueRating === 'think_twice' ? 'warning' : 'danger'
-          } className="px-3.5 py-1 text-[10px] font-extrabold shadow-sm select-none">
+          <Badge variant="secondary" className="px-3.5 py-1 text-[10px] font-extrabold shadow-sm select-none">
             {t('results.ratingLabels.' + valueRating)}
           </Badge>
         </div>
