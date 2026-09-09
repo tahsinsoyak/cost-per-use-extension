@@ -21,7 +21,7 @@
 
 1. **Cost-Per-Use Calculation** — Input the product price, ownership duration, and weekly usage to get the estimated cost per use.
 2. **Advanced Adjustment (Net Cost)** — Factor in potential resale value, recurring maintenance costs, and installment plans.
-3. **Smart Value Rating** — Visual badges: *Excellent*, *Good*, *Think Twice*, or *Expensive*.
+3. **Estimated Usage** — Neutral usage bands show expected total uses, without judging affordability.
 4. **Product Comparison** — Contrast up to 3 products side-by-side.
 5. **Auto-fill from Shopping Sites** — Automatically detects product name & price from Amazon, Trendyol, Hepsiburada, and eBay. Toggleable in settings.
 6. **Multi-Currency** — USD, TRY, EUR, GBP, and custom currencies.

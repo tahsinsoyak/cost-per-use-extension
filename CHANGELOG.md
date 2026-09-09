@@ -2,6 +2,13 @@
 
 All notable user-facing changes to Cost Per Use are recorded here.
 
+## [Unreleased]
+
+### Fixed
+
+- Replaced price-independent value judgments with neutral estimated-use bands in results and both history views, including saved and imported calculations.
+- Localized usage labels and explanations in all ten languages and removed success/warning colors from usage badges.
+
 ## [1.0.2] - 2026-07-18
 
 ### Added

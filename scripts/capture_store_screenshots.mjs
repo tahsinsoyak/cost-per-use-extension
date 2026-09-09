@@ -48,7 +48,7 @@ const stories = {
     product: 'Estimated net cost',
     price: '$304',
     detail: '782 expected uses',
-    accent: 'Excellent long-term value',
+    accent: 'Based on your estimated usage',
   },
   compare: {
     eyebrow: 'COMPARE VALUE, NOT PRICES',
