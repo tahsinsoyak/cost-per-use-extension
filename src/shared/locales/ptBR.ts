@@ -20,6 +20,17 @@ export const ptBR = createLocale({
     },
   },
   results: {
+    target: {
+      title: "Sua meta de custo por uso",
+      help: "Opcional. Informe o valor máximo que deseja pagar por uso.",
+      label: "Meta por uso ({currency})",
+      usesNeeded: "Total de usos necessários",
+      withinEstimate: "Seu uso estimado é suficiente para atingir esta meta.",
+      beyondEstimate: "Usos adicionais além da sua estimativa: {uses}.",
+      assumption: "Mantém o mesmo custo líquido, incluindo ajustes de revenda, manutenção e parcelamento.",
+      invalid: "Insira uma meta maior que zero.",
+      outOfRange: "Esta meta exige usos demais para um cálculo confiável. Tente uma meta mais alta.",
+    },
     scenarios: {
       title: "E se eu usar menos?",
       expected: "Uso esperado",

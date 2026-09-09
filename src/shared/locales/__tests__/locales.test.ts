@@ -34,6 +34,15 @@ describe('locale catalog', () => {
 });
 
 describe('translations', () => {
+  it.each(languageCodes)('provides complete cost target copy for %s', (language) => {
+    for (const field of ['title', 'help', 'label', 'usesNeeded', 'withinEstimate', 'beyondEstimate', 'assumption', 'invalid', 'outOfRange']) {
+      const key = `results.target.${field}`;
+      expect(translate(key, language)).not.toBe(key);
+      if (language !== 'en') expect(translate(key, language)).not.toBe(translate(key, 'en'));
+    }
+    expect(translate('results.target.label', language)).toContain('{currency}');
+    expect(translate('results.target.beyondEstimate', language)).toContain('{uses}');
+  });
   it.each(languageCodes)('localizes neutral usage copy for %s', (language) => {
     for (const rating of ['excellent', 'good', 'think_twice', 'expensive']) {
       const label = translate(`results.ratingLabels.${rating}`, language);

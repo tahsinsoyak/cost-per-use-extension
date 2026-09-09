@@ -35,6 +35,17 @@ export const de = createLocale({
     },
   },
   results: {
+    target: {
+      title: "Dein Kostenziel pro Nutzung",
+      help: "Optional. Gib ein, wie viel jede Nutzung höchstens kosten soll.",
+      label: "Ziel pro Nutzung ({currency})",
+      usesNeeded: "Benötigte Gesamtnutzungen",
+      withinEstimate: "Deine geschätzte Nutzung reicht aus, um dieses Ziel zu erreichen.",
+      beyondEstimate: "Zusätzliche Nutzungen gegenüber deiner Schätzung: {uses}.",
+      assumption: "Die Nettokosten bleiben gleich, einschließlich Wiederverkauf, Wartung und Ratenzahlungen.",
+      invalid: "Gib ein Ziel größer als null ein.",
+      outOfRange: "Dieses Ziel erfordert zu viele Nutzungen für eine zuverlässige Berechnung. Versuche ein höheres Ziel.",
+    },
     scenarios: {
       title: "Was, wenn ich es weniger nutze?",
       expected: "Erwartete Nutzung",

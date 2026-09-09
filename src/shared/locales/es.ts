@@ -37,6 +37,17 @@ export const es = createLocale({
     },
   },
   results: {
+    target: {
+      title: "Tu objetivo de coste por uso",
+      help: "Opcional. Introduce el máximo que quieres pagar por cada uso.",
+      label: "Objetivo por uso ({currency})",
+      usesNeeded: "Usos totales necesarios",
+      withinEstimate: "Tu uso estimado es suficiente para alcanzar este objetivo.",
+      beyondEstimate: "Usos adicionales respecto a tu estimación: {uses}.",
+      assumption: "Se mantiene el mismo coste neto, incluidos los ajustes de reventa, mantenimiento y pagos a plazos.",
+      invalid: "Introduce un objetivo mayor que cero.",
+      outOfRange: "Este objetivo requiere demasiados usos para calcularlo de forma fiable. Prueba un objetivo más alto.",
+    },
     scenarios: {
       title: "¿Y si lo uso menos?",
       expected: "Uso esperado",

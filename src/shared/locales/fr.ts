@@ -20,6 +20,17 @@ export const fr = createLocale({
     },
   },
   results: {
+    target: {
+      title: "Votre objectif de coût par utilisation",
+      help: "Facultatif. Indiquez le coût maximal souhaité pour chaque utilisation.",
+      label: "Objectif par utilisation ({currency})",
+      usesNeeded: "Nombre total d’utilisations nécessaires",
+      withinEstimate: "Votre utilisation estimée suffit pour atteindre cet objectif.",
+      beyondEstimate: "Utilisations supplémentaires par rapport à votre estimation : {uses}.",
+      assumption: "Le coût net reste identique, avec les ajustements de revente, d’entretien et de paiement échelonné.",
+      invalid: "Saisissez un objectif supérieur à zéro.",
+      outOfRange: "Cet objectif nécessite trop d’utilisations pour un calcul fiable. Essayez un objectif plus élevé.",
+    },
     scenarios: {
       title: "Et si je l’utilise moins ?",
       expected: "Utilisation prévue",

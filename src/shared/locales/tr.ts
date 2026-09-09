@@ -58,6 +58,17 @@ export const tr = {
     }
   },
   results: {
+    target: {
+      title: "Kullanım başına maliyet hedefiniz",
+      help: "İsteğe bağlı. Her kullanım için ödemek istediğiniz en yüksek tutarı girin.",
+      label: "Kullanım başına hedef ({currency})",
+      usesNeeded: "Gereken toplam kullanım",
+      withinEstimate: "Tahmini kullanımınız bu hedefe ulaşmak için yeterli.",
+      beyondEstimate: "Tahmininize ek olarak gereken kullanım: {uses}.",
+      assumption: "Yeniden satış, bakım ve taksit düzeltmeleri dahil aynı net maliyet kullanılır.",
+      invalid: "Sıfırdan büyük bir hedef girin.",
+      outOfRange: "Bu hedef güvenilir biçimde hesaplanamayacak kadar çok kullanım gerektiriyor. Daha yüksek bir hedef deneyin.",
+    },
     scenarios: {
       title: "Daha az kullanırsam?",
       expected: "Beklenen kullanım",

@@ -37,6 +37,17 @@ export const ja = createLocale({
     },
   },
   results: {
+    target: {
+      title: "1回あたりの目標コスト",
+      help: "任意。1回の使用にかけたい金額の上限を入力してください。",
+      label: "1回あたりの目標（{currency}）",
+      usesNeeded: "必要な総使用回数",
+      withinEstimate: "想定した使用回数でこの目標に届きます。",
+      beyondEstimate: "想定より追加で必要な使用回数：{uses}。",
+      assumption: "売却額、メンテナンス費用、分割払いの調整を含む正味コストは変わりません。",
+      invalid: "ゼロより大きい目標を入力してください。",
+      outOfRange: "この目標では必要な使用回数が多すぎて正確に計算できません。目標金額を上げてください。",
+    },
     scenarios: {
       title: "使用回数が減ったら？",
       expected: "想定どおりの使用",

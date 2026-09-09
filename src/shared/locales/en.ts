@@ -58,6 +58,17 @@ export const en = {
     }
   },
   results: {
+    target: {
+      title: "Your cost-per-use target",
+      help: "Optional. Enter the most you want each use to cost.",
+      label: "Target per use ({currency})",
+      usesNeeded: "Total uses needed",
+      withinEstimate: "Your estimated usage is enough to reach this target.",
+      beyondEstimate: "Additional uses beyond your estimate: {uses}.",
+      assumption: "Uses the same net cost, including resale, maintenance and installment adjustments.",
+      invalid: "Enter a target greater than zero.",
+      outOfRange: "This target needs too many uses to calculate reliably. Try a higher target.",
+    },
     scenarios: {
       title: "What if I use it less?",
       expected: "Expected usage",

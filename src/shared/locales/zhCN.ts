@@ -37,6 +37,17 @@ export const zhCN = createLocale({
     },
   },
   results: {
+    target: {
+      title: "你的单次使用成本目标",
+      help: "可选。输入你希望每次使用花费的最高金额。",
+      label: "每次使用目标（{currency}）",
+      usesNeeded: "所需总使用次数",
+      withinEstimate: "预计使用次数足以达到这个目标。",
+      beyondEstimate: "超出预计所需的额外使用次数：{uses}。",
+      assumption: "净成本保持不变，包括转售、维护和分期付款调整。",
+      invalid: "请输入大于零的目标。",
+      outOfRange: "此目标所需的使用次数过多，无法可靠计算。请尝试更高的目标金额。",
+    },
     scenarios: {
       title: "如果用得更少呢？",
       expected: "预计使用量",
