@@ -4,6 +4,10 @@ All notable user-facing changes to Cost Per Use are recorded here.
 
 ## [Unreleased]
 
+### Added
+
+- A localized usage scenario card comparing expected cost per use with half as much use, keeping ownership duration and total costs fixed.
+
 ### Fixed
 
 - Replaced price-independent value judgments with neutral estimated-use bands in results and both history views, including saved and imported calculations.

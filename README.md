@@ -33,7 +33,16 @@
 
 ---
 
+## Usage scenarios
+
+Every valid result compares your expected cost per use with half as much use over the same ownership period. Both scenarios keep the same net cost, including installment, maintenance, and resale adjustments. For example, $200 across 400 estimated uses is $0.50/use; half as much use is $1/use. Scenario estimates do not change your saved inputs.
+
+[Preview the scenario card](docs/screenshots/usage-scenarios.png).
+
+To check the scenario UI in all ten languages and both themes, start `npm run dev -- --host 127.0.0.1 --port 4173`, then run `node scripts/check_usage_scenarios.mjs` in another terminal. This requires Playwright Chromium (`npx playwright install chromium`).
+
 ## Technology Stack
+
 
 | Layer | Tech |
 |---|---|
