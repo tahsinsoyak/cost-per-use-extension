@@ -7,6 +7,7 @@ import Button from '../../shared/components/Button';
 import { Save, Plus, AlertCircle, Calendar, RefreshCcw, TrendingUp, DollarSign, CreditCard, Clock } from 'lucide-react';
 import { translate } from '../../shared/locales';
 import UsageScenarios from './UsageScenarios';
+import CostTarget from './CostTarget';
 
 export const ResultCard: React.FC = () => {
   const { currentResult, saveCalculation, addToComparison, comparisonList, settings } = useCalculatorStore();
@@ -108,6 +109,8 @@ export const ResultCard: React.FC = () => {
       </div>
 
       <UsageScenarios calculation={currentResult} language={settings.language} />
+
+      <CostTarget key={currentResult.id} calculation={currentResult} language={settings.language} />
 
       {/* Breakdowns Grid */}
       <div className="metric-grid grid gap-2.5">
