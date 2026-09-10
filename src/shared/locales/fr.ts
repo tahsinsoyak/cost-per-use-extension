@@ -20,6 +20,12 @@ export const fr = createLocale({
     },
   },
   results: {
+    scenarios: {
+      title: "Et si je l’utilise moins ?",
+      expected: "Utilisation prévue",
+      halfUsage: "Deux fois moins d’utilisations",
+      assumption: "Même durée de possession et mêmes coûts totaux. Seule l’utilisation estimée change.",
+    },
     title: 'Résultats', costPerUse: 'Coût par utilisation', valueRating: "Utilisation estimée", btnSave: 'Enregistrer le calcul',
     btnCompare: 'Ajouter à la comparaison', metrics: { perDay: 'Par jour', perMonth: 'Par mois', perYear: 'Par an', totalUses: 'Utilisations totales', netCost: 'Coût net' },
     ratings: {

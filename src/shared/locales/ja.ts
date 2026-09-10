@@ -37,6 +37,12 @@ export const ja = createLocale({
     },
   },
   results: {
+    scenarios: {
+      title: "使用回数が減ったら？",
+      expected: "想定どおりの使用",
+      halfUsage: "使用回数が半分",
+      assumption: "所有期間と総コストは同じです。推定使用回数のみが変わります。",
+    },
     title: '計算結果',
     costPerUse: '1回あたりのコスト',
     valueRating: "推定使用回数",

@@ -19,6 +19,12 @@ export const ar = createLocale({
     },
   },
   results: {
+    scenarios: {
+      title: "ماذا لو استخدمته أقل؟",
+      expected: "الاستخدام المتوقع",
+      halfUsage: "نصف الاستخدام",
+      assumption: "نفس فترة الامتلاك والتكلفة الإجمالية. يتغير الاستخدام المتوقع فقط.",
+    },
     title: 'نتائج الحساب', costPerUse: 'تكلفة الاستخدام', valueRating: "الاستخدام المتوقع", btnSave: 'حفظ الحساب',
     btnCompare: 'إضافة للمقارنة', metrics: { perDay: 'يوميًا', perMonth: 'شهريًا', perYear: 'سنويًا', totalUses: 'إجمالي الاستخدامات', netCost: 'التكلفة الصافية' },
     ratings: {

@@ -58,6 +58,12 @@ export const tr = {
     }
   },
   results: {
+    scenarios: {
+      title: "Daha az kullanırsam?",
+      expected: "Beklenen kullanım",
+      halfUsage: "Yarı yarıya kullanım",
+      assumption: "Sahiplik süresi ve toplam maliyet aynı kalır. Yalnızca tahmini kullanım değişir.",
+    },
     title: "Hesaplama Sonuçları",
     costPerUse: "Kullanım Başına",
     valueRating: "Tahmini kullanım",

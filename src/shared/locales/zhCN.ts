@@ -37,6 +37,12 @@ export const zhCN = createLocale({
     },
   },
   results: {
+    scenarios: {
+      title: "如果用得更少呢？",
+      expected: "预计使用量",
+      halfUsage: "使用量减半",
+      assumption: "持有时间和总成本保持不变，仅改变预计使用量。",
+    },
     title: '计算结果',
     costPerUse: '单次使用成本',
     valueRating: "预计使用次数",

@@ -35,6 +35,12 @@ export const de = createLocale({
     },
   },
   results: {
+    scenarios: {
+      title: "Was, wenn ich es weniger nutze?",
+      expected: "Erwartete Nutzung",
+      halfUsage: "Halbe Nutzung",
+      assumption: "Gleiche Besitzdauer und Gesamtkosten. Nur die geschätzte Nutzung ändert sich.",
+    },
     title: 'Berechnungsergebnis', costPerUse: 'Kosten pro Nutzung', valueRating: "Geschätzte Nutzung",
     btnSave: 'Berechnung speichern', btnCompare: 'Zum Vergleich hinzufügen',
     metrics: { perDay: 'Pro Tag', perMonth: 'Pro Monat', perYear: 'Pro Jahr', totalUses: 'Gesamtnutzungen', netCost: 'Nettokosten' },

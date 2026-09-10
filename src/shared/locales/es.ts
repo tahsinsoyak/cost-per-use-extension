@@ -37,6 +37,12 @@ export const es = createLocale({
     },
   },
   results: {
+    scenarios: {
+      title: "¿Y si lo uso menos?",
+      expected: "Uso esperado",
+      halfUsage: "La mitad de uso",
+      assumption: "Mismo período de propiedad y costes totales. Solo cambia el uso estimado.",
+    },
     title: 'Resultados del cálculo',
     costPerUse: 'Coste por uso',
     valueRating: "Uso estimado",

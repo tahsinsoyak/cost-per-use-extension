@@ -20,6 +20,12 @@ export const ptBR = createLocale({
     },
   },
   results: {
+    scenarios: {
+      title: "E se eu usar menos?",
+      expected: "Uso esperado",
+      halfUsage: "Metade do uso",
+      assumption: "Mesmo período de posse e custos totais. Apenas o uso estimado muda.",
+    },
     title: 'Resultados', costPerUse: 'Custo por uso', valueRating: "Uso estimado", btnSave: 'Salvar cálculo',
     btnCompare: 'Adicionar à comparação', metrics: { perDay: 'Por dia', perMonth: 'Por mês', perYear: 'Por ano', totalUses: 'Usos totais', netCost: 'Custo líquido' },
     ratings: {

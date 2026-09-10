@@ -58,6 +58,12 @@ export const en = {
     }
   },
   results: {
+    scenarios: {
+      title: "What if I use it less?",
+      expected: "Expected usage",
+      halfUsage: "Half as much use",
+      assumption: "Same ownership period and total costs. Only estimated usage changes.",
+    },
     title: "Calculation Results",
     costPerUse: "Cost Per Use",
     valueRating: "Estimated usage",

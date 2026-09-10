@@ -20,6 +20,12 @@ export const ru = createLocale({
     },
   },
   results: {
+    scenarios: {
+      title: "А если пользоваться реже?",
+      expected: "Ожидаемое использование",
+      halfUsage: "Вдвое меньше использований",
+      assumption: "Срок владения и общие затраты остаются прежними. Меняется только ожидаемое число использований.",
+    },
     title: 'Результаты', costPerUse: 'Стоимость использования', valueRating: "Ожидаемое использование", btnSave: 'Сохранить расчёт',
     btnCompare: 'Добавить к сравнению', metrics: { perDay: 'В день', perMonth: 'В месяц', perYear: 'В год', totalUses: 'Всего использований', netCost: 'Чистая стоимость' },
     ratings: {
