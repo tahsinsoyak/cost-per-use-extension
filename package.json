@@ -5,6 +5,8 @@
   "author": "tahsinsoyak",
   "type": "module",
   "scripts": {
+    "web:dev": "vite --config vite.website.config.ts",
+    "web:build": "tsc --noEmit && vite build --config vite.website.config.ts",
     "dev": "vite",
     "build": "tsc && vite build",
     "test": "vitest run",

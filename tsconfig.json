@@ -29,6 +29,6 @@
     /* Types */
     "types": ["chrome", "vite/client", "vitest/globals"]
   },
-  "include": ["src", "vite.config.ts", "scripts"],
+  "include": ["src", "website", "vite.config.ts", "vite.website.config.ts", "scripts"],
   "exclude": ["node_modules", "dist"]
 }
