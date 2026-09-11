@@ -41,8 +41,17 @@ Every valid result compares your expected cost per use with half as much use ove
 
 To check the scenario UI in all ten languages and both themes, start `npm run dev -- --host 127.0.0.1 --port 4173`, then run `node scripts/check_usage_scenarios.mjs` in another terminal. This requires Playwright Chromium (`npx playwright install chromium`).
 
-## Technology Stack
+## Personal cost-per-use target
 
+Enter an optional target below the usage scenarios to see the minimum whole uses needed. For example, a $200 net cost and a $0.50/use target require 400 uses. The card compares that count with your estimated usage, using the same resale, maintenance, and installment adjustments.
+
+The target is a temporary planning input for the displayed calculation. It resets when you calculate again or leave the calculator, and is not added to saved history. Targets must be greater than zero. A zero net cost reaches any positive target on the first use.
+
+[Preview the target card](docs/screenshots/cost-target-en.png).
+
+Run `node scripts/check_cost_targets.mjs` to check targets in all ten languages and both themes. It starts and stops its own local preview server and requires Playwright Chromium (`npx playwright install chromium`).
+
+## Technology Stack
 
 | Layer | Tech |
 |---|---|

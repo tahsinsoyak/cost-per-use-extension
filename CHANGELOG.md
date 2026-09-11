@@ -6,6 +6,7 @@ All notable user-facing changes to Cost Per Use are recorded here.
 
 ### Added
 
+- An optional personal cost-per-use target that shows the minimum whole uses required and compares it with estimated usage, with translations in all ten languages.
 - A localized usage scenario card comparing expected cost per use with half as much use, keeping ownership duration and total costs fixed.
 
 ### Fixed
