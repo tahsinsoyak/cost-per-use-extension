@@ -1,0 +1,153 @@
+{
+  "nav": [
+    "Calculator",
+    "How it works",
+    "The extension",
+    "Support"
+  ],
+  "install": "Add to Chrome",
+  "free": "Free. No account needed.",
+  "eyebrow": "A LITTLE PERSPECTIVE BEFORE YOU BUY",
+  "title": "The price is once.",
+  "titleAccent": "The value is every day.",
+  "intro": "A great purchase earns its place in your life. See what each use could cost before you make it yours.",
+  "local": "Calculated on your device",
+  "open": "Free & open source",
+  "cue": "PUT YOUR NEXT PURCHASE IN PERSPECTIVE",
+  "calc": "Is it worth it?",
+  "examples": [
+    "Headphones",
+    "Everyday shoes",
+    "Coffee machine"
+  ],
+  "product": "What are you considering?",
+  "price": "Purchase price",
+  "currency": "Currency",
+  "duration": "How long will you keep it?",
+  "years": "years",
+  "frequency": "Uses per week",
+  "advanced": "Resale, maintenance & installments",
+  "resale": "Estimated resale value",
+  "maintenance": "Total maintenance cost",
+  "payments": "Number of installments",
+  "totalPaid": "Total paid with installments",
+  "advancedHelp": "Maintenance is for the full ownership period. When installments are entered, their total replaces the purchase price.",
+  "result": "YOUR ESTIMATED COST",
+  "perUse": "per use",
+  "uses": "estimated uses",
+  "net": "net cost",
+  "less": "What if you use it half as much?",
+  "half": "Half the use",
+  "expected": "Expected use",
+  "scenario": "Same ownership period and net cost. Only usage changes.",
+  "target": "Make it worth it to you.",
+  "targetLabel": "Your target per use (optional)",
+  "targetResult": "{uses} total uses to reach your target.",
+  "enough": "Your estimated usage would reach this target.",
+  "more": "That’s {uses} more uses than you estimated.",
+  "targetInvalid": "Enter a positive target that gives a practical number of uses.",
+  "disclaimer": "An estimate, not a verdict. Your budget, needs and actual use matter too.",
+  "methodTag": "LESS GUESSWORK. MORE PERSPECTIVE.",
+  "methodTitle": "A small calculation.\nA clearer decision.",
+  "steps": [
+    [
+      "01",
+      "Start with the real cost.",
+      "Take the purchase price, add maintenance or financing costs, and subtract what you expect to resell it for."
+    ],
+    [
+      "02",
+      "Think about your everyday.",
+      "Estimate how often you will use it and how long you will keep it. Give yourself room to be realistic."
+    ],
+    [
+      "03",
+      "Find your own “worth it.”",
+      "Divide the net cost by expected uses. Try a lower-use scenario, or set a cost-per-use target that works for you."
+    ]
+  ],
+  "extensionTag": "A SECOND THOUGHT, ONE CLICK AWAY",
+  "extensionTitle": "Take the calculator\nshopping with you.",
+  "extensionText": "Open Cost Per Use right on a product page. Optional autofill reads the product details, so you can spend less time entering numbers and more time thinking about the purchase.",
+  "bullets": [
+    "Compare up to three products",
+    "Keep calculations in your browser",
+    "Available in ten languages"
+  ],
+  "extensionNote": "For Chrome on desktop. The calculator above works on your phone, too.",
+  "faqTitle": "A few good questions.",
+  "faqs": [
+    [
+      "What is cost per use?",
+      "It is the net cost of a purchase divided by the number of times you expect to use it. A $200 purchase used 400 times costs $0.50 per use."
+    ],
+    [
+      "Does a low cost per use mean I should buy it?",
+      "Not necessarily. It is one way to compare purchases, not a measure of everything that matters. Consider your budget, your needs, and whether you already own something that does the job."
+    ],
+    [
+      "Where do my numbers go?",
+      "This website calculates in your browser and does not save or send your calculator inputs. The extension can save calculations locally in your browser. Our site host processes normal requests needed to serve the website."
+    ],
+    [
+      "Do I need to install anything?",
+      "No. Use this calculator here, on desktop or mobile. The free Chrome extension adds product-page autofill, comparison and local history."
+    ]
+  ],
+  "footer": "Buy thoughtfully. Use happily.",
+  "source": "Source code",
+  "support": "Help & feedback",
+  "privacy": "Extension privacy policy",
+  "supportContent": {
+    "tag": "MADE WITH CARE. SHARED FOR FREE.",
+    "title": "A little support goes a long way.",
+    "body": "If Cost Per Use helps you shop more thoughtfully, you can support its continued development on Patreon.",
+    "button": "Support on Patreon",
+    "note": "Entirely optional. All features remain free.",
+    "feedback": "Have an idea?",
+    "feedbackText": "Suggest an improvement",
+    "source": "Want to contribute?",
+    "sourceText": "Explore the source code",
+    "signature": "Built by Tahsin Soyak"
+  },
+  "ui": {
+    "language": "Language",
+    "mainNavigation": "Main navigation",
+    "mobileNavigation": "Mobile navigation",
+    "menu": "Menu",
+    "close": "Close",
+    "pageTitle": "Cost Per Use — Buy with a little more perspective",
+    "live": "LIVE ESTIMATE",
+    "examplePurchases": "Example purchases",
+    "decrease": "Decrease years",
+    "increase": "Increase years",
+    "checkFields": "Check fields",
+    "checkEstimate": "Check the highlighted fields to see your estimate.",
+    "compare": "Compare usage & set a target",
+    "extensionAlt": "Cost Per Use Chrome extension with an editable headphone example",
+    "sceneLabel": "Try a product example in US dollars",
+    "try": "Try",
+    "sceneCaption": "Pick an item to try its estimate · USD examples",
+    "play": "Play decorative animation",
+    "pause": "Pause decorative animation",
+    "products": [
+      "Coffee machine",
+      "Headphones",
+      "Everyday shoes",
+      "Camera",
+      "Watch",
+      "Backpack",
+      "Laptop",
+      "Bicycle",
+      "Reading lamp"
+    ],
+    "errors": {
+      "positive": "Enter a number greater than zero.",
+      "nonnegative": "Enter zero or a positive number.",
+      "whole": "Enter a whole number of installments.",
+      "paired": "Enter both the installment count and total paid.",
+      "resaleLimit": "Resale cannot exceed the total paid plus maintenance.",
+      "usageRange": "Adjust the period or frequency to give at least one use and a practical total."
+    }
+  }
+}

@@ -1,14 +1,12 @@
+import { copy } from './copy';
+import type { SiteLanguage } from './language';
 import { ArrowUpRight, Heart, Github, MessageCircle } from 'lucide-react';
 import './support-section.css';
 
 export const PATREON='https://www.patreon.com/tahsinsoyak';
 const REPO='https://github.com/tahsinsoyak/cost-per-use-extension';
-const content={
-  en:{tag:'MADE WITH CARE. SHARED FOR FREE.',title:'A little support goes a long way.',body:'If Cost Per Use helps you shop more thoughtfully, you can support its continued development on Patreon.',button:'Support on Patreon',note:'Entirely optional. All features remain free.',feedback:'Have an idea?',feedbackText:'Suggest an improvement',source:'Want to contribute?',sourceText:'Explore the source code',signature:'Built by Tahsin Soyak'},
-  tr:{tag:'ÖZENLE YAPILDI. ÜCRETSİZ PAYLAŞILDI.',title:'Küçük bir destek, büyük bir katkı.',body:'Cost Per Use daha bilinçli alışveriş yapmanıza yardımcı oluyorsa, geliştirilmesini Patreon üzerinden destekleyebilirsiniz.',button:'Patreon ile destekle',note:'Tamamen isteğe bağlı. Tüm özellikler ücretsiz kalır.',feedback:'Bir fikriniz mi var?',feedbackText:'İyileştirme önerin',source:'Katkıda bulunmak ister misiniz?',sourceText:'Kaynak kodunu inceleyin',signature:'Tahsin Soyak tarafından geliştirildi'},
-};
-export function SupportSection({lang}:{lang:'en'|'tr'}) {
-  const t=content[lang];
+export function SupportSection({lang}:{lang:SiteLanguage}) {
+  const t=copy[lang].supportContent;
   return <section id="support-project" className="support-section container" aria-labelledby="support-title">
     <div className="support-panel">
       <div className="support-mark" aria-hidden="true"><span/><Heart size={38} strokeWidth={1.3}/><i/></div>

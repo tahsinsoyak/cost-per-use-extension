@@ -1,0 +1,39 @@
+.language select{width:156px;max-width:100%;min-height:44px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);font:inherit;font-size:14px;cursor:pointer}
+.language{min-width:0}
+.site-header .desktop-navigation{gap:18px}
+.site-header .header-actions{gap:12px}
+.hero-copy,.method-heading,.extension-grid>div,.steps article,.faq>div{min-width:0}
+h1,h2,h3,.button,.presets button,.hero-cue,.contribute-links strong{overflow-wrap:anywhere}
+.calculator .section-heading{flex-wrap:wrap;gap:10px}
+.calculator .presets{flex-wrap:wrap}
+.calculator .presets button{flex:1 1 110px;min-width:0;white-space:normal}
+.calculator .advanced-toggle{text-align:start;flex-wrap:wrap}
+.calculator .result-amount{font-size:clamp(30px,4vw,52px);overflow-wrap:anywhere}
+.calculator .result-metrics>div{min-width:0}
+.calculator .result-metrics strong{overflow-wrap:anywhere}
+.calculator .scenario-row{grid-template-columns:minmax(0,1fr) minmax(12px,.65fr) auto}
+.calculator .scenario-row strong{font-size:12px}
+.scene-price{max-width:130px;white-space:normal;text-align:center}
+.scene-price>span{display:block;font-size:9px;line-height:1.2}
+.scene-product-name{max-width:125px;white-space:normal;line-height:1.3;text-align:center}
+.scene-example{white-space:normal;line-height:1.5}
+.result-main>p{unicode-bidi:plaintext}
+:lang(ar){font-family:Tahoma,Arial,sans-serif;letter-spacing:normal}
+:lang(ja),:lang(zh-CN){line-break:strict}
+[dir=rtl] .brand{direction:ltr}
+[dir=rtl] .calculator .calculator-result{border-radius:17px 0 0 17px}
+[dir=rtl] .calculator .calculator-inputs{border-right:0}
+[dir=rtl] .field,[dir=rtl] .steps article,[dir=rtl] .faq details,[dir=rtl] .extension-grid ul{text-align:start}
+[dir=rtl] .usage-range{direction:ltr}
+[dir=rtl] .range-ticks{direction:ltr}
+[dir=rtl] input[type=number]{direction:ltr;text-align:end}
+[dir=rtl] .scene-price strong,[dir=rtl] .result-amount,[dir=rtl] .result-metrics strong,[dir=rtl] .scenario-row strong{unicode-bidi:isolate}
+@media(max-width:1180px){.mobile-menu-bottom{gap:12px}.mobile-menu-bottom .language{max-width:70%}.mobile-menu-bottom select{width:180px;font-size:16px}}
+@media(max-width:760px){
+ .calculator .result-amount{font-size:40px}
+ [dir=rtl] .calculator .calculator-result{border-radius:0 0 17px 17px}
+ .scene-price{max-width:110px}
+ .scene-product-name{max-width:105px;font-size:10px}
+ .product-scene .scene-example{bottom:-18px;padding-inline:18px}
+ .product-scene{margin-bottom:18px}
+}

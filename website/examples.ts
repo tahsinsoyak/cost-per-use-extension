@@ -1,4 +1,6 @@
 import { estimatePurchase } from './model';
+import { copy } from './copy';
+import type { SiteLanguage } from './language';
 export const productExamples = [
   {id:'coffee',en:'Coffee machine',tr:'Kahve makinesi',price:450,years:5,uses:7},
   {id:'headphones',en:'Headphones',tr:'Kulaklık',price:200,years:3,uses:5},
@@ -11,6 +13,9 @@ export const productExamples = [
   {id:'lamp',en:'Reading lamp',tr:'Okuma lambası',price:40,years:5,uses:7},
 ] as const;
 export type ProductExample = typeof productExamples[number];
+export function productName(example: ProductExample, language: SiteLanguage): string {
+  return copy[language].ui.products[productExamples.findIndex(item => item.id === example.id)];
+}
 export function exampleEstimate(example:ProductExample) {
   return estimatePurchase({...example,currency:'USD',resale:0,maintenance:0,payments:0,totalPaid:0})!;
 }

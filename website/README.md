@@ -6,7 +6,11 @@ The public-facing website source lives beside the extension and imports its calc
 - `npm run web:build`: typecheck and build the website.
 - `npm test`: includes website input validation and calculation tests.
 
-The website includes English and Turkish, editable example purchases, net-cost adjustments, usage scenarios, optional targets, extension links, and an FAQ. On first visit, it selects the first supported browser language, falling back to English. A manual EN/TR choice is remembered in local storage and takes priority on future visits. If storage is blocked, language switching still works for the current visit. Calculator inputs stay in memory and reset when the page reloads. Site hosting may process ordinary web requests; calculator inputs are not transmitted by this application.
+The website supports English, Arabic, Simplified Chinese, French, German, Japanese, Brazilian Portuguese, Russian, Spanish, and Turkish. This includes calculator validation, product examples, navigation, FAQ, and support content. Arabic uses a right-to-left layout; amounts and numbers follow the selected locale. Currency remains a separate choice: switching language does not convert a purchase or change its currency.
+
+On first visit, the website selects the first supported browser language, falling back to English. Regional Portuguese preferences use Brazilian Portuguese. Traditional Chinese preferences are skipped because only Simplified Chinese is provided. A manual selection is remembered in local storage and takes priority on future visits. If storage is blocked, language switching still works for the current visit. Calculator inputs stay in memory and reset when the page reloads. Site hosting may process ordinary web requests; calculator inputs are not transmitted by this application.
+
+Translations live in `website/locales/`. The shared type and translation tests check completeness and interpolation tokens. Built-in product names follow language changes; names entered by visitors are preserved. The extension preview image remains an English screenshot, with translated alternative text. The translations have not yet had native-speaker editorial review.
 
 An optional `set_purchase_estimate` WebMCP tool uses the same calculation and state as the UI. It is feature-detected and does not affect unsupported browsers. No supported WebMCP validation context was available during initial authoring, so this experimental integration has not been runtime-verified.
 

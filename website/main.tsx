@@ -11,3 +11,4 @@ createRoot(document.getElementById('root')!).render(<React.StrictMode><Website /
 
 import './mobile-menu.css';
 import './mobile-alignment.css';
+import './localization.css';

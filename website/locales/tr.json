@@ -1,0 +1,153 @@
+{
+  "nav": [
+    "Hesaplayıcı",
+    "Nasıl çalışır?",
+    "Eklenti",
+    "Destek"
+  ],
+  "install": "Chrome’a ekle",
+  "free": "Ücretsiz. Hesap gerekmez.",
+  "eyebrow": "SATIN ALMADAN ÖNCE KÜÇÜK BİR BAKIŞ AÇISI",
+  "title": "Fiyatı bir kez.",
+  "titleAccent": "Değeri her gün.",
+  "intro": "İyi bir alışveriş hayatınızda yerini hak eder. Satın almadan önce her kullanımın ne kadara mal olabileceğini görün.",
+  "local": "Cihazınızda hesaplanır",
+  "open": "Ücretsiz ve açık kaynak",
+  "cue": "BİR SONRAKİ ALIŞVERİŞİNİZE YENİ BİR GÖZLE BAKIN",
+  "calc": "Değer mi?",
+  "examples": [
+    "Kulaklık",
+    "Günlük ayakkabı",
+    "Kahve makinesi"
+  ],
+  "product": "Ne almayı düşünüyorsunuz?",
+  "price": "Satın alma fiyatı",
+  "currency": "Para birimi",
+  "duration": "Ne kadar süre kullanacaksınız?",
+  "years": "yıl",
+  "frequency": "Haftalık kullanım",
+  "advanced": "Yeniden satış, bakım ve taksitler",
+  "resale": "Tahmini yeniden satış değeri",
+  "maintenance": "Toplam bakım maliyeti",
+  "payments": "Taksit sayısı",
+  "totalPaid": "Taksitlerle ödenen toplam",
+  "advancedHelp": "Bakım, tüm sahiplik süresini kapsar. Taksit girildiğinde toplam ödeme, satın alma fiyatının yerini alır.",
+  "result": "TAHMİNİ MALİYETİNİZ",
+  "perUse": "kullanım başına",
+  "uses": "tahmini kullanım",
+  "net": "net maliyet",
+  "less": "Yarı yarıya kullanırsanız?",
+  "half": "Yarı yarıya kullanım",
+  "expected": "Beklenen kullanım",
+  "scenario": "Sahiplik süresi ve net maliyet aynı. Yalnızca kullanım değişir.",
+  "target": "Sizin için değerli olsun.",
+  "targetLabel": "Kullanım başına hedefiniz (isteğe bağlı)",
+  "targetResult": "Hedefinize ulaşmak için toplam {uses} kullanım.",
+  "enough": "Tahmini kullanımınız bu hedefe ulaşmaya yeterli.",
+  "more": "Bu, tahmininizden {uses} kullanım daha fazla.",
+  "targetInvalid": "Hesaplanabilir bir kullanım sayısı veren pozitif bir hedef girin.",
+  "disclaimer": "Bu bir tahmin, karar değil. Bütçeniz, ihtiyaçlarınız ve gerçek kullanımınız da önemli.",
+  "methodTag": "DAHA AZ TAHMİN. DAHA NET BİR BAKIŞ.",
+  "methodTitle": "Küçük bir hesap.\nDaha net bir karar.",
+  "steps": [
+    [
+      "01",
+      "Gerçek maliyetle başlayın.",
+      "Satın alma fiyatına bakım veya finansman maliyetlerini ekleyin; tahmini yeniden satış değerini çıkarın."
+    ],
+    [
+      "02",
+      "Günlük hayatınızı düşünün.",
+      "Ne sıklıkla ve ne kadar süre kullanacağınızı tahmin edin. Gerçekçi olmaya özen gösterin."
+    ],
+    [
+      "03",
+      "Sizin için “değer” olanı bulun.",
+      "Net maliyeti tahmini kullanıma bölün. Daha az kullanım senaryosunu deneyin veya kendinize bir hedef belirleyin."
+    ]
+  ],
+  "extensionTag": "BİR TIKLA YENİDEN DÜŞÜNÜN",
+  "extensionTitle": "Hesaplayıcınızı\nalışverişe götürün.",
+  "extensionText": "Cost Per Use’u ürün sayfasında açın. İsteğe bağlı otomatik doldurma ürün bilgilerini okur; rakam girmek yerine alışverişinizi değerlendirmeye zaman ayırın.",
+  "bullets": [
+    "Üç ürüne kadar karşılaştırın",
+    "Hesaplamaları tarayıcınızda saklayın",
+    "On dilde kullanın"
+  ],
+  "extensionNote": "Masaüstü Chrome için. Yukarıdaki hesaplayıcı telefonunuzda da çalışır.",
+  "faqTitle": "Birkaç iyi soru.",
+  "faqs": [
+    [
+      "Kullanım başına maliyet nedir?",
+      "Bir ürünün net maliyetinin tahmini kullanım sayısına bölünmesidir. 200 ₺ tutarında bir ürün 400 kez kullanıldığında kullanım başına maliyeti 0,50 ₺ olur."
+    ],
+    [
+      "Düşük maliyet ürünü almam gerektiğini mi gösterir?",
+      "Her zaman değil. Bu, alışverişleri karşılaştırmanın bir yoludur. Bütçenizi, ihtiyaçlarınızı ve aynı işi yapan bir ürüne zaten sahip olup olmadığınızı düşünün."
+    ],
+    [
+      "Girdiğim bilgiler nereye gider?",
+      "Bu site hesaplamaları tarayıcınızda yapar; hesaplama girdilerinizi kaydetmez veya göndermez. Eklenti hesaplamaları tarayıcınızda yerel olarak saklayabilir. Site sağlayıcımız, siteyi sunmak için gereken normal istekleri işler."
+    ],
+    [
+      "Bir şey yüklemem gerekiyor mu?",
+      "Hayır. Bu hesaplayıcıyı bilgisayarınızda veya telefonunuzda kullanabilirsiniz. Ücretsiz Chrome eklentisi ürün bilgilerini otomatik doldurma, karşılaştırma ve yerel geçmiş özelliklerini ekler."
+    ]
+  ],
+  "footer": "Düşünerek alın. Keyifle kullanın.",
+  "source": "Kaynak kodu",
+  "support": "Yardım ve geri bildirim",
+  "privacy": "Eklenti gizlilik politikası",
+  "supportContent": {
+    "tag": "ÖZENLE YAPILDI. ÜCRETSİZ PAYLAŞILDI.",
+    "title": "Küçük bir destek, büyük bir katkı.",
+    "body": "Cost Per Use daha bilinçli alışveriş yapmanıza yardımcı oluyorsa, geliştirilmesini Patreon üzerinden destekleyebilirsiniz.",
+    "button": "Patreon ile destekle",
+    "note": "Tamamen isteğe bağlı. Tüm özellikler ücretsiz kalır.",
+    "feedback": "Bir fikriniz mi var?",
+    "feedbackText": "İyileştirme önerin",
+    "source": "Katkıda bulunmak ister misiniz?",
+    "sourceText": "Kaynak kodunu inceleyin",
+    "signature": "Tahsin Soyak tarafından geliştirildi"
+  },
+  "ui": {
+    "language": "Dil",
+    "mainNavigation": "Ana gezinme",
+    "mobileNavigation": "Mobil gezinme",
+    "menu": "Menü",
+    "close": "Kapat",
+    "pageTitle": "Cost Per Use — Alışverişe yeni bir gözle bakın",
+    "live": "ANLIK TAHMİN",
+    "examplePurchases": "Örnek alışverişler",
+    "decrease": "Yıl azalt",
+    "increase": "Yıl artır",
+    "checkFields": "Alanları kontrol edin",
+    "checkEstimate": "Tahmini görmek için işaretli alanları kontrol edin.",
+    "compare": "Kullanımı karşılaştır ve hedef belirle",
+    "extensionAlt": "Düzenlenebilir kulaklık örneğiyle Cost Per Use Chrome eklentisi",
+    "sceneLabel": "ABD doları ile bir ürün örneği deneyin",
+    "try": "Dene:",
+    "sceneCaption": "Tahmini denemek için bir ürün seçin · USD örnekleri",
+    "play": "Dekoratif animasyonu oynat",
+    "pause": "Dekoratif animasyonu duraklat",
+    "products": [
+      "Kahve makinesi",
+      "Kulaklık",
+      "Günlük ayakkabı",
+      "Kamera",
+      "Saat",
+      "Sırt çantası",
+      "Dizüstü bilgisayar",
+      "Bisiklet",
+      "Okuma lambası"
+    ],
+    "errors": {
+      "positive": "Sıfırdan büyük bir sayı girin.",
+      "nonnegative": "Sıfır veya pozitif bir sayı girin.",
+      "whole": "Taksit sayısını tam sayı olarak girin.",
+      "paired": "Hem taksit sayısını hem de toplam ödemeyi girin.",
+      "resaleLimit": "Satış değeri, toplam ödeme ve bakım maliyetini aşamaz.",
+      "usageRange": "En az bir kullanım ve makul bir toplam için süreyi veya sıklığı ayarlayın."
+    }
+  }
+}

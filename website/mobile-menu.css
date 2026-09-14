@@ -1,5 +1,5 @@
 .responsive-header .mobile-menu-toggle,.responsive-header .mobile-menu-panel{display:none}
-@media(max-width:1000px){
+@media(max-width:1180px){
  .site-header.responsive-header{position:sticky;top:0;z-index:60;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;height:auto;min-height:76px;padding:12px 0;gap:0 12px;background:#f7f6f2;isolation:isolate}
  .responsive-header:before{content:'';position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#f7f6f2;z-index:-1;border-bottom:1px solid #dce3d9}
  .site-header.responsive-header .desktop-navigation,.site-header.responsive-header>.header-actions{display:none}
