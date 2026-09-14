@@ -12,6 +12,7 @@ import { SmoothAmount } from './SmoothAmount';
 import type { ProductExample } from './examples';
 import { SupportSection, PATREON } from './SupportSection';
 import { SiteHeader } from './SiteHeader';
+import { initialLanguage, rememberLanguage, type SiteLanguage } from './language';
 
 const STORE = 'https://chromewebstore.google.com/detail/cost-per-use/kchaaggejdclkmjgfjbdjimmmjibllmd';
 const REPO = 'https://github.com/tahsinsoyak/cost-per-use-extension';
@@ -19,7 +20,11 @@ const presets = [{price:'200',years:'3',uses:'5'}, {price:'120',years:'2',uses:'
 const icons = [Headphones, Footprints, Coffee];
 export default function Website() {
   useSiteMotion();
-  const [lang,setLang] = useState<'en'|'tr'>('en');
+  const [lang,setLang] = useState<SiteLanguage>(initialLanguage);
+  const changeLanguage = (language: SiteLanguage) => {
+    setLang(language);
+    rememberLanguage(language);
+  };
   const t = copy[lang];
   const [preset,setPreset] = useState(0);
   const [name,setName] = useState<string|null>(null);
@@ -91,7 +96,7 @@ export default function Website() {
   const inputField=(key:keyof typeof inputs,label:string) => <label className="field"><span>{label}</span><input aria-label={label} {...errorProps(key)} type="number" min="0" step={key==='payments'?'1':'any'} value={inputs[key]} onChange={e=>update(key,e.target.value)} placeholder="0" />{fieldError(key)}</label>;
   return <>
     <a className="skip-link" href="#calculator">{t.nav[0]}</a>
-    <SiteHeader lang={lang} onLanguage={setLang} store={STORE}/>
+    <SiteHeader lang={lang} onLanguage={changeLanguage} store={STORE}/>
     <main>
       <section className="hero container">
         <div className="hero-copy"><p className="eyebrow"><span/>{t.eyebrow}</p><h1>{t.title}<br/><em>{t.titleAccent}</em></h1><p className="intro">{t.intro}</p><div className="trust"><span><ShieldCheck size={17}/>{t.local}</span><span><Check size={17}/>{t.open}</span></div><a href="#calculator" className="hero-cue">{t.cue}<ArrowRight size={19}/></a></div>

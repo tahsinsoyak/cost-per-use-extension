@@ -6,7 +6,7 @@ The public-facing website source lives beside the extension and imports its calc
 - `npm run web:build`: typecheck and build the website.
 - `npm test`: includes website input validation and calculation tests.
 
-The initial design includes English and Turkish, editable example purchases, net-cost adjustments, usage scenarios, optional targets, extension links, and an FAQ. Inputs stay in memory and reset when the page reloads. Site hosting may process ordinary web requests; calculator inputs are not transmitted by this application.
+The website includes English and Turkish, editable example purchases, net-cost adjustments, usage scenarios, optional targets, extension links, and an FAQ. On first visit, it selects the first supported browser language, falling back to English. A manual EN/TR choice is remembered in local storage and takes priority on future visits. If storage is blocked, language switching still works for the current visit. Calculator inputs stay in memory and reset when the page reloads. Site hosting may process ordinary web requests; calculator inputs are not transmitted by this application.
 
 An optional `set_purchase_estimate` WebMCP tool uses the same calculation and state as the UI. It is feature-detected and does not affect unsupported browsers. No supported WebMCP validation context was available during initial authoring, so this experimental integration has not been runtime-verified.
 
