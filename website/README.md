@@ -16,12 +16,12 @@ The website can be hosted publicly from this repository at
 `https://tahsinsoyak.github.io/cost-per-use-extension/`.
 No separate repository or application server is needed.
 
-1. Review locally with `npm run web:dev` and commit/push the reviewed website source and `.github/workflows/website-pages.yml` to `main`.
-2. In the repository's **Settings > Pages > Build and deployment**, select **GitHub Actions** as the source.
-3. Under **Actions > Publish website to GitHub Pages**, select **Run workflow** on `main`.
+1. In the repository's **Settings > Pages > Build and deployment**, select **GitHub Actions** as the source (one-time setup).
+2. Review locally with `npm run web:dev` and commit/push the reviewed changes to `main`.
+3. The **Publish website to GitHub Pages** workflow starts automatically. You can also select **Run workflow** on `main` under Actions to republish manually.
 4. After the deployment succeeds, open the URL shown by the `github-pages` environment.
 
-Publishing is manual: pushing changes alone does not update the public website. Repeat step 3 when a reviewed update is ready. The workflow publishes only the generated `build/` directory; the extension has its own build and release process.
+Every push to `main` builds and publishes the website automatically. Pushes to other branches do not publish. A failed build prevents deployment. The workflow publishes only the generated `build/` directory; the extension has its own build and release process.
 
 The workflow gets the site's base path from GitHub Pages and passes it to Vite, so scripts, fonts, and images work under the repository URL. It also supports a custom domain configured in Pages settings. To validate the repository path locally, run:
 

@@ -1,7 +1,9 @@
 name: Publish website to GitHub Pages
 
-# Publish deliberately after reviewing the website locally.
+# Push reviewed changes to main to publish; manual runs remain available.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
