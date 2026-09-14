@@ -1,0 +1,89 @@
+.hero.container{grid-template-columns:1.2fr 1fr;gap:45px}
+.product-scene{position:relative;min-width:0;height:460px;isolation:isolate}
+.scene-art{position:absolute;inset:0;overflow:hidden}
+.scene-halo{position:absolute;width:250px;height:250px;border-radius:50%;filter:blur(24px);opacity:.65}
+.halo-mint{background:#d5f3df;left:50px;top:65px}
+.halo-blue{background:#dbe8ff;width:180px;height:180px;right:12px;top:10px}
+.scene-orbit{position:absolute;width:290px;height:290px;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-25deg);border:1px solid #b9cbbd70;border-radius:50%}
+.scene-card{position:absolute;display:grid;place-items:center;border:1px solid #ffffff;border-radius:26px;box-shadow:0 18px 38px #263e4d12,inset 0 0 0 1px #ffffff70}
+.card-headphones{width:176px;height:196px;background:linear-gradient(145deg,#fffefa,#f0f2e8);color:#243c42;left:50%;top:50%;margin:-98px 0 0 -88px;transform:rotate(-9deg);z-index:2}
+.card-headphones svg{position:relative;z-index:1}
+.scene-shadow{position:absolute;width:75px;height:8px;border-radius:50%;background:#1d383e17;filter:blur(5px);bottom:27px}
+.card-coffee{width:106px;height:114px;background:#e2ede2;color:#45674c;left:5%;top:56px;transform:rotate(-12deg);z-index:3}
+.card-shoes{width:110px;height:106px;background:#dfe8f7;color:#526b94;right:10%;bottom:45px;transform:rotate(11deg);z-index:3}
+.card-camera{width:108px;height:94px;background:#eee6dd;color:#856b54;right:8%;top:40px;transform:rotate(10deg);z-index:3}
+.card-watch{width:78px;height:91px;background:#ebe4f3;color:#79638d;right:2%;top:200px;transform:rotate(12deg);z-index:3}
+.card-backpack{width:103px;height:106px;background:#f3e8cc;color:#91784a;left:6%;bottom:54px;transform:rotate(-10deg);z-index:3}
+.scene-price{position:absolute;top:-17px;left:50%;transform:translateX(-50%);display:flex;align-items:baseline;gap:4px;white-space:nowrap;border:1px solid #ffffff;background:#fffffff5;border-radius:30px;padding:6px 9px;box-shadow:0 5px 14px #243c4210;color:#344a46;z-index:4}
+.scene-price strong{font-size:13px;font-weight:750;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.scene-price>span{font-size:9px;color:#677c76}
+.card-headphones .scene-price{padding:8px 13px;background:#244d40;border-color:#396453;color:#f0fff4}
+.card-headphones .scene-price strong{font-size:17px}.card-headphones .scene-price>span{color:#c4e3d1;font-size:10px}
+.scene-example{position:absolute;bottom:1px;left:0;right:38px;text-align:center;font-size:10px;letter-spacing:.02em;color:#718078}
+.coffee-steam{display:flex;gap:5px;position:absolute;top:15px;left:43px}
+.coffee-steam i{display:block;height:12px;width:1px;background:#45674c50;border-radius:50%}
+.scene-leaf{position:absolute;left:12%;bottom:35px;color:#719b79;transform:rotate(-25deg)}
+.scene-spark{position:absolute;width:9px;height:9px;background:#749b83;border-radius:2px;transform:rotate(45deg)}
+.spark-one{right:16%;top:40px}.spark-two{left:30%;bottom:16px;width:5px;height:5px;background:#8da5c6}
+.scene-pause{position:absolute;right:6px;bottom:0;display:grid;place-items:center;width:30px;height:30px;border:1px solid #d8e0da;border-radius:50%;background:#fffaf1;color:#567065;cursor:pointer;z-index:4}
+@keyframes scene-drift{0%,100%{translate:0 0}50%{translate:0 -13px}}
+@keyframes scene-breathe{0%,100%{scale:1;translate:0 0}50%{scale:1.12;translate:10px 6px}}
+@keyframes scene-steam{0%{translate:0 4px;opacity:0}35%{opacity:.7}100%{translate:3px -10px;opacity:0}}
+@keyframes scene-cue{0%,100%{translate:0 0}50%{translate:4px 0}}
+@media(prefers-reduced-motion:no-preference){
+ .scene-card,.scene-leaf,.scene-spark{animation:scene-drift 7s ease-in-out infinite}
+ .card-coffee{animation-duration:6s;animation-delay:-2s}
+ .card-shoes{animation-duration:8s;animation-delay:-4s}
+ .card-camera{animation-duration:7.5s;animation-delay:-3s}
+ .card-watch{animation-duration:6.5s;animation-delay:-5s}
+ .card-backpack{animation-duration:8.5s;animation-delay:-1s}
+ .scene-leaf{animation-duration:9s;animation-delay:-3s}
+ .scene-spark{animation-duration:5s;animation-delay:-1s}
+ .scene-halo{animation:scene-breathe 12s ease-in-out infinite}
+ .halo-blue{animation-delay:-6s}
+ .coffee-steam i{animation:scene-steam 3s ease-out infinite}
+ .coffee-steam i:nth-child(2){animation-delay:-1s}.coffee-steam i:nth-child(3){animation-delay:-2s}
+ .hero-cue svg{animation:scene-cue 3s ease-in-out 3}
+}
+.product-scene[data-paused=true] *{animation-play-state:paused!important}
+.card-laptop{background:#e0e9eb;color:#4d727c;transform:rotate(5deg);z-index:3}
+.card-bike{background:#e5eddc;color:#6a8054;transform:rotate(-5deg);z-index:3}
+.card-lamp{background:#f2dfd9;color:#9a6b5e;transform:rotate(-9deg);z-index:3}
+@media(prefers-reduced-motion:no-preference){
+ .card-laptop{animation-duration:9s;animation-delay:-4s}
+ .card-bike{animation-duration:7.8s;animation-delay:-2s}
+ .card-lamp{animation-duration:6.8s;animation-delay:-5s}
+}
+@media(prefers-reduced-motion:reduce){.scene-pause{display:none}}
+@media(max-width:1050px) and (min-width:761px){.hero.container{grid-template-columns:1fr 1fr;gap:24px}.card-headphones{width:140px;height:166px;margin:-83px 0 0 -70px}.card-headphones svg{width:85px}.card-watch{width:66px;right:0}}
+@media(max-width:760px){.hero.container{display:block}.product-scene{height:430px;max-width:420px;margin:24px auto 0}.card-headphones{width:140px;height:158px;margin:-79px 0 0 -70px}.card-headphones svg{width:85px}.card-coffee{width:86px;height:92px;left:5%}.card-shoes{width:90px;height:94px;right:8%;bottom:42px}.card-camera{width:91px;height:83px;right:6%}.card-watch{width:64px;height:82px;top:183px;right:1%}.card-backpack{width:88px;height:94px;bottom:50px}.scene-orbit{width:240px;height:240px}.scene-halo{width:210px;height:210px;left:35px;top:75px}.halo-blue{left:auto;right:10px;width:150px;height:150px}.coffee-steam{left:33px;top:8px}.scene-price{padding:5px 7px;gap:3px}.scene-price strong{font-size:12px}.scene-price>span{font-size:8px}.scene-example{font-size:9px}}
+/* Nine products arranged around the featured headphones, with room for badges. */
+.product-scene{height:490px}
+.product-scene .scene-card{width:94px;height:100px;margin:-50px 0 0 -47px;right:auto;bottom:auto}
+.product-scene .card-coffee{left:17%;top:20%}
+.product-scene .card-laptop{left:50%;top:16%}
+.product-scene .card-camera{left:83%;top:21%}
+.product-scene .card-lamp{left:16%;top:50%}
+.product-scene .card-headphones{left:50%;top:49%;width:138px;height:156px;margin:-78px 0 0 -69px}
+.product-scene .card-headphones svg{width:88px}
+.product-scene .card-watch{left:84%;top:51%}
+.product-scene .card-backpack{left:17%;top:80%}
+.product-scene .card-bike{left:50%;top:83%}
+.product-scene .card-shoes{left:83%;top:81%}
+.product-scene .coffee-steam{left:37px;top:9px}
+.product-scene .scene-leaf{left:34%;bottom:24%}
+.product-scene .spark-one{right:34%;top:32%}
+@media(max-width:1050px){
+ .product-scene .scene-card{width:78px;height:88px;margin:-44px 0 0 -39px;border-radius:22px}
+ .product-scene .card-headphones{width:116px;height:138px;margin:-69px 0 0 -58px}
+ .product-scene .card-headphones svg{width:77px}
+ .product-scene .coffee-steam{left:29px;top:7px}
+}
+@media(max-width:760px){.product-scene{height:450px}}
+.scene-card{cursor:pointer;padding:0;font:inherit;transition:box-shadow 180ms,border-color 180ms}
+.scene-product-name{position:absolute;bottom:7px;left:3px;right:3px;text-align:center;font-size:9px;line-height:1.2;opacity:0;transition:opacity 180ms}
+.scene-card:hover,.scene-card:focus-visible{animation-play-state:paused;border-color:#709a82;box-shadow:0 14px 32px #263e4d22}
+.scene-card:hover .scene-product-name,.scene-card:focus-visible .scene-product-name{opacity:1}
+.scene-art:focus-within .scene-card{animation-play-state:paused}
+.scene-card:focus-visible{outline:3px solid #315eff;outline-offset:4px}
+@media(hover:none){.scene-product-name{opacity:1;font-size:8px}}

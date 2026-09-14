@@ -1,0 +1,71 @@
+/* A short entrance, then a still working surface. */
+@keyframes settle-in {
+  from { opacity: 0; translate: 0 14px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes reveal-copy {
+  from { opacity: .3; translate: 0 -5px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .site-header { animation: settle-in 500ms cubic-bezier(.22,1,.36,1) both; }
+  .hero-copy > * { animation: settle-in 650ms cubic-bezier(.22,1,.36,1) both; }
+  .hero-copy h1 { animation-delay: 70ms; }
+  .hero-copy .intro { animation-delay: 130ms; }
+  .hero-copy .trust { animation-delay: 190ms; }
+  .hero-copy .hero-cue { animation-delay: 240ms; }
+  .hero-equation { animation: settle-in 800ms 150ms cubic-bezier(.22,1,.36,1) both; }
+  .calculator { animation: settle-in 650ms 180ms cubic-bezier(.22,1,.36,1) both; }
+  .faq details[open] p { animation: reveal-copy 220ms ease-out; }
+}
+
+.button, .presets button, .stepper button, .language button {
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease,
+    box-shadow 180ms ease, translate 180ms ease, transform 180ms ease;
+}
+.button svg, .hero-cue svg, .faq summary svg {
+  transition: transform 220ms cubic-bezier(.22,1,.36,1);
+}
+.site-header nav a, .footer-links a { position: relative; }
+.site-header nav a::after, .footer-links a::after {
+  content: ''; position: absolute; inset: auto 0 -5px; height: 1px;
+  background: currentColor; transform: scaleX(0); transform-origin: left;
+  transition: transform 200ms ease;
+}
+.site-header nav a:focus-visible::after, .footer-links a:focus-visible::after { transform: scaleX(1); }
+.button:active, .presets button:active, .stepper button:active { translate: 0 1px; }
+.extension-preview { transition: transform 400ms cubic-bezier(.22,1,.36,1), box-shadow 400ms ease; }
+.steps article { transition: border-color 220ms ease; }
+.field input, .field select, .target input, .usage-label input {
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+.field:focus-within input, .field:focus-within select, .target input:focus-visible {
+  box-shadow: 0 0 0 3px #1f5eff12;
+}
+.result-amount { font-variant-numeric: tabular-nums; }
+.advanced-panel { display: grid; grid-template-rows: 0fr; visibility: hidden;
+  transition: grid-template-rows 280ms cubic-bezier(.22,1,.36,1), visibility 0s 280ms; }
+.advanced-panel[data-open=true] { grid-template-rows: 1fr; visibility: visible; transition-delay: 0s; }
+.advanced-clip { min-height: 0; overflow: hidden; }
+fieldset.advanced-fields { margin: 0; border: 0; padding: 20px 0 4px; min-width: 0; }
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover { box-shadow: 0 6px 18px #1f5eff25; }
+  .button:hover svg { transform: translate(2px,-2px); }
+  .hero-cue:hover svg { transform: translateX(5px); }
+  .presets button:hover { translate: 0 -2px; border-color: #9cb3dd; box-shadow: 0 4px 12px #13223509; }
+  .stepper button:not(:disabled):hover { background: #eaf0ff; }
+  .language button:hover { color: var(--blue); }
+  .site-header nav a:hover::after, .footer-links a:hover::after { transform: scaleX(1); }
+  .steps article:hover { border-color: var(--blue); }
+  .extension-preview:hover { transform: rotate(0); box-shadow: 0 24px 55px #13223520; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .advanced-panel { transition: none; }
+  .button:hover, .button:active, .presets button:hover, .presets button:active,
+  .stepper button:active, .button:hover svg, .hero-cue:hover svg { translate: none; transform: none; }
+  .extension-preview:hover { transform: rotate(2deg); }
+}
+@media (max-width:760px) and (prefers-reduced-motion:reduce) {
+  .extension-preview:hover { transform: none; }
+}

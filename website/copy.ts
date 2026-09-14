@@ -1,6 +1,6 @@
 export const copy = {
   en: {
-    nav: ['Calculator', 'How it works', 'The extension'], install: 'Add to Chrome', free: 'Free. No account needed.',
+    nav: ['Calculator', 'How it works', 'The extension', 'Support'], install: 'Add to Chrome', free: 'Free. No account needed.',
     eyebrow: 'A LITTLE PERSPECTIVE BEFORE YOU BUY', title: 'The price is once.', titleAccent: 'The value is every day.',
     intro: 'A great purchase earns its place in your life. See what each use could cost before you make it yours.',
     local: 'Calculated on your device', open: 'Free & open source', cue: 'PUT YOUR NEXT PURCHASE IN PERSPECTIVE',
@@ -31,7 +31,7 @@ export const copy = {
     footer: 'Buy thoughtfully. Use happily.', source: 'Source code', support: 'Help & feedback', privacy: 'Extension privacy policy',
   },
   tr: {
-    nav: ['Hesaplayıcı', 'Nasıl çalışır?', 'Eklenti'], install: 'Chrome’a ekle', free: 'Ücretsiz. Hesap gerekmez.',
+    nav: ['Hesaplayıcı', 'Nasıl çalışır?', 'Eklenti', 'Destek'], install: 'Chrome’a ekle', free: 'Ücretsiz. Hesap gerekmez.',
     eyebrow: 'SATIN ALMADAN ÖNCE KÜÇÜK BİR BAKIŞ AÇISI', title: 'Fiyatı bir kez.', titleAccent: 'Değeri her gün.',
     intro: 'İyi bir alışveriş hayatınızda yerini hak eder. Satın almadan önce her kullanımın ne kadara mal olabileceğini görün.',
     local: 'Cihazınızda hesaplanır', open: 'Ücretsiz ve açık kaynak', cue: 'BİR SONRAKİ ALIŞVERİŞİNİZE YENİ BİR GÖZLE BAKIN',

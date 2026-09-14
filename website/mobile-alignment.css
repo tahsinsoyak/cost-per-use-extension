@@ -1,0 +1,29 @@
+@media(max-width:760px){
+ .hero-copy{text-align:center}
+ .hero-copy .eyebrow,.hero-copy .trust,.hero-copy .hero-cue{justify-content:center}
+ .hero-copy .intro{margin-inline:auto;max-width:36ch}
+ .hero-copy h1{text-wrap:balance}
+ .hero-copy .hero-cue{margin-inline:auto;max-width:32ch;gap:10px}
+ .hero-copy .trust{gap:10px 16px}
+ .product-scene .scene-example{left:0;right:0;padding:0 8px;bottom:-6px}
+ .product-scene .scene-pause{bottom:18px;right:0}
+ .method-heading,.faq>h2{text-align:center}
+ .method-heading .eyebrow{margin-inline:auto}
+ .method-heading h2{text-wrap:balance}
+ .extension-grid>div:first-child{text-align:center}
+ .extension-grid h2,.extension-grid p{margin-inline:auto;max-width:36ch}
+ .extension-grid ul{width:fit-content;max-width:100%;margin-inline:auto;text-align:left}
+ .extension-grid .extension-note{margin-inline:auto}
+ .extension-preview{width:100%;max-width:420px;justify-self:center}
+ .support-panel{text-align:center;justify-items:center}
+ .support-copy,.support-action{width:100%;min-width:0}
+ .support-copy h2{text-wrap:balance}
+ .support-copy>p:not(.eyebrow){margin-inline:auto}
+ .support-panel .support-action{text-align:center}
+ .support-action .patreon-button{max-width:100%}
+ .support-action p{margin-inline:auto}
+ footer.container{align-items:center;text-align:center}
+ footer.container>div{max-width:100%}
+ footer.container .brand{justify-content:center}
+ footer.container .footer-links{justify-content:center;gap:12px 18px}
+}

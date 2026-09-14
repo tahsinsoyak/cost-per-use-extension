@@ -8,3 +8,26 @@
 .hero-cue{max-width:540px;line-height:1.6}
 .presets button{flex-wrap:wrap}
 @media(max-width:760px){.duration-row,.presets button{font-size:14px}.hero-cue{font-size:12px}.trust{font-size:12px}.live-dot{white-space:normal}.footer-links a{font-size:14px}.eyebrow{font-size:12px}}
+/* Inline feedback and an in-flow mobile estimate, scoped to the calculator. */
+@media(max-width:760px){
+ .site-header.container{height:auto;min-height:94px;display:flex;flex-wrap:wrap;padding-top:15px;padding-bottom:12px;row-gap:15px}
+ .site-header nav{display:flex;order:3;width:100%;justify-content:space-between;gap:12px;border-top:1px solid #e1e7de;padding-top:12px}
+ .site-header nav a{font-size:12px;padding:6px 0}
+}
+.field-error{display:block;color:#a62e30;font-size:13px;line-height:1.5;margin:6px 0 10px}
+input[aria-invalid="true"]{border-color:#a62e30;background:#fff6f5}
+.target input[aria-invalid="true"]{color:#172b36}
+.validation-badge{font-size:11px;color:#a62e30;margin-left:auto}
+.mobile-estimate{display:none}
+#estimate-details{scroll-margin-top:90px}
+@media(max-width:760px){
+  .calculator{overflow:visible;position:relative}
+  .mobile-estimate{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:10;background:#18323d;color:#fff;padding:14px 20px;border-radius:12px 12px 0 0;box-shadow:0 4px 14px #122a351a}
+  .mobile-estimate span{display:block;font-size:10px;letter-spacing:.08em}
+  .mobile-estimate strong{display:block;font-size:24px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+  .mobile-estimate small{font-size:12px;font-weight:400}
+  .mobile-estimate a{display:flex;align-items:center;gap:6px;font-size:13px;flex-shrink:0;color:#fff}
+  .calculator-result{border-radius:0 0 12px 12px}
+  .calculator input,.calculator button,.calculator select{scroll-margin-top:110px;scroll-margin-bottom:24px}
+  .advanced-toggle{flex-wrap:wrap}
+}

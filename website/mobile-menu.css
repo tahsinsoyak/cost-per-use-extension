@@ -1,0 +1,20 @@
+.responsive-header .mobile-menu-toggle,.responsive-header .mobile-menu-panel{display:none}
+@media(max-width:1000px){
+ .site-header.responsive-header{position:sticky;top:0;z-index:60;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;height:auto;min-height:76px;padding:12px 0;gap:0 12px;background:#f7f6f2;isolation:isolate}
+ .responsive-header:before{content:'';position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#f7f6f2;z-index:-1;border-bottom:1px solid #dce3d9}
+ .site-header.responsive-header .desktop-navigation,.site-header.responsive-header>.header-actions{display:none}
+ .responsive-header .brand{font-size:18px}
+ .responsive-header .mobile-menu-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 13px;border:1px solid #d2dfd4;border-radius:10px;background:#edf2e9;color:#2d4c38;font-size:13px;font-weight:650}
+ .responsive-header .mobile-menu-toggle[aria-expanded=true]{background:#234435;border-color:#234435;color:#fff}
+ .responsive-header .mobile-menu-panel:not([hidden]){display:block;width:100%;padding:12px 0 4px;max-height:calc(100dvh - 88px);overflow-y:auto}
+ .site-header.responsive-header .mobile-menu-panel nav{display:flex;flex-direction:column;gap:0;padding:0;border:0;width:100%}
+ .site-header.responsive-header .mobile-menu-panel nav a{display:flex;align-items:center;justify-content:space-between;min-height:54px;padding:12px 14px;border-bottom:1px solid #e1e7dc;font-size:16px;font-weight:550;text-align:left}
+ .mobile-menu-panel nav a:hover{background:#edf2e9;border-radius:8px}
+ .mobile-menu-bottom{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 0;font-size:13px;color:#687c6e}
+ .mobile-menu-bottom .language button{min-height:44px;min-width:44px}
+ #calculator,#how-it-works,#extension,#support-project{scroll-margin-top:92px}
+ html{scroll-padding-top:84px}
+ .responsive-header:has(.mobile-menu-panel:not([hidden])){box-shadow:0 15px 20px -20px #142e3270}
+}
+@media(max-width:360px){.responsive-header .brand{font-size:16px;gap:7px}.responsive-header .brand img{width:30px;height:30px}.responsive-header .mobile-menu-toggle{padding:0 10px}}
+@media(prefers-reduced-motion:no-preference){.mobile-menu-panel:not([hidden]){animation:menu-appear 180ms ease-out}@keyframes menu-appear{from{opacity:0;translate:0 -5px}to{opacity:1;translate:0 0}}}
