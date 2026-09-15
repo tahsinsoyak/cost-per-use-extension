@@ -23,6 +23,9 @@ export const SavedCalculations: React.FC = () => {
       currentUsesPerWeek: calc.usesPerWeek.toString(),
       currentResaleValue: calc.resaleValue ? calc.resaleValue.toString() : '',
       currentMaintenanceCost: calc.maintenanceCost ? calc.maintenanceCost.toString() : '',
+      currentInstallmentCount: calc.installmentCount ? calc.installmentCount.toString() : '',
+      currentTotalInstallmentCost: calc.totalInstallmentCost ? calc.totalInstallmentCost.toString() : '',
+      currentInlineHourlyWage: calc.hourlyWageAtCalculation ? calc.hourlyWageAtCalculation.toString() : '',
     });
     // Trigger calculation
     setTimeout(() => {

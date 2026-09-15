@@ -18,6 +18,9 @@ Vergleiche bis zu drei Produkte direkt miteinander, speichere Berechnungen lokal
 
 Wichtigste Funktionen:
 
+- Geplante Nutzung mit halb so viel Nutzung vergleichen
+- Ein persönliches Kostenziel setzen und die Mindestnutzung sehen
+- Neutrale Nutzungsschätzungen ohne Urteil über die Bezahlbarkeit
 - Berechnung von Kosten pro Nutzung und Nettokosten
 - Anpassungen für Wiederverkaufswert und Wartungskosten
 - Berechnung von Raten und Gesamtzahlung

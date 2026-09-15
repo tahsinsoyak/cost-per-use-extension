@@ -18,6 +18,9 @@ Compare até três produtos lado a lado, salve os cálculos localmente e importe
 
 Principais recursos:
 
+- Compare o uso esperado com metade do uso
+- Defina uma meta por uso e veja o mínimo de usos necessários
+- Estimativas neutras, sem julgamentos sobre o que cabe no seu orçamento
 - Cálculo do custo por uso e do custo líquido
 - Ajustes de valor de revenda e despesas de manutenção
 - Cálculos de parcelas e do valor total pago

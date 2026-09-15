@@ -4,7 +4,7 @@
 
 - Category: `Shopping`
 - Default language: `English`
-- Homepage: `https://github.com/tahsinsoyak/cost-per-use-extension`
+- Homepage: `https://tahsinsoyak.github.io/cost-per-use-extension/`
 - Support URL: `https://github.com/tahsinsoyak/cost-per-use-extension/issues`
 - Privacy policy: `https://github.com/tahsinsoyak/cost-per-use-extension/blob/main/docs/privacy-policy.md`
 - Mature content: `No`

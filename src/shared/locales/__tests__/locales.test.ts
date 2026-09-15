@@ -34,6 +34,12 @@ describe('locale catalog', () => {
 });
 
 describe('translations', () => {
+  it.each(languageCodes)('provides release and validation copy for %s', language => {
+    for (const key of ['updates.scenariosTitle','updates.scenariosDescription','updates.targetTitle','updates.targetDescription', ...['positive','nonnegative','whole','paired','resaleLimit','usageRange'].map(field => `validation.${field}`)]) {
+      expect(translate(key, language)).not.toBe(key);
+      if (language !== 'en') expect(translate(key, language)).not.toBe(translate(key, 'en'));
+    }
+  });
   it.each(languageCodes)('provides complete cost target copy for %s', (language) => {
     for (const field of ['title', 'help', 'label', 'usesNeeded', 'withinEstimate', 'beyondEstimate', 'assumption', 'invalid', 'outOfRange']) {
       const key = `results.target.${field}`;

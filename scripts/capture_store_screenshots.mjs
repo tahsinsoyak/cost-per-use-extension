@@ -1,9 +1,10 @@
-import { mkdir } from 'node:fs/promises';
+import { mkdir, readFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const version = JSON.parse(await readFile(resolve(root, 'public/manifest.json'), 'utf8')).version;
 const assets = resolve(root, 'store-assets');
 const baseUrl = process.env.STORE_PREVIEW_URL || 'http://127.0.0.1:4173';
 
@@ -42,13 +43,13 @@ const stories = {
     accent: 'Calculate before you buy',
   },
   result: {
-    eyebrow: 'THE USEFUL NUMBER',
-    title: '$349 becomes $0.39 per use.',
-    body: 'Resale value, maintenance, ownership time, and real usage turn one price into a decision you can compare.',
-    product: 'Estimated net cost',
-    price: '$304',
-    detail: '782 expected uses',
-    accent: 'Based on your estimated usage',
+    eyebrow: 'PLAN FOR REAL LIFE',
+    title: 'Try less use. Set your own target.',
+    body: 'Compare expected use with half as much use, then see how often you need to use a purchase to reach your own target.',
+    product: 'Your optional target',
+    price: '$0.50/use',
+    detail: '608 uses needed · $304 net cost',
+    accent: 'An estimate, not a verdict',
   },
   compare: {
     eyebrow: 'COMPARE VALUE, NOT PRICES',
@@ -80,17 +81,17 @@ function collectPageErrors(page) {
 }
 
 async function seedLocalData(page) {
-  await page.addInitScript((sample) => {
+  await page.addInitScript(({sample, version}) => {
     localStorage.setItem('history', JSON.stringify(sample));
     localStorage.setItem('comparisonList', JSON.stringify(sample));
-    localStorage.setItem('lastSeenReleaseVersion', JSON.stringify('1.0.2'));
+    localStorage.setItem('lastSeenReleaseVersion', JSON.stringify(version));
     localStorage.setItem('settings', JSON.stringify({
       defaultCurrency: 'USD', customCurrencySymbol: '', defaultDurationValue: 3,
       defaultDurationUnit: 'years', defaultUsesPerWeek: 5, theme: 'light',
       onboardingCompleted: true, showWorkCost: false, monthlySalary: 0,
       workHoursPerWeek: 40, hourlyWage: 0, language: 'en', autoFillEnabled: false,
     }));
-  }, calculations);
+  }, {sample: calculations, version});
 }
 
 async function addStoreFrame(page, story) {
@@ -184,9 +185,12 @@ async function captureCalculatorAndResult(browser) {
   await page.waitForFunction(() => (
     document.querySelector('[data-testid="calculation-result"]')?.classList.contains('opacity-100')
   ));
-  await page.locator('main').evaluate((element) => {
-    const result = element.querySelector(':scope > div > div:nth-child(2)');
-    if (result) element.scrollTop = result.offsetTop - element.offsetTop - 8;
+  await page.getByTestId('cost-target').getByRole('spinbutton').fill('0.5');
+  await page.getByTestId('cost-target-result').waitFor();
+  await page.getByTestId('cost-target').getByRole('spinbutton').blur();
+  await page.getByTestId('usage-scenarios').evaluate((element) => {
+    const main = document.querySelector('main');
+    main.scrollTop += element.getBoundingClientRect().top - main.getBoundingClientRect().top - 32;
   });
   await addStoreFrame(page, stories.result);
   await page.screenshot({ path: resolve(assets, 'screenshot-result.png'), animations: 'disabled' });

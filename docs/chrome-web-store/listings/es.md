@@ -18,6 +18,9 @@ Compara hasta tres productos, guarda los cálculos localmente e importa o export
 
 Funciones principales:
 
+- Compara el uso previsto con la mitad de uso
+- Fija un objetivo por uso y consulta los usos mínimos necesarios
+- Estimaciones neutrales, sin juicios sobre lo que puedes permitirte
 - Cálculo del coste por uso y del coste neto
 - Ajustes por valor de reventa y gastos de mantenimiento
 - Cálculos de cuotas e importe total pagado

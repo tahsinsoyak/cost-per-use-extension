@@ -1,6 +1,7 @@
 node_modules/
 dist/
 build/
+release-checks/
 .antigravitycli/
 .agents/
 skills-lock.json

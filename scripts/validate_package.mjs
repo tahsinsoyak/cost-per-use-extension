@@ -32,6 +32,8 @@ const assert = (condition, message) => {
 
 const packageJson = await readJson(path.join(projectRoot, 'package.json'));
 const manifest = await readJson(path.join(distRoot, 'manifest.json'));
+const sourceManifest = await readJson(path.join(projectRoot, 'public/manifest.json'));
+const lock = await readJson(path.join(projectRoot, 'package-lock.json'));
 
 assert(manifest.manifest_version === 3, 'The release package must use Manifest V3.');
 assert(
@@ -40,6 +42,14 @@ assert(
 );
 assert(manifest.default_locale === 'en', 'The default Chrome locale must remain English.');
 assert(!manifest.content_scripts, 'The release must not restore broad, always-on content scripts.');
+assert(JSON.stringify(manifest) === JSON.stringify(sourceManifest), 'Built manifest differs from the source manifest. Rebuild before packaging.');
+assert(lock.version === manifest.version && lock.packages[''].version === manifest.version, 'Lockfile version must match the release.');
+assert(JSON.stringify([...manifest.permissions].sort()) === JSON.stringify(['activeTab','scripting','storage']), 'Unexpected release permissions.');
+assert(!manifest.host_permissions && !manifest.optional_host_permissions, 'Unexpected persistent website access.');
+for (const htmlFile of ['index.html','options.html']) {
+  const html = await readFile(path.join(distRoot, htmlFile), 'utf8');
+  assert(!/<script[^>]+src=["'](?:https?:)?\/\//i.test(html), `${htmlFile} includes remote JavaScript.`);
+}
 
 for (const relativePath of requiredFiles) {
   await access(path.join(distRoot, relativePath));

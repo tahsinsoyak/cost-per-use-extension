@@ -2,7 +2,7 @@
 
 All notable user-facing changes to Cost Per Use are recorded here.
 
-## [Unreleased]
+## [1.1.0] - 2026-09-16
 
 ### Added
 
@@ -11,6 +11,9 @@ All notable user-facing changes to Cost Per Use are recorded here.
 
 ### Fixed
 
+- Validate installment pairs, finite amounts, nonnegative costs, and practical usage totals; use the financed total for resale validation.
+- Validate and recompute imported calculations while preserving valid record IDs and dates.
+- Restore saved financing and hourly-wage inputs, and connect form controls to labels and errors.
 - Replaced price-independent value judgments with neutral estimated-use bands in results and both history views, including saved and imported calculations.
 - Localized usage labels and explanations in all ten languages and removed success/warning colors from usage badges.
 

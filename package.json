@@ -1,7 +1,7 @@
 {
   "name": "cost-per-use-extension",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.1.0",
   "author": "tahsinsoyak",
   "type": "module",
   "scripts": {
@@ -12,10 +12,12 @@
     "test": "vitest run",
     "zip": "node scripts/zip.js",
     "package:validate": "node scripts/validate_package.mjs",
-    "release:check": "npm test && npm run build && npm run package:validate && npm run store:validate && npm run zip",
+    "release:check": "npm test && npm run build && npm run package:validate && npm run store:validate && npm run release:ui && npm run zip && npm run archive:validate",
     "store:promo": "node scripts/generate_store_promo.js",
     "store:screenshots": "node scripts/capture_store_screenshots.mjs",
-    "store:validate": "node scripts/validate_store_assets.mjs"
+    "store:validate": "node scripts/validate_store_assets.mjs",
+    "release:ui": "node scripts/check_usage_scenarios.mjs && node scripts/check_cost_targets.mjs && node scripts/check_release_notice.mjs && node scripts/check_extension_release.mjs",
+    "archive:validate": "node scripts/validate_archive.mjs"
   },
   "dependencies": {
     "@fontsource-variable/jetbrains-mono": "^5.2.8",

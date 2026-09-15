@@ -8,6 +8,10 @@
 
 ## Screenshots
 
+Version **1.1.0** is prepared for Chrome Web Store submission. See the [release notes](docs/releases/v1.1.0.md) and [upload guide](docs/chrome-web-store/releases/v1.1.0.md). Run `npm run release:check` to validate and package the extension.
+
+Try the [public website](https://tahsinsoyak.github.io/cost-per-use-extension/). Website updates and Chrome Web Store updates are separate.
+
 <p align="center">
   <img src="store-assets/screenshot-calculator.png" alt="Cost Per Use calculator with a real-world product example" width="720" />
 </p>
@@ -39,7 +43,7 @@ Every valid result compares your expected cost per use with half as much use ove
 
 [Preview the scenario card](docs/screenshots/usage-scenarios.png).
 
-To check the scenario UI in all ten languages and both themes, start `npm run dev -- --host 127.0.0.1 --port 4173`, then run `node scripts/check_usage_scenarios.mjs` in another terminal. This requires Playwright Chromium (`npx playwright install chromium`).
+To check the scenario UI in all ten languages and both themes, run `node scripts/check_usage_scenarios.mjs`. It starts and stops its own preview server. This requires Playwright Chromium (`npx playwright install chromium`).
 
 ## Personal cost-per-use target
 

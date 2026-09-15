@@ -18,6 +18,9 @@ Compare up to three products side by side, save calculations locally, and import
 
 Main features:
 
+- Compare expected usage with half as much use
+- Set a personal cost-per-use target and see the minimum uses needed
+- Neutral usage estimates without affordability judgments
 - Cost-per-use and net-cost calculations
 - Resale value and maintenance cost adjustments
 - Installment and total-payment calculations

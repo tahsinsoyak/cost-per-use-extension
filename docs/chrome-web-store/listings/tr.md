@@ -18,6 +18,9 @@ Kullanım başına maliyeti hesaplamak için ürün fiyatını, tahmini sahiplik
 
 Başlıca özellikler:
 
+- Beklenen kullanımı yarı yarıya kullanımla karşılaştırın
+- Kullanım başına hedef belirleyin ve gereken en az kullanım sayısını görün
+- Alınabilirlik yargıları olmadan tarafsız kullanım tahminleri
 - Kullanım başına maliyet ve net maliyet hesaplama
 - İkinci el satış değeri ve bakım maliyeti ayarlamaları
 - Taksit ve toplam ödeme hesaplamaları

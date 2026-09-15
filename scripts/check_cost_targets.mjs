@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
-import { mkdir } from 'node:fs/promises';
+import { mkdir, readFile } from 'node:fs/promises';
 import { chromium } from 'playwright';
 import { createServer } from 'vite';
 
+const version = JSON.parse(await readFile('public/manifest.json', 'utf8')).version;
 const languages = ['en', 'tr', 'es', 'de', 'fr', 'pt-BR', 'ru', 'ar', 'ja', 'zh-CN'];
-const server = await createServer({ server: { host: '127.0.0.1', port: 4174, strictPort: true } });
+const server = await createServer({ server: { host: '127.0.0.1', port: 0 } });
 let browser;
 try {
   await server.listen();
@@ -15,15 +16,15 @@ try {
       const page = await browser.newPage({ viewport: { width: 400, height: 600 }, locale: 'en-US' });
       const errors = [];
       page.on('pageerror', error => errors.push(error.message));
-      await page.addInitScript(({ language, theme, currency }) => {
-        localStorage.setItem('lastSeenReleaseVersion', JSON.stringify('1.0.2'));
+      await page.addInitScript(({ language, theme, currency, version }) => {
+        localStorage.setItem('lastSeenReleaseVersion', JSON.stringify(version));
         localStorage.setItem('settings', JSON.stringify({
           defaultCurrency: currency, customCurrencySymbol: '¥', defaultDurationValue: 1,
           defaultDurationUnit: 'years', defaultUsesPerWeek: 5,
           language, theme, autoFillEnabled: false,
         }));
-      }, { language, theme, currency });
-      await page.goto('http://127.0.0.1:4174');
+      }, { language, theme, currency, version });
+      await page.goto(server.resolvedUrls.local[0]);
       await page.locator('input[type="number"][placeholder="0.00"]').first().fill('261');
       await page.locator('button[type="submit"]').click();
       const card = page.getByTestId('cost-target');

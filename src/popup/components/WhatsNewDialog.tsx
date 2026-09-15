@@ -1,5 +1,5 @@
 import React from 'react';
-import { BellRing, ExternalLink, Heart, Maximize2, ShieldCheck, X } from 'lucide-react';
+import { Target, ExternalLink, Heart, Scale, ShieldCheck, X } from 'lucide-react';
 import Button from '../../shared/components/Button';
 import { translate } from '../../shared/locales';
 import type { Language } from '../../shared/locales';
@@ -13,8 +13,8 @@ interface WhatsNewDialogProps {
 export const WhatsNewDialog: React.FC<WhatsNewDialogProps> = ({ language, version, onDismiss }) => {
   const t = (key: string) => translate(key, language);
   const featureItems = [
-    { icon: Maximize2, title: t('updates.layoutTitle'), description: t('updates.layoutDescription') },
-    { icon: BellRing, title: t('updates.noticeTitle'), description: t('updates.noticeDescription') },
+    { icon: Scale, title: t('updates.scenariosTitle'), description: t('updates.scenariosDescription') },
+    { icon: Target, title: t('updates.targetTitle'), description: t('updates.targetDescription') },
     { icon: ShieldCheck, title: t('updates.privacyTitle'), description: t('updates.privacyDescription') },
   ];
 
@@ -74,7 +74,7 @@ export const WhatsNewDialog: React.FC<WhatsNewDialogProps> = ({ language, versio
           </Button>
           <div className="grid grid-cols-2 gap-2">
             <a
-              href="https://github.com/tahsinsoyak/cost-per-use-extension/releases/latest"
+              href={`https://github.com/tahsinsoyak/cost-per-use-extension/blob/main/docs/releases/v${version}.md`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={onDismiss}

@@ -32,6 +32,9 @@ export const CalculatorForm: React.FC = () => {
   const t = (key: string) => translate(key, settings.language);
 
   const [showAdvanced, setShowAdvanced] = useState(false);
+  useEffect(() => {
+    if (['resaleValue', 'maintenanceCost', 'installmentCount', 'totalInstallmentCost', 'hourlyWage'].some(key => formErrors[key])) setShowAdvanced(true);
+  }, [formErrors]);
   
   // Custom input toggles
   const [durationMode, setDurationMode] = useState<'pill' | 'custom'>('pill');
@@ -155,12 +158,16 @@ export const CalculatorForm: React.FC = () => {
             step="any"
             placeholder="0.00"
             required
+            aria-label={t('calculator.titlePrice')}
+            aria-invalid={Boolean(formErrors.price)}
+            aria-describedby={formErrors.price ? 'price-error' : undefined}
             value={currentPrice}
             onChange={(e) => setInputs({ currentPrice: e.target.value })}
             className="price-input flex-1 min-w-0 w-full bg-transparent text-3xl font-extrabold placeholder:text-white/20 border-none outline-none focus:ring-0 p-0"
           />
           {/* Compact Currency Dropdown */}
           <select
+            aria-label={t('calculator.currencyLabel')}
             value={currentCurrency}
             onChange={handleCurrencyChange}
             className="currency-select shrink-0 max-w-[104px] text-xs font-bold border rounded-xl px-2.5 py-1.5 cursor-pointer outline-none transition-colors"
@@ -173,8 +180,8 @@ export const CalculatorForm: React.FC = () => {
           </select>
         </div>
         {formErrors.price && (
-          <span className="text-[10px] text-danger font-semibold mt-1">
-            {formErrors.price}
+          <span id="price-error" className="text-[10px] text-danger font-semibold mt-1">
+            {t(formErrors.price)}
           </span>
         )}
       </div>
@@ -240,7 +247,7 @@ export const CalculatorForm: React.FC = () => {
                 placeholder={t('calculator.durationPlaceholder')}
                 value={currentDurationValue}
                 onChange={(e) => setInputs({ currentDurationValue: e.target.value })}
-                error={formErrors.ownershipDurationValue ? t('calculator.errors.durationRequired') : undefined}
+                error={formErrors.ownershipDurationValue ? t(formErrors.ownershipDurationValue) : undefined}
               />
             </div>
             <div className="responsive-unit-select w-24 shrink-0">
@@ -314,7 +321,7 @@ export const CalculatorForm: React.FC = () => {
                 placeholder={t('calculator.usesPlaceholder')}
                 value={currentUsesPerWeek}
                 onChange={(e) => setInputs({ currentUsesPerWeek: e.target.value })}
-                error={formErrors.usesPerWeek ? t('calculator.errors.usesRequired') : undefined}
+                error={formErrors.usesPerWeek ? t(formErrors.usesPerWeek) : undefined}
                 warning={formWarnings.usesPerWeek ? t('calculator.warnings.highUsage') : undefined}
                 suffixElement={<span className="text-[10px] font-extrabold text-text-secondary/70">{t('common.perWeekShort')}</span>}
               />
@@ -354,7 +361,7 @@ export const CalculatorForm: React.FC = () => {
               placeholder="0.00"
               value={currentResaleValue}
               onChange={(e) => setInputs({ currentResaleValue: e.target.value })}
-              error={formErrors.resaleValue}
+              error={formErrors.resaleValue ? t(formErrors.resaleValue) : undefined}
               prefixElement={getCurrencySymbolText()}
             />
             <Input
@@ -362,6 +369,7 @@ export const CalculatorForm: React.FC = () => {
               type="number"
               inputMode="decimal"
               placeholder="0.00"
+              error={formErrors.maintenanceCost ? t(formErrors.maintenanceCost) : undefined}
               value={currentMaintenanceCost}
               onChange={(e) => setInputs({ currentMaintenanceCost: e.target.value })}
               prefixElement={getCurrencySymbolText()}
@@ -382,7 +390,8 @@ export const CalculatorForm: React.FC = () => {
                     type="number"
                     inputMode="numeric"
                     placeholder="e.g. 12"
-                    value={currentInstallmentCount}
+                    error={formErrors.installmentCount ? t(formErrors.installmentCount) : undefined}
+              value={currentInstallmentCount}
                     onChange={(e) => setInputs({ currentInstallmentCount: e.target.value })}
                     suffixElement={<span className="text-[10px] font-extrabold text-text-secondary/70">{t('common.moShort')}</span>}
                   />
@@ -393,7 +402,8 @@ export const CalculatorForm: React.FC = () => {
                     type="number"
                     inputMode="decimal"
                     placeholder="0.00"
-                    value={currentTotalInstallmentCost}
+                    error={formErrors.totalInstallmentCost ? t(formErrors.totalInstallmentCost) : undefined}
+              value={currentTotalInstallmentCost}
                     onChange={(e) => setInputs({ currentTotalInstallmentCost: e.target.value })}
                     prefixElement={getCurrencySymbolText()}
                   />
@@ -417,7 +427,8 @@ export const CalculatorForm: React.FC = () => {
                 type="number"
                 inputMode="decimal"
                 placeholder="e.g. 25.00"
-                value={currentInlineHourlyWage}
+                error={formErrors.hourlyWage ? t(formErrors.hourlyWage) : undefined}
+              value={currentInlineHourlyWage}
                 onChange={(e) => setInputs({ currentInlineHourlyWage: e.target.value })}
                 prefixElement={getCurrencySymbolText()}
                 suffixElement={<span className="text-[10px] font-extrabold text-text-secondary/70">/{t('common.hourShort')}</span>}

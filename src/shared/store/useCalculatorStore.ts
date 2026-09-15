@@ -1,3 +1,4 @@
+import { importCalculation } from '../lib/importCalculation';
 import { create } from 'zustand';
 import { CostCalculation, Currency, AppSettings } from '../types/calculation';
 import { storage } from '../lib/storage';
@@ -195,18 +196,22 @@ export const useCalculatorStore = create<CalculatorState>((set, get) => ({
       settings,
     } = get();
 
-    const price = parseFloat(currentPrice) || 0;
-    const duration = parseFloat(currentDurationValue) || 0;
-    const uses = parseFloat(currentUsesPerWeek) || 0;
-    const resale = parseFloat(currentResaleValue) || 0;
-    const maintenance = parseFloat(currentMaintenanceCost) || 0;
-    const installments = parseFloat(currentInstallmentCount) || 0;
-    const totalInstallment = parseFloat(currentTotalInstallmentCost) || 0;
-    const inlineWage = parseFloat(currentInlineHourlyWage) || 0;
+    const price = Number(currentPrice);
+    const duration = Number(currentDurationValue);
+    const uses = Number(currentUsesPerWeek);
+    const resale = Number(currentResaleValue);
+    const maintenance = Number(currentMaintenanceCost);
+    const installments = Number(currentInstallmentCount);
+    const totalInstallment = Number(currentTotalInstallmentCost);
+    const inlineWage = Number(currentInlineHourlyWage);
 
     const { errors, warnings, isValid } = validateCalculationInput({
       price,
       ownershipDurationValue: duration,
+      ownershipDurationUnit: currentDurationUnit,
+      installmentCount: installments,
+      totalInstallmentCost: totalInstallment,
+      hourlyWage: inlineWage,
       usesPerWeek: uses,
       resaleValue: resale,
       maintenanceCost: maintenance,
@@ -236,6 +241,11 @@ export const useCalculatorStore = create<CalculatorState>((set, get) => ({
       installmentCount: installments > 0 ? installments : undefined,
       totalInstallmentCost: totalInstallment > 0 ? totalInstallment : undefined,
     });
+
+    if (Object.values(calculated).some(value => typeof value === 'number' && !Number.isFinite(value))) {
+      set({currentResult: null, formErrors: {ownershipDurationValue: 'validation.usageRange'}});
+      return false;
+    }
 
     const resultWithMeta: CostCalculation = {
       ...calculated,
@@ -289,47 +299,7 @@ export const useCalculatorStore = create<CalculatorState>((set, get) => ({
         return { success: false, count: 0, message: t('history.importFormatError') };
       }
 
-      const validCalculations: CostCalculation[] = [];
-      for (const item of parsed) {
-        if (
-          item &&
-          typeof item === 'object' &&
-          typeof item.id === 'string' &&
-          typeof item.price === 'number' &&
-          typeof item.currency === 'string' &&
-          typeof item.ownershipDurationValue === 'number' &&
-          typeof item.usesPerWeek === 'number' &&
-          typeof item.costPerUse === 'number'
-        ) {
-          validCalculations.push({
-            id: item.id,
-            productName: typeof item.productName === 'string' ? item.productName : '',
-            price: item.price,
-            currency: item.currency as Currency,
-            customCurrencySymbol: typeof item.customCurrencySymbol === 'string' ? item.customCurrencySymbol : '',
-            ownershipDurationValue: item.ownershipDurationValue,
-            ownershipDurationUnit: item.ownershipDurationUnit === 'months' || item.ownershipDurationUnit === 'years' ? item.ownershipDurationUnit : 'years',
-            usesPerWeek: item.usesPerWeek,
-            resaleValue: typeof item.resaleValue === 'number' ? item.resaleValue : 0,
-            maintenanceCost: typeof item.maintenanceCost === 'number' ? item.maintenanceCost : 0,
-            totalEstimatedUses: typeof item.totalEstimatedUses === 'number' ? item.totalEstimatedUses : 0,
-            netCost: typeof item.netCost === 'number' ? item.netCost : item.price,
-            costPerUse: item.costPerUse,
-            costPerMonth: typeof item.costPerMonth === 'number' ? item.costPerMonth : 0,
-            costPerYear: typeof item.costPerYear === 'number' ? item.costPerYear : 0,
-            costPerDay: typeof item.costPerDay === 'number' ? item.costPerDay : 0,
-            valueRating: ['excellent', 'good', 'think_twice', 'expensive'].includes(item.valueRating) ? item.valueRating : 'good',
-            createdAt: typeof item.createdAt === 'string' ? item.createdAt : new Date().toISOString(),
-            workHoursCost: typeof item.workHoursCost === 'number' ? item.workHoursCost : undefined,
-            workHoursPerUse: typeof item.workHoursPerUse === 'number' ? item.workHoursPerUse : undefined,
-            hourlyWageAtCalculation: typeof item.hourlyWageAtCalculation === 'number' ? item.hourlyWageAtCalculation : undefined,
-            installmentCount: typeof item.installmentCount === 'number' ? item.installmentCount : undefined,
-            monthlyPayment: typeof item.monthlyPayment === 'number' ? item.monthlyPayment : undefined,
-            totalInstallmentCost: typeof item.totalInstallmentCost === 'number' ? item.totalInstallmentCost : undefined,
-            installmentInterest: typeof item.installmentInterest === 'number' ? item.installmentInterest : undefined,
-          });
-        }
-      }
+      const validCalculations = parsed.map(importCalculation).filter((item): item is CostCalculation => item !== null);
 
       if (validCalculations.length === 0) {
         return { success: false, count: 0, message: t('history.importNoValid') };

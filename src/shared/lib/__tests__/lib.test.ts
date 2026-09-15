@@ -220,7 +220,7 @@ describe('Input Validation Tests', () => {
       maintenanceCost: 0,
     });
     expect(isValid).toBe(false);
-    expect(errors.price).toBe('Enter a valid price.');
+    expect(errors.price).toBe('validation.positive');
   });
 
   it('should alert on high weekly usages', () => {
@@ -232,7 +232,7 @@ describe('Input Validation Tests', () => {
       maintenanceCost: 0,
     });
     expect(isValid).toBe(true);
-    expect(warnings.usesPerWeek).toBe('This usage estimate seems unusually high. You can still continue.');
+    expect(warnings.usesPerWeek).toBe('calculator.warnings.highUsage');
   });
 
   it('should fail if resale exceeds total costs', () => {
@@ -244,6 +244,6 @@ describe('Input Validation Tests', () => {
       maintenanceCost: 10,
     });
     expect(isValid).toBe(false);
-    expect(errors.resaleValue).toBe('Resale value is higher than product cost. Please check your input.');
+    expect(errors.resaleValue).toBe('validation.resaleLimit');
   });
 });

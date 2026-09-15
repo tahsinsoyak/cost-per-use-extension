@@ -1,9 +1,13 @@
 import assert from 'node:assert/strict';
-import { mkdir } from 'node:fs/promises';
+import { mkdir, readFile } from 'node:fs/promises';
 import { chromium } from 'playwright';
+import { createServer } from 'vite';
 
-// Run against the local preview: npm run dev -- --host 127.0.0.1 --port 4173
-const baseUrl = process.env.STORE_PREVIEW_URL || 'http://127.0.0.1:4173';
+// Starts an isolated preview unless STORE_PREVIEW_URL points to an existing one.
+const server = process.env.STORE_PREVIEW_URL ? null : await createServer({server:{host:'127.0.0.1',port:0}});
+await server?.listen();
+const baseUrl = process.env.STORE_PREVIEW_URL || server.resolvedUrls.local[0];
+const version = JSON.parse(await readFile('public/manifest.json', 'utf8')).version;
 const languages = ['en', 'tr', 'es', 'de', 'fr', 'pt-BR', 'ru', 'ar', 'ja', 'zh-CN'];
 const browser = await chromium.launch({ headless: true });
 try {
@@ -12,14 +16,14 @@ try {
       const page = await browser.newPage({ viewport: { width: 400, height: 600 }, locale: 'en-US' });
       const errors = [];
       page.on('pageerror', error => errors.push(error.message));
-      await page.addInitScript(({ language, theme }) => {
-        localStorage.setItem('lastSeenReleaseVersion', JSON.stringify('1.0.2'));
+      await page.addInitScript(({ language, theme, version }) => {
+        localStorage.setItem('lastSeenReleaseVersion', JSON.stringify(version));
         localStorage.setItem('settings', JSON.stringify({
           defaultCurrency: 'USD', defaultDurationValue: 1,
           defaultDurationUnit: 'years', defaultUsesPerWeek: 5,
           language, theme, autoFillEnabled: false,
         }));
-      }, { language, theme });
+      }, { language, theme, version });
       await page.goto(baseUrl);
       await page.locator('input[type="number"][placeholder="0.00"]').first().fill('261');
       await page.locator('button[type="submit"]').click();
@@ -56,4 +60,5 @@ try {
   console.log('Usage scenario UI passed in all 10 languages, light/dark themes, with saved inputs unchanged.');
 } finally {
   await browser.close();
+  await server?.close();
 }

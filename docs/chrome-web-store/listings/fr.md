@@ -18,6 +18,9 @@ Comparez jusqu’à trois produits côte à côte, enregistrez vos calculs local
 
 Fonctionnalités principales :
 
+- Comparez l’usage prévu avec un usage divisé par deux
+- Fixez un coût cible par utilisation et voyez le nombre minimal d’utilisations
+- Des estimations neutres, sans jugement sur votre budget
 - Calcul du coût par utilisation et du coût net
 - Ajustements selon la valeur de revente et les frais d’entretien
 - Calcul des échéances et du montant total payé
