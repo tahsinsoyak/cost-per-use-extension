@@ -8,7 +8,9 @@
 
 ## Screenshots
 
-Version **1.1.0** is prepared for Chrome Web Store submission. See the [release notes](docs/releases/v1.1.0.md) and [upload guide](docs/chrome-web-store/releases/v1.1.0.md). Run `npm run release:check` to validate and package the extension.
+Version **1.1.0** was submitted for Chrome Web Store review on September 27, 2026, as reported by the maintainer. Approval and public availability have not yet been verified. See the [release notes](docs/releases/v1.1.0.md) and [submission guide](docs/chrome-web-store/releases/v1.1.0.md). Run `npm run release:check` to validate and package the extension.
+
+Next steps: [proposed improvements](docs/next-release.md), [manual review checklist](docs/releases/manual-review.md), and [submitted package backup instructions](docs/releases/artifact-handoff.md).
 
 Try the [public website](https://tahsinsoyak.github.io/cost-per-use-extension/). Website updates and Chrome Web Store updates are separate.
 
