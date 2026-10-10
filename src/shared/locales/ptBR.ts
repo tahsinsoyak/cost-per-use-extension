@@ -60,6 +60,7 @@ export const ptBR = createLocale({
     bestBadge: 'Melhor escolha', alreadyAdded: 'Já adicionado à comparação.', addedSuccess: '{product} foi adicionado.', removed: 'Removido da comparação.',
   },
   scraper: {
+    partialDetails: "Título encontrado, mas sem preço exato. O preço existente foi mantido; confira ou digite manualmente.",
     systemPage: 'Não é possível ler páginas do sistema.', injectFailed: 'Não foi possível iniciar o preenchimento. Atualize a página.',
     connectFailed: 'Não foi possível conectar à página.', autofillSuccess: 'Dados do produto preenchidos.', noProductDetails: 'Nenhum dado de produto encontrado.',
   },

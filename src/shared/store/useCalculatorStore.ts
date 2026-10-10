@@ -379,6 +379,29 @@ export const useCalculatorStore = create<CalculatorState>((set, get) => ({
 
     const t = (key: string) => translate(key, get().settings.language);
 
+    const applyResponse = (response: unknown) => {
+      if (!response || typeof response !== 'object') {
+        if (showFeedback) get().showToast(t('scraper.noProductDetails'), 'info');
+        return;
+      }
+      const data = response as Record<string, unknown>;
+      const state = get();
+      const inputs: Parameters<CalculatorState['setInputs']>[0] = {};
+      const hasTitle = typeof data.productName === 'string' && !!data.productName.trim();
+      const hasPrice = typeof data.price === 'string' && !!data.price.trim() && Number.isFinite(Number(data.price)) && Number(data.price) > 0;
+      const validCurrency = typeof data.currency === 'string' && ['USD', 'EUR', 'GBP', 'TRY', 'CUSTOM'].includes(data.currency);
+      if (hasTitle && (showFeedback || !state.currentProductName.trim())) inputs.currentProductName = (data.productName as string).slice(0, 100);
+      if (hasPrice && validCurrency && (showFeedback || !state.currentPrice.trim())) {
+        inputs.currentPrice = data.price as string;
+        inputs.currentCurrency = data.currency as Currency;
+        inputs.currentCustomCurrencySymbol = typeof data.customCurrencySymbol === 'string' ? data.customCurrencySymbol.slice(0, 12) : '';
+      }
+      if (Object.keys(inputs).length) get().setInputs(inputs);
+      if (inputs.currentPrice) get().showToast(t('scraper.autofillSuccess'), 'success');
+      else if (hasTitle && !hasPrice && (showFeedback || inputs.currentProductName)) get().showToast(t('scraper.partialDetails'), 'info');
+      else if (showFeedback) get().showToast(t('scraper.noProductDetails'), 'info');
+    };
+
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const activeTab = tabs[0];
       if (!activeTab || !activeTab.id || !activeTab.url) return;
@@ -432,19 +455,7 @@ export const useCalculatorStore = create<CalculatorState>((set, get) => ({
                 return;
               }
 
-              if (response && (response.productName || response.price)) {
-                get().setInputs({
-                  currentProductName: response.productName || '',
-                  currentPrice: response.price || '',
-                  currentCurrency: response.currency || 'USD',
-                  currentCustomCurrencySymbol: response.customCurrencySymbol || '',
-                });
-                get().showToast(t('scraper.autofillSuccess'), 'success');
-              } else {
-                if (showFeedback) {
-                  get().showToast(t('scraper.noProductDetails'), 'error');
-                }
-              }
+              applyResponse(response);
             });
           }
         );
@@ -458,19 +469,7 @@ export const useCalculatorStore = create<CalculatorState>((set, get) => ({
           return;
         }
 
-        if (response && (response.productName || response.price)) {
-          get().setInputs({
-            currentProductName: response.productName || '',
-            currentPrice: response.price || '',
-            currentCurrency: response.currency || 'USD',
-            currentCustomCurrencySymbol: response.customCurrencySymbol || '',
-          });
-          get().showToast(t('scraper.autofillSuccess'), 'success');
-        } else {
-          if (showFeedback) {
-            get().showToast(t('scraper.noProductDetails'), 'error');
-          }
-        }
+        applyResponse(response);
       });
     });
   },

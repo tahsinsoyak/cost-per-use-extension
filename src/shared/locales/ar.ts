@@ -59,6 +59,7 @@ export const ar = createLocale({
     bestBadge: 'أفضل خيار', alreadyAdded: 'مضاف بالفعل إلى المقارنة.', addedSuccess: 'تمت إضافة {product} للمقارنة.', removed: 'تمت الإزالة من المقارنة.',
   },
   scraper: {
+    partialDetails: "تم العثور على الاسم دون سعر محدد. تم الاحتفاظ بالسعر الحالي؛ تحقّق منه أو أدخله يدوياً.",
     systemPage: 'لا يمكن قراءة صفحات النظام.', injectFailed: 'تعذر تشغيل الملء التلقائي. حدّث الصفحة.',
     connectFailed: 'تعذر الاتصال بالصفحة.', autofillSuccess: 'تم ملء بيانات المنتج.', noProductDetails: 'لم يتم العثور على بيانات المنتج.',
   },

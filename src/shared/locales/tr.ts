@@ -150,6 +150,7 @@ export const tr = {
     removed: "Karşılaştırmadan kaldırıldı.",
   },
   scraper: {
+    partialDetails: "Başlık bulundu ancak kesin fiyat bulunamadı. Mevcut fiyatınız korundu; kontrol edin veya elle girin.",
     systemPage: "Sistem sayfaları taranamaz.",
     permissionMissing: "Tarayıcı izinleri eksik.",
     injectFailed: "Tarayıcı sayfaya yüklenemedi. Lütfen sayfayı yenileyin.",

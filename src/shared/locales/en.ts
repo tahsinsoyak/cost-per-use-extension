@@ -150,6 +150,7 @@ export const en = {
     removed: "Removed from comparison.",
   },
   scraper: {
+    partialDetails: "Title found, but no exact price. Your existing price was kept; check or enter it manually.",
     systemPage: "Cannot scrape system pages.",
     permissionMissing: "Scraper permissions missing.",
     injectFailed: "Failed to inject scraper. Please refresh page.",

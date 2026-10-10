@@ -60,6 +60,7 @@ export const fr = createLocale({
     bestBadge: 'Meilleur choix', alreadyAdded: 'Déjà ajouté à la comparaison.', addedSuccess: '{product} a été ajouté.', removed: 'Retiré de la comparaison.',
   },
   scraper: {
+    partialDetails: "Titre trouvé, mais aucun prix exact. Votre prix actuel a été conservé ; vérifiez-le ou saisissez-le manuellement.",
     systemPage: 'Impossible de lire les pages système.', injectFailed: 'Impossible de lancer le remplissage. Actualisez la page.',
     connectFailed: 'Impossible de se connecter à la page.', autofillSuccess: 'Informations du produit remplies.', noProductDetails: 'Aucune information produit trouvée.',
   },

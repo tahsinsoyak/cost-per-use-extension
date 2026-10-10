@@ -89,6 +89,7 @@ export const ja = createLocale({
     removed: '比較から削除しました。',
   },
   scraper: {
+    partialDetails: "商品名は見つかりましたが、正確な価格は取得できませんでした。入力済みの価格は保持されています。確認するか手動で入力してください。",
     systemPage: 'システムページは読み取れません。',
     injectFailed: '自動入力を開始できませんでした。ページを更新してください。',
     connectFailed: 'ページに接続できませんでした。',

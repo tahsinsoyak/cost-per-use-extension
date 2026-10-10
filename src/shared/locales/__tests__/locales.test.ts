@@ -34,6 +34,11 @@ describe('locale catalog', () => {
 });
 
 describe('translations', () => {
+  it.each(languageCodes)('localizes partial autofill feedback in %s', language => {
+    const message = translate('scraper.partialDetails', language);
+    expect(message).not.toBe('scraper.partialDetails');
+    if (language !== 'en') expect(message).not.toBe(translate('scraper.partialDetails', 'en'));
+  });
   it.each(languageCodes)('provides release and validation copy for %s', language => {
     for (const key of ['updates.scenariosTitle','updates.scenariosDescription','updates.targetTitle','updates.targetDescription', ...['positive','nonnegative','whole','paired','resaleLimit','usageRange'].map(field => `validation.${field}`)]) {
       expect(translate(key, language)).not.toBe(key);

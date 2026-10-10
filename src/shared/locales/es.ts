@@ -89,6 +89,7 @@ export const es = createLocale({
     removed: 'Eliminado de la comparación.',
   },
   scraper: {
+    partialDetails: "Título encontrado, pero sin precio exacto. Se conservó el precio existente; revísalo o introdúcelo manualmente.",
     systemPage: 'No se pueden leer páginas del sistema.',
     injectFailed: 'No se pudo iniciar el autocompletado. Actualiza la página.',
     connectFailed: 'No se pudo conectar con la página.',

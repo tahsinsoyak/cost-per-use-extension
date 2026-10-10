@@ -89,6 +89,7 @@ export const zhCN = createLocale({
     removed: '已从比较中移除。',
   },
   scraper: {
+    partialDetails: "已找到商品名称，但未找到确切价格。已保留现有价格，请核对或手动输入。",
     systemPage: '无法读取系统页面。',
     injectFailed: '无法启动自动填充，请刷新页面。',
     connectFailed: '无法连接到页面。',
