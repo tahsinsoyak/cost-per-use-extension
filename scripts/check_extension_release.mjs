@@ -105,7 +105,10 @@ try {
       target=targets.find(item=>item.url.startsWith(root)) ?? targets.find(item=>!item.url);
       if(!target) await new Promise(resolve=>setTimeout(resolve,100));
     }
-    assert.ok(target);
+    if (!target) {
+      const diagnostic=(await browserCDP.send('Target.getTargets')).targetInfos.map(({type,url,title})=>({type,url,title}));
+      throw new Error('Extension action did not open a popup: '+JSON.stringify(diagnostic));
+    }
     const {sessionId}=await browserCDP.send('Target.attachToTarget',{targetId:target.targetId,flatten:false});
     let sequence=0;
     const pending=new Map();

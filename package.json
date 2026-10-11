@@ -16,8 +16,9 @@
     "store:promo": "node scripts/generate_store_promo.js",
     "store:screenshots": "node scripts/capture_store_screenshots.mjs",
     "store:validate": "node scripts/validate_store_assets.mjs",
-    "release:ui": "node scripts/check_usage_scenarios.mjs && node scripts/check_cost_targets.mjs && node scripts/check_release_notice.mjs && node scripts/check_extension_release.mjs",
-    "archive:validate": "node scripts/validate_archive.mjs"
+    "release:ui": "node scripts/check_usage_scenarios.mjs && node scripts/check_cost_targets.mjs && node scripts/check_release_notice.mjs && node scripts/check_extension_release.mjs && npm run scraper:check",
+    "archive:validate": "node scripts/validate_archive.mjs",
+    "scraper:check": "node scripts/check_product_reader.mjs"
   },
   "dependencies": {
     "@fontsource-variable/jetbrains-mono": "^5.2.8",

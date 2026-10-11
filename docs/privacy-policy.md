@@ -1,6 +1,6 @@
 # Privacy Policy for Cost Per Use
 
-Last updated: July 13, 2026
+Last updated: September 28, 2026
 
 Cost Per Use is a local-first Chrome extension for estimating and comparing the expected cost per use of products. This policy explains the data the extension handles and how it is used.
 
@@ -10,7 +10,7 @@ The extension can handle:
 
 - Calculator inputs, including product names, prices, usage estimates, ownership periods, resale values, maintenance costs, and optional wage values.
 - Settings, saved calculations, and product comparisons.
-- When optional auto-fill is enabled, the active page's product title, displayed price, currency hint, and URL hostname.
+- When optional auto-fill is enabled, the active page's product title, price, currency hint, and URL hostname. The upcoming structured-data reader also processes product details embedded in the page and compares the current page URL with product and offer URLs locally to identify a selected variant. These URLs are not saved or transmitted.
 
 Auto-fill is disabled by default. When enabled, it runs only after the user opens the extension on an active page. It does not continuously monitor browsing.
 

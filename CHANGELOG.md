@@ -2,6 +2,14 @@
 
 All notable user-facing changes to Cost Per Use are recorded here.
 
+## [Unreleased]
+
+- Read Schema.org Product and ProductGroup JSON-LD, including linked offers and variants identified by the current page URL, for broader compatibility with stores that expose standard product data.
+- Keep the existing Amazon, Trendyol, Hepsiburada, and eBay readers; match store domains at hostname boundaries and honor price selector priority.
+- Avoid selecting arbitrary JSON-LD product prices or ranges; limit generic microdata extraction to a single product and price.
+- Preserve existing inputs during automatic reads and preserve missing fields during manual autofill. Explain partial title-only results in all ten languages.
+- Add product-reader fixtures and regression checks for structured data and autofill behavior. Live compatibility still depends on each store's page markup.
+
 ## [1.1.0] - 2026-09-16
 
 ### Added
