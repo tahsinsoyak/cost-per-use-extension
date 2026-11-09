@@ -1,126 +1,156 @@
-# Cost Per Use — Chrome Extension
-
-> A premium, free, privacy-friendly shopping decision helper that users can open instantly before buying an expensive product.
-
-**Cost Per Use** is a beautiful, privacy-first Chrome Extension that helps you calculate the real value of a purchase based on how frequently you expect to use it. Make smarter buying decisions, compare alternatives, and keep a history of your product assessments — completely locally.
-
----
-
-## Screenshots
-
-Version **1.1.0** is [published publicly on the Chrome Web Store](https://chromewebstore.google.com/detail/cost-per-use/kchaaggejdclkmjgfjbdjimmmjibllmd). See the [release notes](docs/releases/v1.1.0.md) and [submission guide](docs/chrome-web-store/releases/v1.1.0.md). Run `npm run release:check` to validate and package a future extension update.
-
-Next steps: [proposed improvements](docs/next-release.md), [manual review checklist](docs/releases/manual-review.md), and [submitted package backup instructions](docs/releases/artifact-handoff.md).
-
-Unreleased development now includes [broader product autofill support](docs/product-reader.md). These source changes are separate from the submitted 1.1.0 ZIP.
-
-Try the [public website](https://tahsinsoyak.github.io/cost-per-use-extension/). Website updates and Chrome Web Store updates are separate.
-
 <p align="center">
-  <img src="store-assets/screenshot-calculator.png" alt="Cost Per Use calculator with a real-world product example" width="720" />
-</p>
-<p align="center">
-  <img src="store-assets/screenshot-compare.png" alt="Side-by-side product comparison" width="720" />
+  <img src="store-assets/promo-tile-marquee.png" alt="Cost Per Use — Smart Shopping Calculator" width="100%" />
 </p>
 
----
+<h1 align="center">Cost Per Use — Chrome & Edge Extension</h1>
 
-## Key Features
+<p align="center">
+  <strong>Make smarter buying decisions. Calculate the real value of any purchase before you spend.</strong>
+</p>
 
-1. **Cost-Per-Use Calculation** — Input the product price, ownership duration, and weekly usage to get the estimated cost per use.
-2. **Advanced Adjustment (Net Cost)** — Factor in potential resale value, recurring maintenance costs, and installment plans.
-3. **Estimated Usage** — Neutral usage bands show expected total uses, without judging affordability.
-4. **Product Comparison** — Contrast up to 3 products side-by-side.
-5. **Auto-fill from Shopping Sites** — Automatically detects product name & price from Amazon, Trendyol, Hepsiburada, and eBay. Toggleable in settings.
-6. **Multi-Currency** — USD, TRY, EUR, GBP, and custom currencies.
-7. **Labor Time Equivalent** — See how many work hours each use costs.
-8. **Local History** — Save, export, and import calculations as JSON.
-9. **Dark / Light Theme** — System preference detection included.
-10. **10 Languages** — English, Turkish, Spanish, German, French, Brazilian Portuguese, Russian, Arabic, Japanese, and Simplified Chinese, with English fallback for every message.
-11. **100% Private** — Zero analytics, zero cloud databases, no accounts, no trackers.
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/cost-per-use/kchaaggejdclkmjgfjbdjimmmjibllmd"><img src="https://img.shields.io/badge/Chrome_Web_Store-v1.1.0-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Web Store" /></a>
+  <a href="https://tahsinsoyak.github.io/cost-per-use-extension/"><img src="https://img.shields.io/badge/Live_Web_Demo-Try_Online-00C853?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Demo" /></a>
+  <a href="https://github.com/tahsinsoyak/cost-per-use-extension/releases/latest"><img src="https://img.shields.io/badge/GitHub_Release-v1.1.0-24292e?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Release" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License" /></a>
+  <a href="docs/privacy-policy.md"><img src="https://img.shields.io/badge/Privacy-100%25_Local-9C27B0?style=for-the-badge" alt="Privacy First" /></a>
+</p>
 
----
-
-## Usage scenarios
-
-Every valid result compares your expected cost per use with half as much use over the same ownership period. Both scenarios keep the same net cost, including installment, maintenance, and resale adjustments. For example, $200 across 400 estimated uses is $0.50/use; half as much use is $1/use. Scenario estimates do not change your saved inputs.
-
-[Preview the scenario card](docs/screenshots/usage-scenarios.png).
-
-To check the scenario UI in all ten languages and both themes, run `node scripts/check_usage_scenarios.mjs`. It starts and stops its own preview server. This requires Playwright Chromium (`npx playwright install chromium`).
-
-## Personal cost-per-use target
-
-Enter an optional target below the usage scenarios to see the minimum whole uses needed. For example, a $200 net cost and a $0.50/use target require 400 uses. The card compares that count with your estimated usage, using the same resale, maintenance, and installment adjustments.
-
-The target is a temporary planning input for the displayed calculation. It resets when you calculate again or leave the calculator, and is not added to saved history. Targets must be greater than zero. A zero net cost reaches any positive target on the first use.
-
-[Preview the target card](docs/screenshots/cost-target-en.png).
-
-Run `node scripts/check_cost_targets.mjs` to check targets in all ten languages and both themes. It starts and stops its own local preview server and requires Playwright Chromium (`npx playwright install chromium`).
-
-## Technology Stack
-
-| Layer | Tech |
-|---|---|
-| Manifest | Manifest V3 |
-| Frontend | React (TypeScript) + Vite |
-| Styling | Tailwind CSS + PostCSS |
-| State | Zustand |
-| Storage | `chrome.storage.local` |
-| Testing | Vitest |
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/cost-per-use/kchaaggejdclkmjgfjbdjimmmjibllmd"><strong>👉 Add to Chrome (Free)</strong></a> •
+  <a href="https://tahsinsoyak.github.io/cost-per-use-extension/"><strong>🌐 Try Interactive Web App</strong></a> •
+  <a href="https://github.com/tahsinsoyak/cost-per-use-extension/releases/latest"><strong>📦 Download v1.1.0 ZIP</strong></a> •
+  <a href="#-supported-languages"><strong>🌍 10 Languages</strong></a>
+</p>
 
 ---
 
-## Installation
+## 💡 Why Cost Per Use?
 
-### From Source
+Price tags are deceptive. An expensive item you use every day often costs **far less** than a cheap impulse buy you only use twice.
 
+```text
+  ❌ $180 Party Shoes     worn 3 times         ➔  $60.00 / wear   (Wasteful)
+  ✅ $300 Winter Coat     worn 200 days        ➔  $1.50 / wear    (Great deal!)
+  ✅ $800 Daily Laptop    used 3 years daily   ➔  $0.73 / day     (Best investment!)
+```
+
+**Cost Per Use** sits right in your browser. Whenever you're browsing an online shop, open the extension to instantly evaluate whether a purchase is truly worth your hard-earned money.
+
+---
+
+## ✨ Features
+
+- ⚡ **1-Click Shopping Autofill** — Automatically grabs product title, price, and currency when shopping on Amazon, eBay, Trendyol, Hepsiburada, and more.
+- 🎯 **Target Cost Goal** — Set your personal cost-per-use goal (e.g. *$0.50/use*) to see the exact number of uses required to justify the price.
+- ⚖️ **Side-by-Side Comparison** — Compare up to 3 products simultaneously to discover which one offers the highest value.
+- 🔄 **Realistic "What-If" Scenarios** — Automatically calculates what happens if you only use the item half as much as anticipated.
+- 🛠️ **Real Net Cost** — Factor in expected resale value, maintenance costs, and installment interest.
+- ⏳ **Work-Hour Equivalent** — Translate price tags into hours of labor based on your wage.
+- 💾 **Local History & JSON Export** — Save past calculations, export them for backup, or import previous logs.
+- 🎨 **Dark & Light Modes** — Automatically conforms to your browser theme.
+- 🔒 **100% Private & Offline** — No sign-up, no analytics, no remote servers, no trackers. All data stays strictly on your machine.
+
+---
+
+## 📸 Screenshots
+
+<p align="center">
+  <img src="store-assets/screenshot-calculator.png" alt="Cost Per Use Calculator Interface" width="49%" />
+  <img src="store-assets/screenshot-compare.png" alt="Side-by-Side Product Comparison" width="49%" />
+</p>
+<p align="center">
+  <img src="store-assets/screenshot-result.png" alt="Detailed Net Cost & Scenario Analysis" width="49%" />
+  <img src="store-assets/screenshot-history.png" alt="Local Purchase History" width="49%" />
+</p>
+
+---
+
+## 🌍 Supported Languages
+
+Cost Per Use is fully translated and accessible across 10 languages:
+
+| Language | Code | Native Name | Status |
+|---|:---:|---|:---:|
+| 🇺🇸 English | `en` | English | ✅ Full |
+| 🇹🇷 Turkish | `tr` | Türkçe | ✅ Full |
+| 🇪🇸 Spanish | `es` | Español | ✅ Full |
+| 🇩🇪 German | `de` | Deutsch | ✅ Full |
+| 🇫🇷 French | `fr` | Français | ✅ Full |
+| 🇧🇷 Portuguese | `pt-BR` | Português (Brasil) | ✅ Full |
+| 🇷🇺 Russian | `ru` | Русский | ✅ Full |
+| 🇸🇦 Arabic | `ar` | العربية (RTL) | ✅ Full |
+| 🇯🇵 Japanese | `ja` | 日本語 | ✅ Full |
+| 🇨🇳 Simplified Chinese | `zh-CN` | 简体中文 | ✅ Full |
+
+---
+
+## 🚀 How to Install
+
+### Option 1: Chrome Web Store (Recommended)
+Install directly in one click from the official store:
+👉 **[Cost Per Use on Chrome Web Store](https://chromewebstore.google.com/detail/cost-per-use/kchaaggejdclkmjgfjbdjimmmjibllmd)**  
+*(Also works seamlessly on Microsoft Edge, Brave, Opera, and Vivaldi)*
+
+### Option 2: Prebuilt Release ZIP
+1. Download the latest `cost-per-use-extension-v1.1.0.zip` from [GitHub Releases](https://github.com/tahsinsoyak/cost-per-use-extension/releases/latest).
+2. Unzip the file into a folder.
+3. Open `chrome://extensions/` and toggle **Developer mode** in the top right.
+4. Click **Load unpacked** and choose the unzipped folder.
+
+### Option 3: From Source
 ```bash
 git clone https://github.com/tahsinsoyak/cost-per-use-extension.git
 cd cost-per-use-extension
 npm install
 npm run build
 ```
-
-### Load in Chrome / Edge
-
-1. Open `chrome://extensions/` (or `edge://extensions/`)
-2. Enable **Developer mode**
-3. Click **Load unpacked**
-4. Select the `dist` folder
-5. Pin **Cost Per Use** to your toolbar
+Load the generated `dist/` directory as an unpacked extension.
 
 ---
 
-## Privacy
+## 💻 Tech Stack
 
-**Cost Per Use** is local-first.
-
-- **No Accounts** — No login, subscription, or payment.
-- **No Analytics** — We do not track your shopping behaviors or website visits.
-- **No Cloud Sync** — Your data never leaves your browser. All history is saved to `chrome.storage.local` and can be cleared instantly.
-
-Read the full [Privacy Policy](docs/privacy-policy.md). Chrome Web Store submission materials are in [docs/chrome-web-store](docs/chrome-web-store/README.md).
-
-Release history is available in the [changelog](CHANGELOG.md).
+- **Extension Framework:** Manifest V3 (Chrome & Edge compatible)
+- **Frontend:** React 18 + TypeScript + Vite
+- **Styling:** Tailwind CSS + PostCSS
+- **State Management:** Zustand
+- **Storage:** `chrome.storage.local` (zero cloud dependencies)
+- **Testing:** Vitest (226 unit and localization tests)
 
 ---
 
-## Support
+## 🔒 Privacy & Permissions
 
-This extension is 100% free and open source. If you find it valuable, consider supporting development:
+Your privacy is paramount. **Cost Per Use** operates completely offline inside your browser:
+- **No analytics or telemetry**
+- **No tracking cookies or ads**
+- **No account or registration required**
+- **No data leaves your device**
+
+Read our complete [Privacy Policy](docs/privacy-policy.md).
+
+---
+
+## 🤝 Contributing & Releases
+
+- **Releases:** Check out the [Releases page](https://github.com/tahsinsoyak/cost-per-use-extension/releases) and [CHANGELOG.md](CHANGELOG.md) for full version history.
+- **Pull Requests:** Issues and PRs are welcome! Before submitting changes, run:
+  ```bash
+  npm test
+  npm run release:check
+  ```
+
+---
+
+## ☕ Support
+
+Cost Per Use is 100% free, open-source, and ad-free. If this extension saves you money and helps you shop smarter, consider supporting development:
 
 [![Support on Patreon](https://img.shields.io/badge/Support-Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/tahsinsoyak)
 
 ---
 
-## License
-
-MIT License — see [LICENSE](LICENSE) for details.
-
----
-
 <p align="center">
-  Made with care by <a href="https://github.com/tahsinsoyak">@tahsinsoyak</a>
+  Crafted with care by <a href="https://github.com/tahsinsoyak">@tahsinsoyak</a> • Licensed under <a href="LICENSE">MIT</a>
 </p>
