@@ -1,37 +1,47 @@
-# Deutscher Store-Eintrag
+# Deutsche Store-Beschreibung
 
 ## Titel
 
-`Kosten pro Nutzung`
+`Kosten pro Nutzung: Smart Shopping & Kauf-Rechner`
 
-## Zusammenfassung
+## Kurzbeschreibung
 
-`Berechne vor dem Kauf die tatsächlichen Kosten pro Nutzung.`
+`Berechne die echten Kosten pro Nutzung vor dem Kauf. Vergleiche Produkte, vermeide Impulskäufe und kaufe bewusster ein.`
 
 ## Ausführliche Beschreibung
 
-Kosten pro Nutzung hilft dir, einen Kauf zu bewerten, indem die tatsächlichen Kosten jeder erwarteten Nutzung geschätzt werden.
+Stoppe Impulskäufe und kaufe smarter ein mit Kosten pro Nutzung - dem intelligenten Einkaufs-, Cost-per-Wear- und Preisrechner für Chrome.
 
-Gib Produktpreis, geplante Besitzdauer und Nutzungshäufigkeit ein, um die Kosten pro Nutzung zu berechnen. Für eine genauere Schätzung kannst du Wiederverkaufswert, Wartungskosten, Ratenzahlungen und den insgesamt gezahlten Betrag berücksichtigen. Mit deinem Stundenlohn lässt sich ein Kauf außerdem in Arbeitszeit umrechnen.
+Preisschilder zeigen nicht die ganze Wahrheit. Ein Paar Schuhe für 180 Euro, das nur 3 Mal getragen wird, kostet 60 Euro pro Tragen, während ein Wintermantel für 300 Euro bei 200 Nutzungstagen nur 1,50 Euro pro Tag kostet. Kosten pro Nutzung hilft dir, den wahren Wert jedes Kaufs im Voraus zu berechnen.
 
-Vergleiche bis zu drei Produkte direkt miteinander, speichere Berechnungen lokal und importiere oder exportiere deinen Verlauf als JSON. Die optionale automatische Eingabe kann Produktname, angezeigten Preis und Währung von der aktiven Einkaufsseite lesen, nachdem du die Funktion aktiviert und die Erweiterung geöffnet hast.
+Egal ob du bei Amazon, eBay, in Shopify-Shops oder bei anderen Online-Händlern einkaufst: Kosten pro Nutzung gibt dir in Sekunden eine klare Entscheidungsgrundlage.
 
 Wichtigste Funktionen:
 
-- Geplante Nutzung mit halb so viel Nutzung vergleichen
-- Ein persönliches Kostenziel setzen und die Mindestnutzung sehen
-- Neutrale Nutzungsschätzungen ohne Urteil über die Bezahlbarkeit
-- Berechnung von Kosten pro Nutzung und Nettokosten
-- Anpassungen für Wiederverkaufswert und Wartungskosten
-- Berechnung von Raten und Gesamtzahlung
-- Optionale Umrechnung in Arbeitszeit
-- Direkter Vergleich von bis zu drei Produkten
-- Lokaler Verlauf mit JSON-Import und -Export
-- Optionales Ausfüllen von Produktname, Preis und Währung der aktiven Seite
-- USD, TRY, EUR, GBP und benutzerdefinierte Währungen
-- Helles und dunkles Design
-- Benutzeroberfläche in 10 Sprachen
+1-Klick-Autofill beim Einkaufen
+Erkennt automatisch Produktname, Preis und Währung beim Surfen auf Amazon, eBay, Shopify-Stores und beliebten Online-Shops. Kein manuelles Abtippen nötig.
 
-Datenschutz steht an erster Stelle. Seiteninformationen, Einstellungen, Vergleiche und Berechnungen werden lokal in Chrome verarbeitet und gespeichert. Kosten pro Nutzung benötigt kein Konto und enthält keine Analysen, Werbung, Tracker oder Cloud-Dienste. Nutzerdaten werden weder verkauft noch an Dritte weitergegeben.
+Persönliches Kostenziel
+Lege dein persönliches Ziel für die Kosten pro Nutzung fest (z. B. 0,50 Euro pro Nutzung), um sofort zu sehen, wie oft du das Produkt mindestens nutzen musst.
 
-Kosten pro Nutzung ist kostenlos und quelloffen. Im Support-Bereich befindet sich ein freiwilliger Patreon-Link, der keine Funktionen freischaltet und für die Nutzung der Erweiterung nicht erforderlich ist.
+Direkter Produktvergleich
+Vergleiche bis zu 3 Produkte gleichzeitig nebeneinander und finde heraus, welche Alternative das beste Preis-Leistungs-Verhältnis bietet.
+
+Realistische Nutzungsszenarien
+Prüfe sofort, wie sich die Kosten verändern, wenn du den Artikel nur halb so oft nutzt wie geplant - der beste Schutz vor Fehlkäufen.
+
+Nettokosten- und Ratenrechner
+Berücksichtige den erwarteten Wiederverkaufswert, laufende Wartungskosten sowie Ratenzahlungen für eine realistische Gesamtrechnung.
+
+Umrechnung in Arbeitszeit
+Rechnet jeden Kaufpreis anhand deines Stundenlohns direkt in die erforderlichen Arbeitsstunden um.
+
+Lokaler Berechnungsverlauf
+Speichere frühere Berechnungen lokal ab, exportiere sie als JSON-Backup und importiere sie jederzeit wieder.
+
+Datenschutz und Lokale Speicherung:
+- Kein Benutzerkonto, keine Registrierung und kein Login erforderlich
+- Keine Analysen, keine Tracker und keine Werbung
+- Keine Cloud-Datenbank; alle Daten bleiben ausschließlich auf deinem Gerät
+
+Triff noch heute bewusste, sparsame und clevere Kaufentscheidungen. Füge Kosten pro Nutzung kostenlos zu Chrome hinzu.

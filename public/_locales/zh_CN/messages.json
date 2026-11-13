@@ -1,4 +1,8 @@
 {
-  "extName": { "message": "单次使用成本" },
-  "extDescription": { "message": "购买前计算商品每次使用的实际成本。" }
+  "extName": {
+    "message": "单次使用成本：智能购物与性价比计算器"
+  },
+  "extDescription": {
+    "message": "购买前计算商品每次使用的真实成本与每次穿搭成本。并排比较商品，拒绝冲动消费，助您精明省钱。"
+  }
 }

@@ -2,36 +2,46 @@
 
 ## Título
 
-`Custo por Uso`
+`Custo por Uso: Calculadora de Compras Inteligentes`
 
 ## Resumo
 
-`Calcule o custo real por uso dos produtos antes de comprar.`
+`Calcule o custo real por uso antes de comprar. Compare produtos, evite compras por impulso e economize dinheiro facilmente.`
 
 ## Descrição detalhada
 
-Custo por Uso ajuda você a avaliar uma compra estimando quanto cada uso esperado realmente custará.
+Pare de fazer compras por impulso e compre de forma mais inteligente com Custo por Uso - a calculadora de compras inteligentes, custo por uso e custo-benefício para o Chrome.
 
-Informe o preço do produto, o período esperado de uso e a frequência de utilização para calcular o custo por uso. Para uma estimativa mais completa, você pode incluir o valor de revenda, as despesas de manutenção, as parcelas e o valor total pago. Também é possível converter uma compra em tempo de trabalho usando seu salário por hora.
+As etiquetas de preço não contam toda a história. Um sapato de R$ 600 usado apenas 3 vezes custa R$ 200 por uso, enquanto um casaco de R$ 800 usado 200 vezes custa apenas R$ 4 por uso. O Custo por Uso ajuda você a calcular o verdadeiro valor de qualquer compra antes de gastar.
 
-Compare até três produtos lado a lado, salve os cálculos localmente e importe ou exporte o histórico em JSON. O preenchimento automático opcional pode ler o nome do produto, o preço exibido e a moeda na página de compras ativa depois que você ativar o recurso e abrir a extensão.
+Seja comprando na Amazon, eBay, lojas Shopify ou nos seus sites favoritos, o Custo por Uso oferece clareza financeira em segundos.
 
-Principais recursos:
+Principais Recursos:
 
-- Compare o uso esperado com metade do uso
-- Defina uma meta por uso e veja o mínimo de usos necessários
-- Estimativas neutras, sem julgamentos sobre o que cabe no seu orçamento
-- Cálculo do custo por uso e do custo líquido
-- Ajustes de valor de revenda e despesas de manutenção
-- Cálculos de parcelas e do valor total pago
-- Equivalência opcional em tempo de trabalho
-- Comparação de até três produtos
-- Histórico local com importação e exportação em JSON
-- Preenchimento opcional de nome, preço e moeda a partir da página ativa
-- USD, TRY, EUR, GBP e moedas personalizadas
-- Temas claro e escuro
-- Interface disponível em 10 idiomas
+Preenchimento Automático em 1 Clique
+Detecta automaticamente o nome do produto, o preço e a moeda ao navegar na Amazon, eBay, lojas Shopify e sites de comércio eletrônico populares.
 
-A privacidade vem em primeiro lugar. Informações das páginas, configurações, comparações e cálculos são processados e armazenados localmente no Chrome. Custo por Uso não exige conta e não inclui análise de dados, publicidade, rastreadores ou serviços em nuvem. Os dados dos usuários não são vendidos nem compartilhados com terceiros.
+Meta Pessoal de Custo
+Defina sua meta de custo por uso (como R$ 2,00 por uso) para ver exatamente quantas vezes você precisa usar o item para compensar o preço.
 
-Custo por Uso é gratuito e de código aberto. A seção de suporte inclui um link voluntário para o Patreon, mas ele não desbloqueia recursos e nunca é necessário para usar a extensão.
+Comparação de Produtos Lado a Lado
+Compare até 3 produtos simultaneamente e descubra qual alternativa oferece a melhor relação custo-benefício.
+
+Cenários Realistas de Uso
+Veja o que acontece se você usar o produto apenas metade do planejado, protegendo seu bolso contra arrependimentos.
+
+Calculadora de Custo Líquido e Parcelamento
+Inclua valor estimado de revenda, custos de manutenção e juros de parcelamento para calcular o impacto financeiro real.
+
+Equivalência em Horas de Trabalho
+Converte qualquer preço de compra nas horas de trabalho necessárias para pagá-lo com base no seu ganho por hora.
+
+Histórico Local de Cálculos
+Salve cálculos anteriores, exporte em formato JSON para backup e importe suas análises quando precisar.
+
+Privacidade em Primeiro Lugar:
+- Não requer conta, cadastro ou login
+- Zero análises, rastreadores ou anúncios
+- Sem banco de dados na nuvem; todos os dados ficam apenas no seu computador
+
+Tome decisões de compra conscientes, econômicas e inteligentes hoje mesmo. Adicione o Custo por Uso ao Chrome gratuitamente.

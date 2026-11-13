@@ -2,7 +2,7 @@
 
 ## Başlık
 
-`Kullanım Başına Maliyet`
+`Kullanım Başına Maliyet: Akıllı Alışveriş ve Fiyat Hesaplayıcı`
 
 ## Özet
 

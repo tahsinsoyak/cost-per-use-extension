@@ -1,4 +1,8 @@
 {
-  "extName": { "message": "Custo por Uso" },
-  "extDescription": { "message": "Calcule o custo real por uso dos produtos antes de comprar." }
+  "extName": {
+    "message": "Custo por Uso: Calculadora de Compras Inteligentes"
+  },
+  "extDescription": {
+    "message": "Calcule o custo real por uso antes de comprar. Compare produtos, evite compras por impulso e economize dinheiro facilmente."
+  }
 }

@@ -1,4 +1,8 @@
 {
-  "extName": { "message": "Kosten pro Nutzung" },
-  "extDescription": { "message": "Berechne vor dem Kauf die tatsächlichen Kosten pro Nutzung." }
+  "extName": {
+    "message": "Kosten pro Nutzung: Smart Shopping & Kauf-Rechner"
+  },
+  "extDescription": {
+    "message": "Berechne die echten Kosten pro Nutzung vor dem Kauf. Vergleiche Produkte, vermeide Impulskäufe und kaufe bewusster ein."
+  }
 }

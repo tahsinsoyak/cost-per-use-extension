@@ -2,7 +2,7 @@
 
 ## Title
 
-`Cost Per Use`
+`Cost Per Use: Smart Shopping & Cost Per Wear Calculator`
 
 ## Summary
 

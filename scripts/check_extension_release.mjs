@@ -6,6 +6,7 @@ import { chromium } from 'playwright';
 
 // Uses an isolated Chromium profile and the actual built extension, never the user's profile.
 const manifest = JSON.parse(await readFile('dist/manifest.json', 'utf8'));
+const enMessages = JSON.parse(await readFile('dist/_locales/en/messages.json', 'utf8'));
 const dist = path.resolve('dist');
 const fixture = createServer((_request, response) => {
   response.setHeader('Content-Type', 'text/html; charset=utf-8');
@@ -21,7 +22,7 @@ try {
   });
   const browserCDP = await context.browser().newBrowserCDPSession();
   const {extensions} = await browserCDP.send('Extensions.getExtensions');
-  const extension = extensions.find(item => item.name === 'Cost Per Use');
+  const extension = extensions.find(item => item.name === enMessages.extName.message);
   assert.ok(extension?.enabled);
   assert.equal(extension.version, manifest.version);
   const root = `chrome-extension://${extension.id}/`;
