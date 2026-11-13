@@ -10,28 +10,38 @@
 
 ## Detailed description
 
-Cost Per Use helps you evaluate a purchase by estimating how much every expected use will actually cost.
+Stop impulse buying and shop smarter with Cost Per Use - the smart shopping, cost per wear, and price calculator for Chrome.
 
-Enter the product price, expected ownership period, and usage frequency to calculate its cost per use. For a more complete estimate, you can include resale value, maintenance expenses, installment payments, and the total amount paid. You can also translate a purchase into working-time equivalents using your hourly wage.
+Price tags do not tell the whole story. A $180 pair of shoes worn 3 times costs $60 per wear, while a $300 winter coat worn 200 days costs only $1.50 per wear. Cost Per Use helps you calculate the true value of any purchase before you spend.
 
-Compare up to three products side by side, save calculations locally, and import or export your history as JSON. Optional auto-fill can read the product title, displayed price, and currency from the active shopping page after you enable the feature and open the extension.
+Whether you are shopping on Amazon, eBay, Shopify storefronts, or everyday retailers, Cost Per Use gives you clear buying perspective in seconds.
 
-Main features:
+Key Features:
 
-- Compare expected usage with half as much use
-- Set a personal cost-per-use target and see the minimum uses needed
-- Neutral usage estimates without affordability judgments
-- Cost-per-use and net-cost calculations
-- Resale value and maintenance cost adjustments
-- Installment and total-payment calculations
-- Optional working-time equivalents
-- Side-by-side comparison for up to three products
-- Local calculation history with JSON import and export
-- Optional active-page product title, price, and currency auto-fill
-- USD, TRY, EUR, GBP, and custom currencies
-- Light and dark themes
-- Interface support for 10 languages
+1-Click Shopping Autofill
+Automatically detects product title, price, and currency when browsing Amazon, eBay, Shopify stores, and popular eCommerce sites. No manual typing needed.
 
-Privacy comes first. Page information, settings, comparisons, and calculations are processed and stored locally in Chrome. Cost Per Use requires no account and includes no analytics, advertising, trackers, or cloud service. User data is not sold or shared with third parties.
+Personal Cost Target
+Set your target cost-per-use (such as $0.50 per use) to see the exact number of uses required to justify the price before you purchase.
 
-Cost Per Use is free and open source. A voluntary Patreon link is available in the Support section, but it does not unlock features and is never required to use the extension.
+Side-by-Side Product Comparison
+Compare up to 3 products at once. Discover which alternative gives you the best price-to-value ratio.
+
+What-If Usage Scenarios
+Test what happens if you only use the item half as much as planned, protecting you from buyer's remorse and unused purchases.
+
+Net Cost and Installment Calculator
+Factor in expected resale value, recurring maintenance costs, and installment interest to calculate the real financial impact.
+
+Labor Time Equivalent
+Converts any purchase price into the hours of work required to afford it based on your hourly wage.
+
+Local Calculation History
+Save past calculations, export them as JSON for backup, and import previous assessments anytime.
+
+Privacy First and Local Storage:
+- No account, registration, or login required
+- Zero analytics, trackers, or advertising
+- No cloud database; all data stays strictly on your computer
+
+Make confident, frugal, and smart buying decisions today. Add Cost Per Use to Chrome for free.

@@ -10,28 +10,38 @@
 
 ## Ayrıntılı açıklama
 
-Kullanım Başına Maliyet, bir ürünün beklenen her kullanımının gerçekte ne kadara mal olacağını tahmin ederek satın alma kararlarınızı değerlendirmenize yardımcı olur.
+Gereksiz harcamaları durdurun ve akıllı alışveriş yapın. Cost Per Use, satın almadan önce ürünlerin gerçek kullanım başına ve giyim başına maliyetini hesaplayan ücretsiz alışveriş asistanınızdır.
 
-Kullanım başına maliyeti hesaplamak için ürün fiyatını, tahmini sahiplik süresini ve kullanım sıklığını girin. Daha kapsamlı bir tahmin için ikinci el satış değerini, bakım giderlerini, taksit sayısını ve ödenecek toplam tutarı ekleyebilirsiniz. Saatlik ücretinizi kullanarak satın alımın kaç saatlik çalışmaya karşılık geldiğini de görebilirsiniz.
+Bir ürünün etiket fiyatı gerçek değerini göstermez. 3 kez giydiğiniz 3.000 TL'lik bir ayakkabı giyim başına 1.000 TL'ye gelirken; kış boyunca 150 gün giydiğiniz 6.000 TL'lik kaliteli bir mont kullanım başına sadece 40 TL'dir. Cost Per Use, sepete eklemeden önce gerçek maliyeti görmenizi sağlar.
 
-Üç ürüne kadar yan yana karşılaştırma yapın, hesaplamalarınızı yerel olarak kaydedin ve geçmişinizi JSON biçiminde içe veya dışa aktarın. İsteğe bağlı otomatik doldurma özelliği, siz etkinleştirip uzantıyı açtıktan sonra aktif alışveriş sayfasındaki ürün adını, görüntülenen fiyatı ve para birimini okuyabilir.
+Trendyol, Hepsiburada, Amazon veya eBay'de gezinirken bütçeniz için en mantıklı kararları verin.
 
-Başlıca özellikler:
+Başlıca Özellikler:
 
-- Beklenen kullanımı yarı yarıya kullanımla karşılaştırın
-- Kullanım başına hedef belirleyin ve gereken en az kullanım sayısını görün
-- Alınabilirlik yargıları olmadan tarafsız kullanım tahminleri
-- Kullanım başına maliyet ve net maliyet hesaplama
-- İkinci el satış değeri ve bakım maliyeti ayarlamaları
-- Taksit ve toplam ödeme hesaplamaları
-- İsteğe bağlı çalışma süresi karşılığı
-- Üç ürüne kadar yan yana karşılaştırma
-- JSON içe ve dışa aktarma destekli yerel hesaplama geçmişi
-- Aktif sayfadan isteğe bağlı ürün adı, fiyat ve para birimi doldurma
-- USD, TRY, EUR, GBP ve özel para birimleri
-- Açık ve koyu tema
-- 10 dilde arayüz desteği
+Tek Tıkla Otomatik Bilgi Alma
+Trendyol, Hepsiburada, Amazon ve eBay sayfalarındayken ürün adını, fiyatını ve para birimini otomatik olarak çeker.
 
-Gizlilik önceliklidir. Sayfa bilgileri, ayarlar, karşılaştırmalar ve hesaplamalar Chrome içinde yerel olarak işlenir ve saklanır. Kullanım Başına Maliyet hesap gerektirmez; analiz sistemi, reklam, izleyici veya bulut hizmeti içermez. Kullanıcı verileri satılmaz veya üçüncü taraflarla paylaşılmaz.
+Kişisel Hedef Maliyet Belirleme
+Hedef kullanım başına maliyetinizi belirleyin (örneğin kullanım başına 10 TL) ve bu hedefe ulaşmak için ürünü en az kaç kez kullanmanız gerektiğini tek bakışta görün.
 
-Kullanım Başına Maliyet ücretsiz ve açık kaynaklıdır. Destek bölümünde isteğe bağlı bir Patreon bağlantısı bulunur; bu bağlantı herhangi bir özelliğin kilidini açmaz ve uzantıyı kullanmak için gerekli değildir.
+3 Ürünü Yan Yana Karşılaştırma
+Aynı anda 3 farklı ürünü karşılaştırın, bütçeniz için fiyat/performans açısından en karlı seçeneği bulun.
+
+Gerçekçi Senaryolar
+Ürünü beklediğinizden yarı yarıya daha az kullanırsanız ne olacağını anında hesaplayın; dolapta bekleyen atıl ürünlerden kaçının.
+
+Net Maliyet ve Taksit Analizi
+İkinci el satış değeri, bakım ve onarım giderleri ile taksit seçeneklerini hesaba katarak gerçek net maliyeti hesaplayın.
+
+Çalışma Saati Karşılığı
+Ürünün saatlik kazancınıza göre kaç saatlik emeğinize denk geldiğini hesaplayın.
+
+Yerel Hesaplama Geçmişi
+Geçmiş hesaplamalarınızı kaydedin, JSON olarak yedekleyin ve dilediğiniz zaman geri yükleyin.
+
+Gizlilik Önceliklidir:
+- Hesap açma veya giriş yapma zorunluluğu yoktur
+- Hiçbir reklam, takipçi veya veri toplama kodu içermez
+- Tüm hesaplamalar ve geçmiş sadece sizin cihazınızda yerel olarak saklanır
+
+Akıllı, bilinçli ve tasarruflu alışveriş için Cost Per Use'u Chrome'a ücretsiz ekleyin.
