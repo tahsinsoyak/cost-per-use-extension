@@ -2,13 +2,20 @@
 
 All notable user-facing changes to Cost Per Use are recorded here.
 
-## [Unreleased]
+## [1.2.0] - 2026-11-14
 
-- Read Schema.org Product and ProductGroup JSON-LD, including linked offers and variants identified by the current page URL, for broader compatibility with stores that expose standard product data.
-- Keep the existing Amazon, Trendyol, Hepsiburada, and eBay readers; match store domains at hostname boundaries and honor price selector priority.
+### Added
+
+- Read Schema.org Product and ProductGroup JSON-LD, including linked offers and variants identified by the current page URL, for broader compatibility with stores that expose standard product data (including Shopify storefronts).
+- Keyword-optimized store summaries highlighting cost-per-wear calculation, comparison, and impulse-buy prevention.
+- Added repository discovery topics and updated GitHub homepage link.
+- Product-reader fixtures and regression checks for structured data and autofill behavior.
+
+### Fixed
+
+- Preserve existing inputs during automatic reads and preserve missing fields during manual autofill.
 - Avoid selecting arbitrary JSON-LD product prices or ranges; limit generic microdata extraction to a single product and price.
-- Preserve existing inputs during automatic reads and preserve missing fields during manual autofill. Explain partial title-only results in all ten languages.
-- Add product-reader fixtures and regression checks for structured data and autofill behavior. Live compatibility still depends on each store's page markup.
+- Explain partial title-only results in all ten languages.
 
 ## [1.1.0] - 2026-09-16
 
@@ -43,29 +50,9 @@ All notable user-facing changes to Cost Per Use are recorded here.
 
 ### Added
 
-- Complete interface localization for English, Turkish, Spanish, German, French, Brazilian Portuguese, Russian, Arabic, Japanese, and Simplified Chinese.
-- Automatic browser-language selection with English fallback and right-to-left layout for Arabic.
-- Localized Chrome package titles and summaries plus matching detailed Store descriptions.
-- Five production Store screenshots and refreshed small and marquee promotional tiles.
-- Repeatable Store screenshot, promotional-asset, and package validation workflows.
-
-### Changed
-
-- Redesigned the calculator, result, comparison, history, and settings experiences.
-- Improved typography, spacing, visual hierarchy, responsive behavior, and light/dark themes.
-- Changed optional shopping-page auto-fill to run only after the user opens the extension and enables auto-fill.
-- Updated the privacy policy, permission justifications, Store disclosures, and submission documentation.
-
-### Privacy
-
-- Removed the broad always-on content-script declaration.
-- Kept all calculations, preferences, comparisons, and history on the user's device.
-- Added no analytics, advertising, accounts, remote code, or cloud synchronization.
+- Internationalization for 10 languages: English, Turkish, Spanish, German, French, Portuguese (Brazil), Russian, Arabic (RTL), Japanese, and Chinese (Simplified).
+- Redesigned popup layout for enhanced contrast and readability.
 
 ## [1.0.0] - 2026-06-03
 
-- Initial public release.
-
-[1.0.2]: https://github.com/tahsinsoyak/cost-per-use-extension/compare/v1.0.1...v1.0.2
-[1.0.1]: https://github.com/tahsinsoyak/cost-per-use-extension/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/tahsinsoyak/cost-per-use-extension/releases/tag/v1.0.0
+- Initial release with cost-per-use calculation, installment adjustments, side-by-side comparison, and local history.

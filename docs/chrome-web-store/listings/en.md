@@ -6,7 +6,7 @@
 
 ## Summary
 
-`Calculate the real cost per use of products before buying.`
+`Calculate true cost per use & cost per wear before buying. Compare products, stop impulse shopping, and save money effortlessly.`
 
 ## Detailed description
 

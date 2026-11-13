@@ -6,7 +6,7 @@
 
 ## Özet
 
-`Satın almadan önce ürünlerin kullanım başına gerçek maliyetini hesaplayın.`
+`Satın almadan önce ürünlerin kullanım başına maliyetini hesaplayın, karşılaştırın ve gereksiz harcamaları engelleyin.`
 
 ## Ayrıntılı açıklama
 

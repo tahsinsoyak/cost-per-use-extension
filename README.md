@@ -9,9 +9,9 @@
 </p>
 
 <p align="center">
-  <a href="https://chromewebstore.google.com/detail/cost-per-use/kchaaggejdclkmjgfjbdjimmmjibllmd"><img src="https://img.shields.io/badge/Chrome_Web_Store-v1.1.0-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Web Store" /></a>
+  <a href="https://chromewebstore.google.com/detail/cost-per-use/kchaaggejdclkmjgfjbdjimmmjibllmd"><img src="https://img.shields.io/badge/Chrome_Web_Store-Latest-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Web Store" /></a>
   <a href="https://tahsinsoyak.github.io/cost-per-use-extension/"><img src="https://img.shields.io/badge/Live_Web_Demo-Try_Online-00C853?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Demo" /></a>
-  <a href="https://github.com/tahsinsoyak/cost-per-use-extension/releases/latest"><img src="https://img.shields.io/badge/GitHub_Release-v1.1.0-24292e?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Release" /></a>
+  <a href="https://github.com/tahsinsoyak/cost-per-use-extension/releases/latest"><img src="https://img.shields.io/badge/GitHub_Release-v1.2.0-24292e?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Release" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License" /></a>
   <a href="docs/privacy-policy.md"><img src="https://img.shields.io/badge/Privacy-100%25_Local-9C27B0?style=for-the-badge" alt="Privacy First" /></a>
 </p>
@@ -19,7 +19,7 @@
 <p align="center">
   <a href="https://chromewebstore.google.com/detail/cost-per-use/kchaaggejdclkmjgfjbdjimmmjibllmd"><strong>👉 Add to Chrome (Free)</strong></a> •
   <a href="https://tahsinsoyak.github.io/cost-per-use-extension/"><strong>🌐 Try Interactive Web App</strong></a> •
-  <a href="https://github.com/tahsinsoyak/cost-per-use-extension/releases/latest"><strong>📦 Download v1.1.0 ZIP</strong></a> •
+  <a href="https://github.com/tahsinsoyak/cost-per-use-extension/releases/latest"><strong>📦 Download v1.2.0 ZIP</strong></a> •
   <a href="#-supported-languages"><strong>🌍 10 Languages</strong></a>
 </p>
 
@@ -93,7 +93,7 @@ Install directly in one click from the official store:
 *(Also works seamlessly on Microsoft Edge, Brave, Opera, and Vivaldi)*
 
 ### Option 2: Prebuilt Release ZIP
-1. Download the latest `cost-per-use-extension-v1.1.0.zip` from [GitHub Releases](https://github.com/tahsinsoyak/cost-per-use-extension/releases/latest).
+1. Download the latest `cost-per-use-extension-v1.2.0.zip` from [GitHub Releases](https://github.com/tahsinsoyak/cost-per-use-extension/releases/latest).
 2. Unzip the file into a folder.
 3. Open `chrome://extensions/` and toggle **Developer mode** in the top right.
 4. Click **Load unpacked** and choose the unzipped folder.
